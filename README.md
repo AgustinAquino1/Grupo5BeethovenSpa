@@ -2,7 +2,7 @@
 Proyecto: Dog Hotel
 Producto: e-commerce 
 Servicios: 
-Objetivo: Dog Hotel 
+Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino 
 
 Integrante: Julieta Ventre
 Edad: 21
