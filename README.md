@@ -19,3 +19,20 @@ Edad: 30
 Empleo: Anañista Funcional
 Hobby: Gym, Lectura y Peliculas
 
+Website referencia: 
+Dogmatico: https://www.dogmatico.com/
+//descripcion del porque fue elegido//
+
+Perron:https://perron.es/
+//descripcion del porque fue elegido//
+
+Petville:https://petville.com.ar/
+//descripcion del porque fue elegido//
+
+Ripley Pets:
+https://simple.ripley.cl/mascotas/alimento-mascotas/alimentos-perros?gclid=CjwKCAjw3cSSBhBGEiwAVII0Z9fKvexu3nRhDg_2zUmtgf5e5JMf3_1r33ipa7TCLsIIBGAEA8zZ6hoCk10QAvD_BwE&s=mdco
+//descripcion del porque fue elegido//
+
+Iprofesional:
+https://www.iprofesional.com/actualidad/175242-spa-para-perros-la-nueva-tendencia-que-propone-combatir-el-estres-canino
+//descripcion del porque fue elegido//
