@@ -19,4 +19,3 @@ Edad: 30
 Empleo: Anañista Funcional
 Hobby: Gym, Lectura y Peliculas
 
-Hola
