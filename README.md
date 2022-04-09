@@ -1,8 +1,8 @@
 # Grupo5
 Proyecto: Dog Hotel
-Producto:  
+Producto: e-commerce 
 Servicios: 
-Objetivo: Dog Hotel brinda 
+Objetivo: Dog Hotel 
 
 Integrante: Julieta Ventre
 Edad: 21
