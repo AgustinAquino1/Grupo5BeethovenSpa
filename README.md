@@ -1,11 +1,8 @@
 # Grupo5
 Proyecto: Dog Hotel
-Producto:  
+Producto: e-commerce   
 Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros
-Objetivo:
-Producto: e-commerce 
-Servicios: 
-Objetivo: Dog Hotel 
+Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino 
 
 Integrante: Julieta Ventre
 Edad: 21
@@ -21,5 +18,5 @@ Hobby: Leer, hacer música, cocinar
 
 Integrante: Raieni Gleite
 Edad: 30
-Empleo: Analista Funcional
+Empleo: Anañista Funcional
 Hobby: Gym, Lectura y Peliculas
