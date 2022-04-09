@@ -1,6 +1,6 @@
 # Grupo5
 Proyecto: Dog Hotel
-Producto: e-commerce   
+Producto: e-commerce
 Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros
 Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino 
 
@@ -18,3 +18,5 @@ Integrante: Raieni Gleite
 Edad: 30
 Empleo: Anañista Funcional
 Hobby: Gym, Lectura y Peliculas
+
+Hola
