@@ -15,3 +15,8 @@ Edad: 29
 Empleo: Profesor de Música
 Hobby: Leer, hacer música, cocinar
 
+
+Integrante: Raieni Gleite
+Edad: 30
+Empleo: Anañista Funcional
+Hobby: Gym, Lectura y Peliculas
