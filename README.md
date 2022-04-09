@@ -1,7 +1,7 @@
 # Grupo5
 Proyecto: Dog Hotel
-Producto:  
-Servicios:
+Producto: e-commerce 
+Servicios: 
 Objetivo:
 
 Integrante: Julieta Ventre
