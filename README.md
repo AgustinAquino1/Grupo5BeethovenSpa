@@ -1,8 +1,14 @@
 # Grupo5
 Proyecto: Dog Hotel
+<<<<<<< HEAD
 Producto:  
 Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros
 Objetivo:
+=======
+Producto: e-commerce 
+Servicios: 
+Objetivo: Dog Hotel 
+>>>>>>> 84a6ad0343ccc9cbae101f9c5ac9b56f7f9307eb
 
 Integrante: Julieta Ventre
 Edad: 21
