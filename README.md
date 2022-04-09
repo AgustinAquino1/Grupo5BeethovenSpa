@@ -5,7 +5,7 @@ Edad: 21
 Empleo: Comercio exterior
 Hobby: Jugar videoJuegos
 
-Proyecto: Dog Hotel
-Producto:  
+Proyecto: Dog hotel 
+Producto:
 Servicios:
 Objetivo:
