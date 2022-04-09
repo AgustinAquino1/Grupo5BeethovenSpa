@@ -35,4 +35,4 @@ https://simple.ripley.cl/mascotas/alimento-mascotas/alimentos-perros?gclid=CjwKC
 
 Iprofesional:
 https://www.iprofesional.com/actualidad/175242-spa-para-perros-la-nueva-tendencia-que-propone-combatir-el-estres-canino
-//descripcion del porque fue elegido//
+//eleccion: La nota fue elegida por su ...//
