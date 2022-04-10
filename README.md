@@ -2,7 +2,7 @@
 Proyecto: Dog Hotel
 Producto: e-commerce
 Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros
-Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino 
+Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino podrá disfrutar de los mejores servicios brindados en el país.
 
 Integrante: Julieta Ventre
 Edad: 21
