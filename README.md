@@ -28,7 +28,7 @@ Perron:https://perron.es/
 Descripcion: Es un blog donde abordan diferentes asuntos. Con tips para cuidar a tu perro, consejos de entrenamiento, alimentación, tipos de juguetes ideales, etc.
 
 Petville:https://petville.com.ar/
-Dscripcion: En este website brindan servicios similares. Tiene las secciones de su website bien definidas y de facil navegación. Ademas cuenta con muchas fotos y seccion de testimonios.
+Descripcion: En este website brindan servicios similares. Tiene las secciones de su website bien definidas y de facil navegación. Ademas cuenta con muchas fotos y seccion de testimonios.
 
 Ripley Pets:
 https://simple.ripley.cl/mascotas/alimento-mascotas/alimentos-perros?gclid=CjwKCAjw3cSSBhBGEiwAVII0Z9fKvexu3nRhDg_2zUmtgf5e5JMf3_1r33ipa7TCLsIIBGAEA8zZ6hoCk10QAvD_BwE&s=mdco
