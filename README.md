@@ -16,7 +16,7 @@ Hobby: Leer, hacer música, cocinar
 
 Integrante: Raieni Gleite
 Edad: 30
-Empleo: Anañista Funcional
+Empleo: Analista Funcional
 Hobby: Gym, Lectura y Peliculas
 
 Website referencia: 
