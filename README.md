@@ -34,4 +34,6 @@ Ripley Pets:
 https://simple.ripley.cl/mascotas/alimento-mascotas/alimentos-perros?gclid=CjwKCAjw3cSSBhBGEiwAVII0Z9fKvexu3nRhDg_2zUmtgf5e5JMf3_1r33ipa7TCLsIIBGAEA8zZ6hoCk10QAvD_BwE&s=mdco
 Descripcion: El website cuenta con los mismos servicios que nuestro proyecto. Ademas de contar con buena funcionalidad de exibicion de productos disponibles para venta.
 
-
+Kiwano:
+https://www.kiwano.com.ar/customer/account/create/
+descripcion: El Website fue tomado en cuenta para el diseño de la pagina web, por ejemplo el carrito,su Log in, su formulario de registro,etc. 
