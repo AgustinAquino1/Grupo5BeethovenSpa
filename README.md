@@ -34,6 +34,4 @@ Ripley Pets:
 https://simple.ripley.cl/mascotas/alimento-mascotas/alimentos-perros?gclid=CjwKCAjw3cSSBhBGEiwAVII0Z9fKvexu3nRhDg_2zUmtgf5e5JMf3_1r33ipa7TCLsIIBGAEA8zZ6hoCk10QAvD_BwE&s=mdco
 Descripcion: El website cuenta con los mismos servicios que nuestro proyecto. Ademas de contar con buena funcionalidad de exibicion de productos disponibles para venta.
 
-Iprofesional:
-https://www.iprofesional.com/actualidad/175242-spa-para-perros-la-nueva-tendencia-que-propone-combatir-el-estres-canino
-Descripcion: El website cuenta con un articulo que sirve de inspiracion y confirma los beneficios del servicio que es ofrecido a los clientes en nuestro proyecto.
+
