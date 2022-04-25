@@ -1,4 +1,4 @@
-# Grupo5
+# Grupo5BeethovenSpa
 Proyecto: Beethoven Spa
 Producto: e-commerce
 Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros
