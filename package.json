@@ -4,7 +4,7 @@
   "description": "Proyecto: Beethoven Spa\r Producto: e-commerce\r Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros\r Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino podrá disfrutar de los mejores servicios brindados en el país.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/AgustinAquino1/Grupo5BeethovenSpa#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7"
   }
 }
