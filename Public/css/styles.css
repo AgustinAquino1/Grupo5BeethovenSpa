@@ -4,3 +4,6 @@
   box-sizing: border-box;
   font-family: roboto
 }
+header {
+   display:flex
+  }
