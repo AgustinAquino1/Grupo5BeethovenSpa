@@ -23,6 +23,7 @@
   background-color: #FFD7D7;
   align-items: center;
   border: 0.5px solid   #C1C1C1;
+  border-radius: 5px;
 }
 .burguer {
   width: 10%;
