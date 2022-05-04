@@ -1,9 +1,31 @@
+/*---COLORES---*/
+rosita header: #FFD7D7;
+rosa fuerte:#FF3A5E ;
+celeste :#60E2EB;
+verdeagua:#A8EBDF;
+azul verdoso: #9AC2D2;
+verde:#DBEFEB;
+
+/*------*/
+
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: roboto
 }
+
+/*----header-----*/
 header {
-   display:flex
-  }
+   display:flex;
+   background-color: pink ;
+   height: 70px;
+   width : 50%;
+   border:dotted red
+   
+     }
+/*---body---*/
+/*---footer---*/
+/*---MediaQ---*/
+
