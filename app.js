@@ -15,6 +15,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, './views/home.html'))   
 })
 
+app.get("/home", (req, res) => {
+    res.sendFile(path.join(__dirname, './views/home.html'))   
+})
+
 app.get('*', (req, res) => {
     
     res.status(404).send("Not found 404")
