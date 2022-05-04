@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: roboto
 }
-
+header {
+  border-bottom: 1px solid #C1C1C1; 
+}
 .top-header {
    display:flex;
    justify-content: space-around;
