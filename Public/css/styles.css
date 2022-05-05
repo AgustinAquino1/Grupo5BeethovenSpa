@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: roboto
 }
+/***************************************** M O B I L E - H E A D E R  *************************************************/
 header {
   border-bottom: 1px solid #C1C1C1; 
 }
@@ -41,6 +42,7 @@ header {
   font-size: 30px;
   margin-top: 20px;
 }
+
 .fa-user {
   visibility: hidden;
   font-size: 30px;
@@ -81,7 +83,11 @@ h1 {
   border-bottom-right-radius: 3px;
 }
 
+/***************************************** M O B I L E - F O O T E R *************************************************/
 
+/*********************************************************************************************************************/
+/***************************************** H E A D E R - T A B L E T *************************************************/
+/*********************************************************************************************************************/
 @media  (min-width: 426px){
 
   .fa-user {
@@ -93,3 +99,13 @@ h1 {
     justify-content: space-between;
   }
 }
+  .fa-cart-shopping:hover{
+    color: #ffa5b5;
+  }
+
+  .fa-user:hover {
+    color: #ffa5b5;
+  }
+  .fa-bars:hover {
+    color: #ffa5b5;
+  }
