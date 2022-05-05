@@ -15,17 +15,160 @@ verde:#DBEFEB;
   box-sizing: border-box;
   font-family: roboto
 }
-
-/*----header-----*/
+/** H O M E - H E A D E R  **/
 header {
+  border-bottom: 1px solid #C1C1C1; 
+}
+.top-header {
    display:flex;
-   background-color: pink ;
-   height: 70px;
-   width : 50%;
-   border:dotted red
-   
-     }
-/*---body---*/
-/*---footer---*/
-/*---MediaQ---*/
+   justify-content: space-around;
+   padding: 10px;
+  }
+.logo {
+  width: 60px;
+  }
+.logo-container-buscador{
+    width: 70%;
+}
+.logo-container{
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: #FFD7D7;
+  align-items: center;
+  border: 0.5px solid   #C1C1C1;
+  border-radius: 5px;
+}
+.burguer {
+  width: 10%;
+}
 
+.nav-right {
+  display: flex;
+  width: 10%;
+}
+
+.fa-cart-shopping{
+  color: #FF3A5E;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.fa-cart-shopping:hover{
+  color: #4f0513;
+}
+.fa-user {
+  visibility: hidden;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #FF3A5E;
+}
+.fa-bars {
+  color: #FF3A5E;
+  font-size: 30px;
+  margin-top: 20px;
+}
+h1 {
+  margin: auto;
+  font-size: 20px;
+  color: #fff;
+  font-weight: lighter;
+}
+
+.buscador {
+  display: flex;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+.barra {
+  width: 100%;
+  height: 30px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-color: #FFF;
+  border-style: none;
+}
+.fa-magnifying-glass {
+  background-color: #FFF;
+  padding: 5px;
+  border-style: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.bloque-1{
+  width: 100%;
+  margin-top: 10px;
+  
+}
+.img-principal-product-detail{
+  display: flex;
+  justify-content: center;
+  
+}
+.img-product1{
+  width: 400px;
+    
+}
+.img-product2{
+  width: 0px;
+  
+}
+.img-product3{
+  width:300px;
+  height: 270px;
+  margin-bottom: 10px;
+  
+}
+.img-te-puede-interesar{
+  justify-content: center;
+  border:solid #FF3A5E;
+  
+  }
+  .card{
+   display: flex;
+    justify-content: center;
+  }
+
+/* From uiverse.io */
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+ }
+ 
+ button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+ }
+ 
+ button:active {
+  transform: translateY(-1px);
+ }
+
+
+/** H O M E - H E A D E R - T A B L E T **/
+
+@media  (min-width: 426px){
+
+  .fa-user {
+    visibility:visible;
+    color: #FF3A5E;
+  }
+
+  .nav-right {
+    justify-content: space-between;
+  }
+}
