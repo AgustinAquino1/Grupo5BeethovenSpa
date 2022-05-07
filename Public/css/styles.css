@@ -96,6 +96,16 @@ h1 {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+
+
+.te-puede-interesar{
+  
+  justify-content: center;
+  display: flex;
+  font-size: 0.5cm;
+  
+}
+
 .bloque-1{
   width: 100%;
   margin-top: 10px;
@@ -118,17 +128,26 @@ h1 {
   width:300px;
   height: 270px;
   margin-bottom: 10px;
-  
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.img-product3:hover{
+  box-shadow: 0px 15px 20px rgba(185, 185, 185, 0.945);
+  color: rgba(255, 255, 255, 0.596);
+  transform: translateY(-7px);
 }
 .img-te-puede-interesar{
   justify-content: center;
-  border:solid #FF3A5E;
+  
   
   }
   .card{
    display: flex;
     justify-content: center;
-  }
+     }
 
 /* From uiverse.io */
 button {
@@ -148,8 +167,8 @@ button {
  }
  
  button:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color:#f85472ca ;
+  box-shadow: 0px 15px 20px rgb(237, 170, 182);
   color: #fff;
   transform: translateY(-7px);
  }
@@ -157,6 +176,8 @@ button {
  button:active {
   transform: translateY(-1px);
  }
+
+ 
 
 
 /** H O M E - H E A D E R - T A B L E T **/
@@ -171,4 +192,33 @@ button {
   .nav-right {
     justify-content: space-between;
   }
+
+/*---- product detail---*/
+.ropa-perro-art{
+  color: rgba(0, 0, 0, 0.695);
+  display: flex;
+  justify-content: center;
+}
+
+.button-div{
+  display: flex;
+  justify-content: center;
+ }
+ button{
+   margin-left: 10px;
+ }
+ .description-art h4{
+   font-size: 20px;
+   color:rgba(0, 0, 0, 0.874);
+ }
+ .frase1{
+   font-size: 15px;
+   font-style: italic;
+   color: rgb(246, 33, 108);
+ } 
+ .frase2{
+   font-size: 15px;
+   font-style: oblique;
+   color: rgb(227, 31, 100);
+ }
 }
