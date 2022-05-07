@@ -96,6 +96,9 @@ h1 {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+main{
+  margin-bottom: 90px;
+}
 
 
 .te-puede-interesar{
@@ -190,6 +193,31 @@ button {
   font-style: oblique;
   color: rgb(227, 31, 100);
 }
+
+/*** MOBILE - PRODUCT CART ***/
+
+.card-carrito{
+  display: flex;
+  flex-direction: row;
+  border: solid rgb(255, 192, 203);
+  margin-bottom: 20px;
+  box-shadow: 0px 15px 20px rgba(255, 192, 203, 0.5);
+}
+  
+  .card-carrito img {
+    width: 100px;
+  }
+  .card-carrito h2{
+    font-size: 15px;
+  }
+  .costo-desc-total{
+    display: flex;
+    flex-direction: column;
+  }
+  .costo-desc-total h3,h4{
+    color:rgba(0, 0, 0, 0.88)
+  }
+  
  /** M O B I L E - F O O T E R **/
 
 footer {
