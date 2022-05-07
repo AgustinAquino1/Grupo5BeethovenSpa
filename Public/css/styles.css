@@ -335,10 +335,11 @@ footer div section h5 {
 @media  (min-width: 1024px){
 
   .bloque-1{
-    margin-top:10px;
+    margin-top:50px;
     display: flex;
     flex-direction: row;
-       
+    margin-left: 100px;
+    width: 70%; 
   }
   .img-principal-product-detail{
     display: flex;
@@ -372,7 +373,7 @@ flex-direction: column;
 }
 button{
   margin-bottom: 20px;
-  
+
 }
 
 .bloque{
