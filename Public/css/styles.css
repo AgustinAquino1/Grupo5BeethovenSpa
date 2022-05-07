@@ -94,10 +94,15 @@ h1 {
 
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
-.footer-section-container {
-  padding: 15px;
+footer {
+
   border-top: 1px solid #C1C1C1 ; 
   background-color: #FFD7D7;
+
+}
+
+.footer-section-container {
+  padding: 15px;
 }
 
 .iconos-contacto {
@@ -133,6 +138,18 @@ footer div section h5 {
   font-size: 15px;
   font-weight: lighter;
   padding: 5px;
+}
+
+.footer-copyright-container {
+  padding-left : 15px;
+  background-color: #f7dada;
+  border-top: 1px solid #C1C1C1 ;
+}
+
+.copyright {
+
+  font-weight: lighter;
+
 }
 
 
