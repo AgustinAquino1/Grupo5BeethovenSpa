@@ -176,7 +176,20 @@ button {
  button:active {
   transform: translateY(-1px);
  }
-
+ .description-art h4{
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.874);
+}
+.frase1{
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(246, 33, 108);
+} 
+.frase2{
+  font-size:15px;
+  font-style: oblique;
+  color: rgb(227, 31, 100);
+}
  /** M O B I L E - F O O T E R **/
 
 footer {
@@ -234,7 +247,50 @@ footer div section h5 {
   font-weight: lighter;
 
 }
-/** T A B L E T - F O O T E R **/
+
+
+/** H O M E - H E A D E R - T A B L E T **/
+
+@media  (min-width: 426px){
+
+  .fa-user {
+    visibility:visible;
+    color: #FF3A5E;
+  }
+
+  .nav-right {
+    justify-content: space-between;
+  }
+
+/*---- product detail---*/
+.ropa-perro-art{
+  color: rgba(0, 0, 0, 0.695);
+  display: flex;
+  justify-content: center;
+}
+
+.button-div{
+  display: flex;
+  justify-content: center;
+ }
+ button{
+   margin-left: 10px;
+ }
+
+.img-te-puede-interesar{
+  display: flex;
+}
+
+.img-product3{
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  
+}
+
+
+
+ /** T A B L E T - F O O T E R **/
 
 .footer-section-container {
   display: flex ;
@@ -273,46 +329,58 @@ footer div section h5 {
 
 }
 
+ 
+}
+/*** desktop ***/
+@media  (min-width: 1024px){
 
-/** H O M E - H E A D E R - T A B L E T **/
-
-@media  (min-width: 426px){
-
-  .fa-user {
-    visibility:visible;
-    color: #FF3A5E;
+  .bloque-1{
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+       
   }
-
-  .nav-right {
-    justify-content: space-between;
-  }
-
-/*---- product detail---*/
-.ropa-perro-art{
-  color: rgba(0, 0, 0, 0.695);
-  display: flex;
-  justify-content: center;
+  .img-principal-product-detail{
+    display: flex;
+    justify-content:left;
+    
+     
+}
+.img-small{
+display:flex;
+flex-direction: column;
+}
+.img-product2{
+  width: 120px;
+  margin-left:5px;
+  margin-bottom: 3px;
+  margin-top:4px;
 }
 
-.button-div{
+.bloque-2{
   display: flex;
-  justify-content: center;
- }
- button{
-   margin-left: 10px;
- }
- .description-art h4{
-   font-size: 20px;
-   color:rgba(0, 0, 0, 0.874);
- }
- .frase1{
-   font-size: 15px;
-   font-style: italic;
-   color: rgb(246, 33, 108);
- } 
- .frase2{
-   font-size: 15px;
-   font-style: oblique;
-   color: rgb(227, 31, 100);
- }
+  flex-direction: column;
+  margin:20px;
+  }
+
+.ropa-perro-art{
+  margin-bottom: 100px;
+}
+.button-div{
+ display: flex;
+flex-direction: column;
+}
+button{
+  margin-bottom: 20px;
+  
+}
+
+.bloque{
+  display:flex;
+  flex-direction:row;
+  width: 100%;
+  
+}
+
+
 }
