@@ -177,7 +177,101 @@ button {
   transform: translateY(-1px);
  }
 
- 
+ /** M O B I L E - F O O T E R **/
+
+footer {
+
+  border-top: 1px solid #C1C1C1 ; 
+  background-color: #FFD7D7;
+
+}
+
+.footer-section-container {
+  padding: 15px;
+}
+
+.iconos-contacto {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+.fa-facebook {
+  font-size: 2rem;
+  color: blue;
+}
+
+
+.fa-instagram {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.fa-whatsapp {
+  font-size: 2rem;
+  color: #25d366;
+}
+
+footer div section h5 { 
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.footer-copyright-container {
+  padding : 15px;
+}
+
+.copyright {
+
+  font-weight: lighter;
+
+}
+/** T A B L E T - F O O T E R **/
+
+.footer-section-container {
+  display: flex ;
+  justify-content: space-around;
+}
+
+
+
+.fa-instagram {
+
+  margin-left: 50px;
+
+}
+
+.fa-whatsapp {
+
+  margin-left: 50px;
+
+}
+
+.fa-facebook:hover {
+
+  color: #FF3A5E;
+
+}
+
+.fa-instagram:hover {
+
+  color: #FF3A5E;
+
+}
+
+.fa-whatsapp:hover {
+
+  color: #FF3A5E;
+
+}
 
 
 /** H O M E - H E A D E R - T A B L E T **/
