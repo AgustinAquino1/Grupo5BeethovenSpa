@@ -4,6 +4,313 @@
   box-sizing: border-box;
   font-family: roboto
 }
+/** H O M E - H E A D E R  **/
+
 header {
-   display:flex
+  border-bottom: 1px solid #C1C1C1; 
+}
+.top-header {
+   display:flex;
+   justify-content: space-around;
+   padding: 10px;
   }
+.logo {
+  width: 60px;
+  }
+.logo-container-buscador{
+    width: 70%;
+}
+.logo-container{
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: #FFD7D7;
+  align-items: center;
+  border: 0.5px solid   #C1C1C1;
+  border-radius: 5px;
+}
+.burguer {
+  width: 10%;
+}
+
+.nav-right {
+  display: flex;
+  width: 10%;
+}
+
+.fa-cart-shopping{
+  color: #FF3A5E;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.fa-cart-shopping:hover{
+  color: #4f0513;
+}
+.fa-user {
+  visibility: hidden;
+  font-size: 30px;
+  margin-top: 20px;
+  color: #FF3A5E;
+}
+.fa-bars {
+  color: #FF3A5E;
+  font-size: 30px;
+  margin-top: 20px;
+}
+h1 {
+  margin: auto;
+  font-size: 20px;
+  color: #fff;
+  font-weight: lighter;
+}
+
+.buscador {
+  display: flex;
+  margin: 10px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+.barra {
+  width: 100%;
+  height: 30px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-color: #FFF;
+  border-style: none;
+}
+.fa-magnifying-glass {
+  background-color: #FFF;
+  padding: 5px;
+  border-style: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/** H O M E - H E A D E R - T A B L E T **/
+
+@media  (min-width: 426px){
+
+  .fa-user {
+    visibility:visible;
+    color: #FF3A5E;
+  }
+
+  .nav-right {
+    justify-content: space-between;
+  }
+}
+
+  /*============== LOGIN =============*/
+
+ 
+ form.login {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px auto;
+    font-size: 14px;
+    padding-top:20px;
+    font-size: 14px;
+ }    
+
+.general-login{
+      background-color: white;
+      display:block;
+      border: #cfefed solid 3px;
+      width: 40%;
+      text-align: center;
+      padding:2px;
+  }
+
+h3{
+  padding-top:10px;
+  padding-bottom: 20px;
+  font-size:16px;
+}
+
+.main-link{
+
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    align-items: center;
+}
+
+label{
+  padding: 1%;
+  font-size:14px;
+}
+
+.main-link input{
+  background-color: #cfefed ;
+  width: 50%;
+  border: #cfefed solid;
+  padding: 1%;
+}
+
+.send-buttom {
+  margin:20px;
+  color: #090909;
+  padding: 5px 70px 5px 70px;
+  font-size: 14px;
+  background: #00969f;
+  border: 2px solid #00969f;
+  transition: all .3s #00969f;
+  
+}
+
+.send-buttom:hover{
+  background-color: #00969f;
+  color: #e8e8e8;
+}
+
+
+.new-account{
+  padding:5%;
+  border-bottom: #090909 solid 1px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+.help{
+  padding:5%;
+  font-size: 14px;
+  text-align:center;
+}
+
+/*================== REGISTER ===============*/
+form.register{
+  display:flex;
+}
+
+
+
+.title-information{
+  color: #ffa8cd;
+  text-align: center;
+}
+
+.personal-information{
+  padding:5%;
+  width: 70%;
+  border-right: #ffa8cd solid;
+}
+
+.login-information{
+  padding:5%;
+  width: 70%;
+  border-left: #ffa8cd solid;
+}
+
+.subscription{
+  padding:5px;
+  align-items: center;
+  font-size: 14px;;
+}
+
+.container{
+  text-align: center;
+}
+
+
+
+/** M O B I L E - F O O T E R **/
+
+footer {
+
+  border-top: 1px solid #C1C1C1 ; 
+  background-color: #FFD7D7;
+
+}
+
+.footer-section-container {
+  padding: 15px;
+}
+
+.iconos-contacto {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+.fa-facebook {
+  font-size: 2rem;
+  color: blue;
+}
+
+
+.fa-instagram {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.fa-whatsapp {
+  font-size: 2rem;
+  color: #25d366;
+}
+
+footer div section h5 { 
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.footer-copyright-container {
+  padding : 15px;
+}
+
+.copyright {
+
+  font-weight: lighter;
+
+}
+/** T A B L E T - F O O T E R **/
+
+.footer-section-container {
+  display: flex ;
+  justify-content: space-around;
+}
+
+
+
+.fa-instagram {
+
+  margin-left: 50px;
+
+}
+
+.fa-whatsapp {
+
+  margin-left: 50px;
+
+}
+
+.fa-facebook:hover {
+
+  color: #FF3A5E;
+
+}
+
+.fa-instagram:hover {
+
+  color: #FF3A5E;
+
+}
+
+.fa-whatsapp:hover {
+
+  color: #FF3A5E;
+
+}
