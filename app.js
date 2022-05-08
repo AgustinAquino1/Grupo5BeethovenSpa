@@ -12,6 +12,7 @@ app.listen (port, () =>
 app.use(express.static(publicPath));
 
 app.get("/", (req, res) => {
+<<<<<<< HEAD
     res.sendFile(path.join(__dirname, './views/home.html'))   
 });
 app.get("/productDetail", (req, res) => {
@@ -26,10 +27,23 @@ app.get("/home", (req, res) => {
 app.get("/Cart", (req, res) => {
     res.sendFile(path.join(__dirname, './views/productCart.html'))   
 });
+=======
+    res.sendFile(path.join(__dirname, './views/home.html'))
+})
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname, './views/login.html'))
+})
+
+app.get("/register", (req, res) => {
+    res.sendFile(path.join(__dirname, './views/register.html'))
+})
+>>>>>>> rai
 
 app.get('*', (req, res) => {
     
     res.status(404).send("Not found 404")
     
-})
+});
+
 

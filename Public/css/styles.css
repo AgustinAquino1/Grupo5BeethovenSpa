@@ -13,7 +13,12 @@ verde:#DBEFEB;------*/
   box-sizing: border-box;
   font-family: roboto
 }
+<<<<<<< HEAD
 /***************************************** M O B I L E - H E A D E R  *************************************************/
+=======
+/** H O M E - H E A D E R  **/
+
+>>>>>>> rai
 header {
   border-bottom: 1px solid #C1C1C1; 
 }
@@ -52,6 +57,12 @@ header {
   margin-top: 20px;
 }
 
+<<<<<<< HEAD
+=======
+.fa-cart-shopping:hover{
+  color: #4f0513;
+}
+>>>>>>> rai
 .fa-user {
   visibility: hidden;
   font-size: 30px;
@@ -92,6 +103,7 @@ h1 {
   border-bottom-right-radius: 3px;
 }
 
+<<<<<<< HEAD
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
 footer {
@@ -280,6 +292,141 @@ button {
   }
   
  /** M O B I L E - F O O T E R **/
+=======
+/** H O M E - H E A D E R - T A B L E T **/
+
+@media  (min-width: 426px){
+
+  .fa-user {
+    visibility:visible;
+    color: #FF3A5E;
+  }
+
+  .nav-right {
+    justify-content: space-between;
+  }
+}
+
+  /*============== LOGIN =============*/
+
+ 
+ form.login {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px auto;
+    font-size: 14px;
+    padding-top:20px;
+    font-size: 14px;
+ }    
+
+.general-login{
+      background-color: white;
+      display:block;
+      border: #cfefed solid 3px;
+      width: 40%;
+      text-align: center;
+      padding:2px;
+  }
+
+h3{
+  padding-top:10px;
+  padding-bottom: 20px;
+  font-size:16px;
+}
+
+.main-link{
+
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    align-items: center;
+}
+
+label{
+  padding: 1%;
+  font-size:14px;
+}
+
+.main-link input{
+  background-color: #cfefed ;
+  width: 50%;
+  border: #cfefed solid;
+  padding: 1%;
+}
+
+.send-buttom {
+  margin:20px;
+  color: #090909;
+  padding: 5px 70px 5px 70px;
+  font-size: 14px;
+  background: #00969f;
+  border: 2px solid #00969f;
+  transition: all .3s #00969f;
+  
+}
+
+.send-buttom:hover{
+  background-color: #00969f;
+  color: #e8e8e8;
+}
+
+
+.new-account{
+  padding:5%;
+  border-bottom: #090909 solid 1px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+
+.help{
+  padding:5%;
+  font-size: 14px;
+  text-align:center;
+}
+
+/*================== REGISTER ===============*/
+form.register{
+  display:flex;
+}
+
+
+
+.title-information{
+  color: #ffa8cd;
+  text-align: center;
+}
+
+.personal-information{
+  padding:5%;
+  width: 70%;
+  border-right: #ffa8cd solid;
+}
+
+.login-information{
+  padding:5%;
+  width: 70%;
+  border-left: #ffa8cd solid;
+}
+
+.subscription{
+  padding:5px;
+  align-items: center;
+  font-size: 14px;;
+}
+
+.container{
+  text-align: center;
+}
+
+
+
+/** M O B I L E - F O O T E R **/
+>>>>>>> rai
 
 footer {
 
@@ -336,6 +483,7 @@ footer div section h5 {
   font-weight: lighter;
 
 }
+<<<<<<< HEAD
 
 
 /** H O M E - H E A D E R - T A B L E T **/
@@ -392,6 +540,9 @@ footer div section h5 {
 
 
  /** T A B L E T - F O O T E R **/
+=======
+/** T A B L E T - F O O T E R **/
+>>>>>>> rai
 
 .footer-section-container {
   display: flex ;
@@ -401,11 +552,19 @@ footer div section h5 {
 
 
 .fa-instagram {
+<<<<<<< HEAD
+=======
+
+>>>>>>> rai
   margin-left: 50px;
 
 }
 
 .fa-whatsapp {
+<<<<<<< HEAD
+=======
+
+>>>>>>> rai
   margin-left: 50px;
 
 }
@@ -417,11 +576,16 @@ footer div section h5 {
 }
 
 .fa-instagram:hover {
+<<<<<<< HEAD
+=======
+
+>>>>>>> rai
   color: #FF3A5E;
 
 }
 
 .fa-whatsapp:hover {
+<<<<<<< HEAD
   
   color: #FF3A5E;
 
@@ -482,4 +646,9 @@ button{
 }
 
 
+=======
+
+  color: #FF3A5E;
+
+>>>>>>> rai
 }
