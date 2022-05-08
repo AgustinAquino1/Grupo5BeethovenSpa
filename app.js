@@ -20,10 +20,12 @@ app.get("/productDetail", (req, res) => {
 
 app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, './views/home.html'))   
-})
+});
 
 
-
+app.get("/Cart", (req, res) => {
+    res.sendFile(path.join(__dirname, './views/productCart.html'))   
+});
 
 app.get('*', (req, res) => {
     

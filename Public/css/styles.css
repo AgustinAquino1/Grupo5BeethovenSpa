@@ -157,6 +157,19 @@ footer div section h5 {
 /*********************************************************************************************************************/
 /***************************************** H E A D E R - T A B L E T *************************************************/
 /*********************************************************************************************************************/
+main{
+  margin-bottom: 90px;
+}
+
+
+.te-puede-interesar{
+  
+  justify-content: center;
+  display: flex;
+  font-size: 0.5cm;
+  
+}
+
 .bloque-1{
   width: 100%;
   margin-top: 10px;
@@ -179,17 +192,26 @@ footer div section h5 {
   width:300px;
   height: 270px;
   margin-bottom: 10px;
-  
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.img-product3:hover{
+  box-shadow: 0px 15px 20px rgba(185, 185, 185, 0.945);
+  color: rgba(255, 255, 255, 0.596);
+  transform: translateY(-7px);
 }
 .img-te-puede-interesar{
   justify-content: center;
-  border:solid #FF3A5E;
+  
   
   }
   .card{
    display: flex;
     justify-content: center;
-  }
+     }
 
 /* From uiverse.io */
 button {
@@ -209,8 +231,8 @@ button {
  }
  
  button:hover {
-  background-color: #2EE59D;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color:#f85472ca ;
+  box-shadow: 0px 15px 20px rgb(237, 170, 182);
   color: #fff;
   transform: translateY(-7px);
  }
@@ -218,6 +240,102 @@ button {
  button:active {
   transform: translateY(-1px);
  }
+ .description-art h4{
+  font-size: 20px;
+  color:rgba(0, 0, 0, 0.874);
+}
+.frase1{
+  font-size: 15px;
+  font-style: italic;
+  color: rgb(246, 33, 108);
+} 
+.frase2{
+  font-size:15px;
+  font-style: oblique;
+  color: rgb(227, 31, 100);
+}
+
+/*** MOBILE - PRODUCT CART ***/
+
+.card-carrito{
+  display: flex;
+  flex-direction: row;
+  border: solid rgb(255, 192, 203);
+  margin-bottom: 20px;
+  box-shadow: 0px 15px 20px rgba(255, 192, 203, 0.5);
+}
+  
+  .card-carrito img {
+    width: 100px;
+  }
+  .card-carrito h2{
+    font-size: 15px;
+  }
+  .costo-desc-total{
+    display: flex;
+    flex-direction: column;
+  }
+  .costo-desc-total h3,h4{
+    color:rgba(0, 0, 0, 0.88)
+  }
+  
+ /** M O B I L E - F O O T E R **/
+
+footer {
+
+  border-top: 1px solid #C1C1C1 ; 
+  background-color: #FFD7D7;
+
+}
+
+.footer-section-container {
+  padding: 15px;
+}
+
+.iconos-contacto {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-around;
+  padding: 10px;
+}
+.fa-facebook {
+  font-size: 2rem;
+  color: blue;
+}
+
+
+.fa-instagram {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0,0,0,.25);
+}
+
+.fa-whatsapp {
+  font-size: 2rem;
+  color: #25d366;
+}
+
+footer div section h5 { 
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.footer-copyright-container {
+  padding : 15px;
+}
+
+.copyright {
+
+  font-weight: lighter;
+
+}
 
 
 /** H O M E - H E A D E R - T A B L E T **/
@@ -245,6 +363,35 @@ button {
   }
 
   /***************************************** T A B L E T - F O O T E R *************************************************/
+/*---- product detail---*/
+.ropa-perro-art{
+  color: rgba(0, 0, 0, 0.695);
+  display: flex;
+  justify-content: center;
+}
+
+.button-div{
+  display: flex;
+  justify-content: center;
+ }
+ button{
+   margin-left: 10px;
+ }
+
+.img-te-puede-interesar{
+  display: flex;
+}
+
+.img-product3{
+  width: 200px;
+  height: 200px;
+  margin-left: 20px;
+  
+}
+
+
+
+ /** T A B L E T - F O O T E R **/
 
 .footer-section-container {
   display: flex ;
@@ -254,13 +401,11 @@ button {
 
 
 .fa-instagram {
-  
   margin-left: 50px;
 
 }
 
 .fa-whatsapp {
-  
   margin-left: 50px;
 
 }
@@ -272,7 +417,6 @@ button {
 }
 
 .fa-instagram:hover {
-  
   color: #FF3A5E;
 
 }
@@ -282,5 +426,60 @@ button {
   color: #FF3A5E;
 
 }
+
+ 
+}
+/*** desktop ***/
+@media  (min-width: 1024px){
+
+  .bloque-1{
+    margin-top:50px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    width: 70%; 
+  }
+  .img-principal-product-detail{
+    display: flex;
+    justify-content:left;
+    
+     
+}
+.img-small{
+display:flex;
+flex-direction: column;
+}
+.img-product2{
+  width: 120px;
+  margin-left:5px;
+  margin-bottom: 3px;
+  margin-top:4px;
+}
+
+.bloque-2{
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+  }
+
+.ropa-perro-art{
+  margin-bottom: 100px;
+}
+.button-div{
+ display: flex;
+flex-direction: column;
+}
+button{
+  margin-bottom: 20px;
+
+}
+
+.bloque{
+  display:flex;
+  flex-direction:row;
+  width: 100%;
+  
+}
+
 
 }
