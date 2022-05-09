@@ -93,8 +93,30 @@ h1 {
 }
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
 
+.carrousel-conteiner {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  
+}
 
-
+.carrousel {
+  width: 100%
+}
+.servicios {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #e8e8e8;
+}
+.servicios-imagenes-container {
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+}
+.servicios-imagenes{
+  height: 100%;
+}
 
 
 /***************************************** M O B I L E - F O O T E R *************************************************/
