@@ -95,7 +95,7 @@ h1 {
 
 .carrousel-conteiner {
   display: flex;
-  width: 60%;
+  width: 100%;
   margin: auto;
   padding: 10px;
   
@@ -449,8 +449,21 @@ button {
   .fa-bars:hover {
     color: #ffa5b5;
   }
+.servicios-imagenes-container {
+  display: flex;
+}
+  .card-servicios {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: none;
+    width: 50%;
+  }
 
- 
+  main section div article:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100)
+  }
 
 
 
@@ -574,5 +587,34 @@ button{
   
 }
 
+.servicios-imagenes-container {
+  display: flex;
+}
+  .card-servicios {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: none;
+    width: 45%;
+  }
+
+  main section div article:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100)
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;            
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ebebeb;    
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #ebebeb ;   
+    border-radius: 20px;      
+    border: 2px solid #666;  
+  }
 
 }
