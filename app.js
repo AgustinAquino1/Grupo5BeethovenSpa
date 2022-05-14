@@ -1,46 +1,25 @@
 const express = require ('express');
 const app = express();
-const path = require ('path');
-const publicPath = path.resolve (__dirname, './public')
-
-const port= 3030;
+const port = 3000
+const path = require ('path')
 
 
-app.listen (port, () =>
-    console.log('inicia el servidor'));
 
-app.use(express.static(publicPath));
+const mainRouter = require ('./routers/mainRouter')
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'))   
-});
+app.use(express.static(path.resolve(__dirname, './public')));
 
-app.get("/productDetail", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productDetail.html'))   
-});
+app.set('view engine','ejs');
 
-app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'))   
-});
+app.set('views', path.resolve(__dirname, 'views'));
 
 
-app.get("/Cart", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productCart.html'))   
-});
+app.use(express.static('public'));
 
-
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/login.html'))
+app.listen ( port, () => {
+    console.log ("servidor funcionando")
 })
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/register.html'))
-})
-
-app.get('*', (req, res) => {
-    
-    res.status(404).send("Not found 404")
-    
-});
+app.use("/", mainRouter)
 
 
