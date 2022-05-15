@@ -316,7 +316,7 @@ main{
   
 }
 .bloque-te-puede-interesar{
-  width: 50%;
+  width: 100%;
 }
 
 .bloque-1{
@@ -362,8 +362,17 @@ main{
     justify-content: center;
      }
   .bloque-2{
-        
+              
      }
+.Cocina-Gourmet{
+  display: flex;
+  justify-content: center;
+}
+.button-div{
+  display: flex;
+  justify-content: center;
+}
+
 
 /* From uiverse.io */
 button {
@@ -396,6 +405,10 @@ button {
   font-size: 20px;
   color:rgba(0, 0, 0, 0.874);
 }
+.description-art{
+  margin-top: 20px;
+  text-align: center;
+  }
 .frase1{
   font-size: 15px;
   font-style: italic;
@@ -474,12 +487,14 @@ button {
 
 
 
-  /***************************************** T A B L E T - F O O T E R *************************************************/
+  
 /*---- product detail---*/
 .Cocina-Gourmet{
-  color: rgba(0, 0, 0, 0.695);
+  color: rgba(26, 25, 25, 0.695);
   display: flex;
   justify-content: center;
+  align-content: CENTER;
+
 }
 
 .button-div{
@@ -501,6 +516,15 @@ button {
   
 }
 
+.button-div{
+  margin-top: 20px;
+}
+.description-art h4{
+  margin-bottom: 15px;
+}
+.description-2 h4 {
+  margin-top: 15px;
+}
 
 
  /** T A B L E T - F O O T E R **/
@@ -574,9 +598,7 @@ flex-direction: column;
   margin:20px;
   }
 
-.ropa-perro-art{
-  margin-bottom: 100px;
-}
+
 .button-div{
  display: flex;
 flex-direction: column;
