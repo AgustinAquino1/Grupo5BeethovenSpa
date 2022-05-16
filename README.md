@@ -25,9 +25,9 @@ Empleo: Asesor
 Hobby:  Jugar videoJuegos , Cryptomonedas.  
 
 Integrante: Maxi
-Edad : 
-Empleo:  
-Hobby: 
+Edad : 18
+Empleo: Gestion De Cobranzas
+Hobby: Escuchar Musica, Comprar Ropa
 
 Website referencia: 
 Dogmatico: https://www.dogmatico.com/
