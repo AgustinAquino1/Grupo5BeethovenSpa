@@ -24,6 +24,11 @@ Edad : 33
 Empleo: Asesor  
 Hobby:  Jugar videoJuegos , Cryptomonedas.  
 
+Integrante: Maxi
+Edad : 
+Empleo:  
+Hobby: 
+
 Website referencia: 
 Dogmatico: https://www.dogmatico.com/
 Descripcion: Es un hotel para perros donde cuentan con los servicios de reservas, estetica y tienda.
