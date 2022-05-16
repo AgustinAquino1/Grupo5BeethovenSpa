@@ -564,7 +564,7 @@ button {
 
  
 }
-/*** desktop ***/
+/*** desktop MAIN ***/
 @media  (min-width: 1024px){
 
   .bloque-1{
@@ -622,7 +622,7 @@ button{
 
 .servicios-imagenes-container {
   display: flex;
-}
+
   .card-servicios {
     margin-left: 5px;
     margin-right: 5px;
