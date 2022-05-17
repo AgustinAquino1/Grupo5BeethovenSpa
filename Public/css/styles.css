@@ -1,4 +1,4 @@
-/*---COLORES---*/
+/*---COLORES---
 rosita header: #FFD7D7;
 rosa fuerte:#FF3A5E ;
 celeste :#60E2EB;
@@ -6,7 +6,7 @@ verdeagua:#A8EBDF;
 azul verdoso: #9AC2D2;
 verde:#DBEFEB;
 
-/*------*/
+------*/
 
 
 * {
@@ -213,10 +213,23 @@ button {
   .costo-desc-total{
     display: flex;
     flex-direction: column;
-  }
+      }
   .costo-desc-total h3,h4{
-    color:rgba(0, 0, 0, 0.88)
+    color:rgba(0, 0, 0, 0.88);
+    margin-bottom: 20px;
   }
+
+  .carrito{
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+.button-div-cart{
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+ 
+
   
  /** M O B I L E - F O O T E R **/
 
@@ -291,7 +304,7 @@ footer div section h5 {
   }
 
 /*---- product detail---*/
-.ropa-perro-art{
+.perro-articulo{
   color: rgba(0, 0, 0, 0.695);
   display: flex;
   justify-content: center;
@@ -316,6 +329,34 @@ footer div section h5 {
   
 }
 
+/** tablet cart**/
+.precio{
+  display: flex;
+  justify-content: end;
+  
+}
+.card-carrito{
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+.contenedor-costo-desc-total{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.costo-desc-total{
+  width: 50%;
+}
+.contenedor-button-div-cart{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.button-div-cart{
+    width: 50%;
+  
+}
 
 
  /** T A B L E T - F O O T E R **/
@@ -392,7 +433,7 @@ flex-direction: column;
   margin:20px;
   }
 
-.ropa-perro-art{
+.perro-articulo{
   margin-bottom: 100px;
 }
 .button-div{
@@ -411,5 +452,42 @@ button{
   
 }
 
+/*  cart desktop*/
+.img-perrocomida{
+ 
+}
+.carrito{
+  margin-left: 15px;
+}
+.precio{
+  display: flex;
+  justify-content: end;
+  
+}
+.card-carrito{
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+}
+.contenedor-costo-desc-total{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.costo-desc-total{
+  width: 20%;
+}
+.contenedor-button-div-cart{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.button-div-cart{
+    width: 20%;
+  
+}
+.card-carrito h2{
+margin: auto;
+}
 
 }
