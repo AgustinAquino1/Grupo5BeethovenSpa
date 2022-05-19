@@ -18,3 +18,9 @@ Seguimos trabajando en el css de la web, Aprovechamos el espacio de zoom con las
 No se encontraron impedimentos.
 
 Terminaremos de implementar los templates y ordenando el front , preparandonos para darle mayor fluidez a nuestro proyecto.
+
+
+Miercoles 18/05/2022
+
+Terminamos de organizarnos respecto al sprint 3 y hablamos acerca de nuestras fortalezas y debilidades.
+Seguimos modificando y ordeando nuestro proyecto con los controllers.
