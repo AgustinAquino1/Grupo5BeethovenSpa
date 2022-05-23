@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "nombre": "Clywd",
+    "apellido": "Koomar",
+    "email": "ckoomar0@constantcontact.com",
+    "password": "RPUBrQ2E0Av",
+    "categoria": "user",
+    "raza": "Caniche",
+    "imagen": "user_1.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Claudell",
+    "apellido": "Snasdell",
+    "email": "csnasdell1@yolasite.com",
+    "password": "RcL6Lth",
+    "categoria": "user",
+    "raza": "chihuahua",
+    "imagen": "user_2.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Sissy",
+    "apellido": "Dunhill",
+    "email": "sdunhill2@msu.edu",
+    "password": "iDx9oqd",
+    "categoria": "user",
+    "raza": "Caniche",
+    "imagen": "user_3.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Nancy",
+    "apellido": "Vinsen",
+    "email": "nvinsen3@dion.ne.jp",
+    "password": "CZtPXBci",
+    "categoria": "user",
+    "raza": "Bull dog",
+    "imagen": "user_4.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Amy",
+    "apellido": "Faldoe",
+    "email": "afaldoe4@dion.ne.jp",
+    "password": "NOq7kOBWu",
+    "categoria": "user",
+    "raza": "Bull dog",
+    "imagen": "user_5.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Harv",
+    "apellido": "Coultish",
+    "email": "hcoultish5@imgur.com",
+    "password": "gCulEago5d",
+    "categoria": "user",
+    "raza": "chihuahua",
+    "imagen": "user_6.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Colette",
+    "apellido": "Powlesland",
+    "email": "cpowlesland6@ustream.tv",
+    "password": "IpfWFSX6jNk",
+    "categoria": "user",
+    "raza": "Caniche",
+    "imagen": "user_7.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Park",
+    "apellido": "Jurisic",
+    "email": "pjurisic7@stanford.edu",
+    "password": "HksPPS2qidjQ",
+    "categoria": "user",
+    "raza": "Cocker",
+    "imagen": "user_8.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Thurstan",
+    "apellido": "Grichukhanov",
+    "email": "tgrichukhanov8@soup.io",
+    "password": "o9UoDayuSr1e",
+    "categoria": "user",
+    "raza": "Ovejero alemán",
+    "imagen": "user_9.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Zaccaria",
+    "apellido": "Devaney",
+    "email": "zdevaney9@harvard.edu",
+    "password": "SgEYrW73Xq",
+    "categoria": "user",
+    "raza": "chihuahua",
+    "imagen": "user_10.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Alexis",
+    "apellido": "Badcock",
+    "email": "abadcocka@google.it",
+    "password": "5F0BRIDQW",
+    "categoria": "user",
+    "raza": "Ovejero alemán",
+    "imagen": "user_11.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Wylie",
+    "apellido": "Schoffel",
+    "email": "wschoffelb@sourceforge.net",
+    "password": "NtdfjbHqZ",
+    "categoria": "user",
+    "raza": "Caniche",
+    "imagen": "user_12.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Mathilda",
+    "apellido": "Greguoli",
+    "email": "mgreguolic@tumblr.com",
+    "password": "xI72tlaizhW",
+    "categoria": "user",
+    "raza": "Pitbull",
+    "imagen": "user_13.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Dimitri",
+    "apellido": "Bail",
+    "email": "dbaild@intel.com",
+    "password": "VUpcfEW6okax",
+    "categoria": "user",
+    "raza": "Dálmata",
+    "imagen": "user_14.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Timothy",
+    "apellido": "Kegan",
+    "email": "tkegane@comsenz.com",
+    "password": "KSqlofcC5q",
+    "categoria": "user",
+    "raza": "chihuahua",
+    "imagen": "user_15.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Melany",
+    "apellido": "Croughan",
+    "email": "mcroughanf@pcworld.com",
+    "password": "rCBLPxa",
+    "categoria": "user",
+    "raza": "Bull dog",
+    "imagen": "user_16.jpg"
+  },
+  {
+    "id": 17,
+    "nombre": "Samson",
+    "apellido": "Pesterfield",
+    "email": "spesterfieldg@marriott.com",
+    "password": "sXOJQo5SR",
+    "categoria": "user",
+    "raza": "Cocker",
+    "imagen": "user_17.jpg"
+  },
+  {
+    "id": 18,
+    "nombre": "Land",
+    "apellido": "Trenoweth",
+    "email": "ltrenowethh@ucoz.ru",
+    "password": "YqWCKRgX4h3",
+    "categoria": "user",
+    "raza": "Ovejero alemán",
+    "imagen": "user_18.jpg"
+  },
+  {
+    "id": 19,
+    "nombre": "Alicea",
+    "apellido": "Kenninghan",
+    "email": "akenninghani@latimes.com",
+    "password": "K0UUeeXu",
+    "categoria": "user",
+    "raza": "Bull dog",
+    "imagen": "user_19.jpg"
+  },
+  {
+    "id": 20,
+    "nombre": "Josefina",
+    "apellido": "Cann",
+    "email": "jcannj@issuu.com",
+    "password": "nLM4dJ4PIfoo",
+    "categoria": "user",
+    "raza": "Cocker",
+    "imagen": "user_20.jpg"
+  }
+]
