@@ -20,6 +20,10 @@ const mainController = {
 
     register: (req, res) => {
         res.render(path.join(__dirname, '../views/register'))   
+    },
+
+    productCreate: (req, res) => {
+        res.render(path.join(__dirname, '../views/productCreate'))   
     }
 
     
