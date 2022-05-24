@@ -15,6 +15,8 @@ router.get("/register", mainController.register);
 
 router.get("/productCreate", mainController.productCreate);
 
+router.get('/search', mainController.search); 
+
 
 
 module.exports = router;
