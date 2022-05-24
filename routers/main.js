@@ -13,7 +13,6 @@ router.get("/productDetail", mainController.productDetail);
 
 router.get("/register", mainController.register);
 
-router.get("/productCreate", mainController.productCreate);
 
 router.get('/search', mainController.search); 
 

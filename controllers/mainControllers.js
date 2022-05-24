@@ -29,10 +29,7 @@ const mainController = {
         res.render(path.join(__dirname, '../views/register'))   
     },
 
-    productCreate: (req, res) => {
-        res.render(path.join(__dirname, '../views/productCreate'))   
-    },
-
+ 
     search: (req, res) => {
 		res.render('results')
 	},

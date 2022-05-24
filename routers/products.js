@@ -14,7 +14,7 @@ const multer = require ('multer')
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/images/products')
+    cb(null, 'public/img/products')
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + path.extname(file.originalname) + Math.round(Math.random() * 1E9)
@@ -30,20 +30,20 @@ const upload = multer({ storage: storage })
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
-router.post('/create', upload.any(), productsController.store); 
+router.get('/products/create', productsController.create); 
+router.post('/products/create', upload.any(), productsController.store); 
 
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id/', productsController.detail); 
 
-/*** EDIT ONE PRODUCT ***/ 
+/*** EDIT ONE PRODUCT ***
 router.get('/:id/edit', productsController.edit); 
 router.put('/:id', productsController.update); 
 
 
-/*** DELETE ONE PRODUCT ***/ 
+/*** DELETE ONE PRODUCT ***
 router.delete('/:id', productsController.destroy); 
-
+*/
 
 module.exports = router;

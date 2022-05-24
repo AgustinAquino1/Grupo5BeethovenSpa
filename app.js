@@ -5,7 +5,9 @@ const path = require ('path')
 
 
 
-const mainRouter = require ('./routers/mainRouter')
+const mainRouter = require ('./routers/main')
+
+const productsRouter = require('./routers/products'); 
 
 app.use(express.static(path.resolve(__dirname, './public')));
 
@@ -23,3 +25,4 @@ app.listen ( port, () => {
 app.use("/", mainRouter)
 
 
+app.use('/products', productsRouter);
