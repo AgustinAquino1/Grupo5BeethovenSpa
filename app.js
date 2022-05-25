@@ -36,11 +36,3 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, './views/register.html'))
 })
-
-app.get('*', (req, res) => {
-    
-    res.status(404).send("Not found 404")
-    
-});
-
-
