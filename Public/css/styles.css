@@ -303,7 +303,7 @@ form.register{
 
 
 /*********************************************************************************************************************/
-/***************************************** H E A D E R - T A B L E T *************************************************/
+/***************************************** M A I N- MOBILE *************************************************/
 /*********************************************************************************************************************/
 main{
   margin-bottom: 90px;
@@ -315,6 +315,10 @@ main{
   justify-content: center;
   display: flex;
   font-size: 0.5cm;
+ 
+}
+.bloque-te-puede-interesar{
+  width: 50%;
   
 }
 
@@ -360,6 +364,16 @@ main{
    display: flex;
     justify-content: center;
      }
+ 
+.Cocina-Gourmet{
+  display: flex;
+  justify-content: center;
+}
+.button-div{
+  display: flex;
+  justify-content: center;
+}
+
 
 /* From uiverse.io */
 button {
@@ -392,6 +406,10 @@ button {
   font-size: 20px;
   color:rgba(0, 0, 0, 0.874);
 }
+.description-art{
+  margin-top: 20px;
+  text-align: center;
+  }
 .frase1{
   font-size: 15px;
   font-style: italic;
@@ -483,12 +501,16 @@ button {
 
 
 
-  /***************************************** T A B L E T - F O O T E R *************************************************/
+  
 /*---- product detail---*/
 .perro-articulo{
-  color: rgba(0, 0, 0, 0.695);
+  color: rgba(0, 0, 0, 0.695);}
+.Cocina-Gourmet{
+  color: rgba(26, 25, 25, 0.695);
   display: flex;
   justify-content: center;
+  align-content: CENTER;
+
 }
 
 .button-div{
@@ -536,7 +558,13 @@ button {
 }
 .button-div-cart{
     width: 50%;
+  }
   
+.description-art h4{
+  margin-bottom: 15px;
+}
+.description-2 h4 {
+  margin-top: 15px;
 }
 
 
@@ -578,15 +606,14 @@ button {
 
  
 }
-/*** desktop ***/
+/*** desktop MAIN ***/
 @media  (min-width: 1024px){
 
   .bloque-1{
     margin-top:50px;
     display: flex;
     flex-direction: row;
-    margin-left: 100px;
-    width: 70%; 
+    width: 100%; 
   }
   .img-principal-product-detail{
     display: flex;
@@ -597,19 +624,28 @@ button {
 .img-small{
 display:flex;
 flex-direction: column;
+margin-top: 40px;
 }
+
 .img-product2{
   width: 120px;
   margin-left:5px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   margin-top:4px;
+}
+.fotos-bloque{
+  display: flex;
+  justify-content: center;
+  margin-left:200px;
 }
 
 .bloque-2{
   display: flex;
   flex-direction: column;
   margin:20px;
-  }
+  margin-left: 300px;
+    }
+
 
 .perro-articulo{
   margin-bottom: 100px;
@@ -622,17 +658,17 @@ button{
   margin-bottom: 20px;
 
 }
-
-.bloque{
-  display:flex;
-  flex-direction:row;
-  width: 100%;
-  
+.description-art ul{
+  list-style: none;
 }
+
+}
+
 
 .servicios-imagenes-container {
-  display: flex;
+  display: flex; 
 }
+
   .card-servicios {
     margin-left: 5px;
     margin-right: 5px;
@@ -697,4 +733,3 @@ button{
 margin: auto;
 }
 
-}
