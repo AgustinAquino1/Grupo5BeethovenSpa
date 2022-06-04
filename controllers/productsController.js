@@ -35,16 +35,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
-		let image2
 
-		if(req.files[1] != undefined){
-
-			image2 = req.files[1].filename
-
-		}
-		else {
-			image2 = 'default-image.png'
-		}
 
 		let image1
 
@@ -56,14 +47,49 @@ const controller = {
 		else {
 			image1 = 'default-image.png'
 		}
+		
+		let image2
+		
+		if(req.files[1] != undefined){
+			
+			image2 = req.files[1].filename
+
+		}
+		else {
+			image2 = 'default-image.png'
+		}
+
+		let image3
+
+		if(req.files[2] != undefined){
+
+			image3 = req.files[2].filename
+
+		}
+		else {
+			image3 = 'default-image.png'
+		}
+
+		let image4
+
+		if(req.files[3] != undefined){
+
+			image4 = req.files[3].filename
+
+		}
+		else {
+			image4 = 'default-image.png'
+		}
+		
 		let newProduct = {
 		id: products[products.length - 1].id + 1,
 		...req.body,
 		image1: image1,
-		image2: image2
-
+		image2: image2,
+		image3: image3,
+		image4: image4
+	
 		}
-
 		products.push(newProduct)
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products));
@@ -85,15 +111,48 @@ const controller = {
 		let id = req.params.id
 		let productToEdit = products.find (product => product.id ==id)
 
-		let image
+		let image1
 
 		if(req.files[0] != undefined){
 
-			image = req.files[0].filename
+			image1 = req.files[0].filename
 
 		}
 		else {
-			image = productToEdit.image
+			image1 = 'default-image.png'
+		}
+		
+		let image2
+		
+		if(req.files[1] != undefined){
+			
+			image2 = req.files[1].filename
+
+		}
+		else {
+			image2 = 'default-image.png'
+		}
+
+		let image3
+
+		if(req.files[2] != undefined){
+
+			image3 = req.files[2].filename
+
+		}
+		else {
+			image3 = 'default-image.png'
+		}
+
+		let image4
+
+		if(req.files[3] != undefined){
+
+			image4 = req.files[3].filename
+
+		}
+		else {
+			image4 = 'default-image.png'
 		}
 		
 		productToEdit = {
