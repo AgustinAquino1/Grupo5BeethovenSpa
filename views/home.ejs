@@ -12,49 +12,25 @@
             <div class = "main-section-container">
 
                 <div class = "carrousel-conteiner">
-                    <img class="carrousel" src="/img/pelocorto.jpg">
+                    <img class="carrousel" src="/img/products/pelocorto.jpg">
                 </div>
 
                 <section class = "servicios-main">
                     <h3>Nuestros Servicios</h3>
                     <div class = "servicios-imagenes-container">
-                        <article class="card-servicios">
-                            <img class="servicios-imagenes" src="/img/masajesperro.jpg">
+
+                <% simple.forEach(product => { %>
+                    
+                    <article class="card-servicios">
+                        <a href="/products/detail/<%= product.id %> ">
+                            <img class="servicios-imagenes" src="/img/products/<%= product.image1 %>">
                             <div class="caracteristicas">
                                 <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Sesión de masajes</h3>
+                                <h3 class="descripciones"><%= product.name %></h3>
                             </div>
-                        </article>
-
-                        <article class="card-servicios">
-                            <img class="servicios-imagenes" src="/img/perropeinado.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Peinados acordes a la raza</h3>
-                            </div>
-                        </article>
-
-                        <article class="card-servicios">
-
-                            <img class="servicios-imagenes" src="/img/perritocomiendo.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Cocina gourmet</h3>
-                            </div>
-                        </article>
-
-                        
-                        <article class="card-servicios">
-
-                            <img class="servicios-imagenes" src="/img/perrotoalla.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Revitalizadores para el pelo y la piel</h3>
-                            </div>
-                        </article>
-
-
-
+                        </a>
+                    </article>
+                <%}) %>
 
                     </div>
                 </section>
@@ -63,32 +39,18 @@
                     <h3>Paquetes Especiales</h3>
                     <div class = "servicios-imagenes-container">
 
-                        <article class="card-servicios">
-                            <img class="servicios-imagenes" src="/img/perropeinado.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">experiencia gourmet + 3 prendas de ropa a elección</h3>
-                            </div>
-                        </article>
-
-                        <article class="card-servicios">
-
-                            <img class="servicios-imagenes" src="/img/perritocomiendo.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Corte de pelo + experiencia revitalizadora de piel</h3>
-                            </div>
-                        </article>
-
-                        
-                        <article class="card-servicios">
-
-                            <img class="servicios-imagenes" src="/img/perrotoalla.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">Un día de spa en nuestro centro all-inclusive</h3>
-                            </div>
-                        </article>
+                        <% special.forEach(product => { %>
+                    
+                            <article class="card-servicios">
+                                <a href="/products/detail/<%= product.id %> ">
+                                    <img class="servicios-imagenes" src="/img/<%= product.image1 %>">
+                                    <div class="caracteristicas">
+                                        <i class="fa-solid fa-paw"></i>
+                                        <h3 class="descripciones"><%= product.name %></h3>
+                                    </div>
+                                </a>
+                            </article>
+                        <%}) %>
 
 
 

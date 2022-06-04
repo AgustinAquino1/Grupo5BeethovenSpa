@@ -17,8 +17,8 @@ const storage = multer.diskStorage({
     cb(null, 'public/img/products')
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + path.extname(file.originalname) + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + 'img' + uniqueSuffix)
+    const uniqueSuffix = "new-file" + Date.now() + path.extname(file.originalname) 
+    cb(null, uniqueSuffix)
   }
 })
 
@@ -30,20 +30,21 @@ const upload = multer({ storage: storage })
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/products/create', productsController.create); 
-router.post('/products/create', upload.any(), productsController.store); 
+router.get('/create', productsController.create); 
+router.post('/create', upload.any(), productsController.store); 
+
+router.get("/cart", productsController.cart);
 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/:id/', productsController.detail); 
+router.get('/detail/:id/', productsController.detail); 
 
-/*** EDIT ONE PRODUCT ***
-router.get('/:id/edit', productsController.edit); 
-router.put('/:id', productsController.update); 
+/*** EDIT ONE PRODUCT ***/
+router.get('/edit/:id', productsController.edit); 
+router.put('/edit/:id', upload.any(), productsController.update); 
 
 
-/*** DELETE ONE PRODUCT ***
-router.delete('/:id', productsController.destroy); 
-*/
+/*** DELETE ONE PRODUCT ***/ 
+router.delete('/delete/:id', productsController.destroy); 
 
 module.exports = router;

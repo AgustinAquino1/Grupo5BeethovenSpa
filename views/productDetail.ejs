@@ -12,20 +12,20 @@
         <div class="fotos-bloque">
      <div class="img-principal">
          <div class="img-principal-product-detail">
-             <img src="/img/perro+comida.jpg" alt="perro+comida" class="img-product1">
+             <img src="/img/<%= product.image1 %>" alt="perro+comida" class="img-product1">
         </div>   
      </div>
         <div class="img-small">
-            <img src="/img/perroZanahoria.jpg" alt="perroZanahoria" class="img-product2">
-            <img src="/img/perritocomiendo.jpg" alt="perritocomiendo" class="img-product2">
-            <img src="/img/perroMoetTorta.jpg" alt="perroMoetTorta" class="img-product2">
+            <img src="/img/<%= product.image2 %>" alt="perroZanahoria" class="img-product2">
+            <img src="/img/<%= product.image3 %>" alt="perritocomiendo" class="img-product2">
+            <img src="/img/<%= product.image4 %>" alt="perroMoetTorta" class="img-product2">
         </div>
         </div>
         
         <div class="bloque-2">
 
             <div>
-                <h2 class="Cocina-Gourmet">  Cocina Gourmet  </h2>
+                <h2 class="Cocina-Gourmet">  <%= product.name %>  </h2>
             </div>
 
            <div class="button-div">
@@ -35,28 +35,23 @@
            <div class="description-art">
                 <h4>Descripción</h4>
 
-                <h5 class="frase1">Haz que tu perro disfrute la mejor comida de su vida</h5> 
+                <h5 class="frase1"><%= product.descriptionSlogan %></h5> 
 
                 <ul>
-                    <li> Alimentos premium</li>
-                    <li> Verduras y frutas de nuestra huerta</li>
-                    <li> La mejor carne del pais</li>
-                        <li>Contamos con chefs de primera </li>
-                            <li>Nuestro menu cuenta con gran variedad de platos gourmet </li>
+                    <li><%= product.description %> </li>
+                    
                                        
                 
                 </ul>
 
                 <div class="description-2">
 
-                    <h4>Nuestro Menu</h4>
-                    <h5 class="frase2">Comida apta para perro con problemas gastricos</h5>
+                    <h4><%= product.feature%></h4>
+                    <h5 class="frase2"><%= product.addSlogan %></h5>
                     
                     <ul>
 
-                        <li> Lomo con verduras de la huerta </li>
-                        <li>pollo con hierbas finas</li>
-                        <li>Ensalada fresca</li>
+                        <li><%= product.add %></li>
 
                     </ul>
 
