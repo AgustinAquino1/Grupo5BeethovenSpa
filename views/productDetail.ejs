@@ -8,67 +8,87 @@
         <%- include ('partials/header')%>
 
 <main>
-    <article class="bloque">
-     <article class="bloque-1">
+    <div class="bloque-1">
+        <div class="fotos-bloque">
      <div class="img-principal">
          <div class="img-principal-product-detail">
-             <img src="/img/dog-img4.jpg" alt="foto-perro1" class="img-product1">
+             <img src="/img/products/<%= product.image1 %>" alt="perro+comida" class="img-product1">
         </div>   
-        </div>
+     </div>
         <div class="img-small">
-            <img src="/img/dog-img5.jpg" alt="foto-perro2" class="img-product2">
-            <img src="/img/dog-img6.jpg" alt="foto-perro3" class="img-product2">
-            <img src="/img/dog-img7.jpg" alt="foto-perro4" class="img-product2">
+            <img src="/img/products/<%= product.image2 %>" alt="perroZanahoria" class="img-product2">
+            <img src="/img/products/<%= product.image3 %>" alt="perritocomiendo" class="img-product2">
+            <img src="/img/products/<%= product.image4 %>" alt="perroMoetTorta" class="img-product2">
         </div>
-        </article>
-        <article class="bloque-2">
-            <div><h2 class="ropa-perro-art">Campera Champion para perro pequeño</h2></div>
-           <div class="button-div"> <button>comprar</button>
-            <button>Agregar al carrito</button>
-           </div>
-           <div class="description-art">
-                <h4>Descripción</h4>
-                <h5 class="frase1">La prenda perfecta para que tu peludito esté protegido</h5> 
-                <ul><li> Tela calidad premium</li>
-                    <li> Elastizado</li>
-                    <li> 2 mangas y capucha</li>
-                        <li>Color amarillo y blanco, estampa animada</li>
-                            <li> Medidas talle S:</li>
-                                <li> CUELLO 19 cm sin estirar</li>
-                                    <li> PECHO 19 cm sin estirar / 25 cm estirado</li>
-                                        <li> LARGO 25 cm sin estirar / 29 cm estirado.  </li>            
-                
-                </ul>
-                <div class="description-2">
-                    <h4>COMO TOMAR LAS MEDIDAS</h4>
-                    <h5 class="frase2">Para elegir el talle adecuado le sugerimos tener en cuenta TRES MEDIDAS:</h5>
-                    <ul>
-                        <li>LOMO: medir el largo de su can </li>
-                        <li>PECHO: medir circunferencia total de su can - bajo axila</li>
-                        <li>COTORNO CUELLO: medir circunferencia total del cuello de su can
-                            Sugerimos que la mascota es peluda o tiene rulos agregar 3 cm más aproximadamente a la medida tomada del pecho.
-                            </li>
-                    </ul>
-                </div>
-           </div>
-        </article>
-    </article>
-        <div><h3 class="te-puede-interesar"><u>Tambien te puede interesar</u></h3></div>
-        <div class="img-te-puede-interesar"> 
-            <div class="card">
-                <img src="/img/dog-img3.jpg" alt="*" class="img-product3">
-            </div>
-            <div class="card">
-            <img src="/img/dog-img2.jpg" alt="*" class="img-product3">
         </div>
         
-        <div class="card">
-            <img src="/img/dog-img1.jpg" alt="*" class="img-product3">
-        </div>
+        <div class="bloque-2">
+
+            <div>
+                <h2 class="Cocina-Gourmet">  <%= product.name %>  </h2>
+            </div>
+
+           <div class="button-div">
+            <button>Agregar al carrito</button>
+           </div>
+
+           <div class="description-art">
+                <h4>Descripción</h4>
+
+                <h5 class="frase1"><%= product.descriptionSlogan %></h5> 
+
+                <ul>
+                    <li><%= product.description %> </li>
+                    
+                                       
+                
+                </ul>
+
+                <div class="description-2">
+
+                    <h4><%= product.feature%></h4>
+                    <h5 class="frase2"><%= product.addSlogan %></h5>
+                    
+                    <ul>
+
+                        <li><%= product.add %></li>
+
+                    </ul>
+
+                </div>
+           </div>
         </div>
     </div>
-    </article>
     
+            <div class="bloque-te-puede-interesar">
+
+            <h3 class="te-puede-interesar">
+                <u>Tambien te puede interesar</u>
+            </h3>
+        
+        <div class="img-te-puede-interesar"> 
+
+            <div class="card">
+
+                <img src="/img/products/masajesperro.jpg " alt="*" class="img-product3">
+            </div>
+
+            <div class="card">
+            <img src="/img/products/perrotoalla.jpg" alt="*" class="img-product3">
+            </div>
+
+        
+        <div class="card">
+            <img src="/img/products/perropeinado.jpg" alt="*" class="img-product3">
+        </div>
+
+       </div>
+    </div>
+
+</article>
+</div>
+    
+
 </main>
  
 

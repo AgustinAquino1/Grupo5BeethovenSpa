@@ -10,26 +10,58 @@
     <main>
         <article class="shopping-cart">
             <div class="carrito">
-                <h3>Carrito</h3>
-    </div>
-    <div class="card-carrito">
-        <img src="/img/dog-img4.jpg" alt="foto-perro1" class="img-product1">
-        <div class="ropa-perro-art-cant">
-        <div><h2 class="ropa-perro-art">Campera Champion para perro pequeño</h2></div>
-        <div><h3>Cant</h3></div>
-        </div>  
-        <div><h3>Precio</h3></div>
-    </div>
-    <div class="costo-desc-total">
-    <h3>Costo del envío</h3>
-    <h3>Descuentos</h3>
-    <h3>Total a Pagar</h3>
-    </div>  
-    <div class="button-div"> <button>comprar</button>
-        <button>Seguir comprando</button>
-       </div>
-
-</article>
+              <h3>Carrito</h3>
+            </div>
+  
+            <div class="card-carrito">
+              <img
+                src="/img/perro+comida.jpg"
+                alt="foto-perro-comida"
+                class="img-perrocomida"
+              />
+              <div>
+  
+                <h2 class="perro-articulo">
+                  Servicio de Cocina Gourmet 
+                </h2>
+              </div>
+  
+              <div class="cantidad">
+                <form action="/cantidad"method="GET">
+                    <label>cantidad</label>
+                    <select name="cantidad" >
+                        <option  value="1" min="1" max="10" >1</option>
+                        <option  value="2" min="1" max="10" >2</option>
+                        <option  value="3" min="1" max="10" >3</option>
+                        <option  value="4" min="1" max="10" >4</option>
+                        <option  value="5" min="1" max="10" >5</option>
+                        <option  value="6" min="1" max="10" >6</option>
+                    </select>
+                </form>
+              </div>
+  
+              <div class="precio">
+                  <h3>U$S100</h3>
+              </div>
+            </div>
+            <div class="contenedor-costo-desc-total">
+  
+            <div class="costo-desc-total">
+              <h3>Costo del envío</h3>
+              <h3>Descuentos</h3>
+              <h3>Total a Pagar</h3>
+            </div>
+  
+          </div>
+           <div class="contenedor-button-div-cart">
+            <div class="button-div-cart">
+              <button>comprar</button>
+              <button>Seguir comprando</button>
+            </div>
+          </div>
+          
+  
+          </article>
 
 
 
