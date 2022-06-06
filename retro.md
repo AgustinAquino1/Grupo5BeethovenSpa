@@ -17,15 +17,9 @@ Recibimos nuevos compañeros al equipo
 
 Cuarto Sprint
 
-Implementamos el metodo JSON y CRUD a nuestro proyecto
+Implementamos el metodo JSON y CRUD a nuestro proyecto, implementacion de create,edit,delete,detail en el proyecto
 
 
-Quinto Sprint
-
-Se implemento el Login Y Registros de usuarios Dentro de nuestro proyecto
 
 
-Sexto Sprint
-
-Implementacion de create,edit,delete,detail en el proyecto, script de estructura de base de datos
 
