@@ -266,6 +266,10 @@ label{
   text-align:center;
 }
 
+.image-edit{
+  height:80px ;
+}
+
 /*================== REGISTER ===============*/
 form.register{
   display:flex;

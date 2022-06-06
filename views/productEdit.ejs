@@ -9,41 +9,61 @@
 
     <main>
 
-        <form action="/products/create" method="POST" class="register" enctype="multipart/form-data" >
+        <form action="/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="personal-information">
-          <div class="title-information"><h3>Modificar Producto</h3></div>
+          <div class="title-information"><h3>Crear producto</h3></div>
                  
           
      
          
             <div class="main-link">
-             <input type="text" name="name" placeholder="Nombre del producto">
+             <input type="text" name="name" value="<%= product.name %>">
+            </div>
+            <div class="main-link">
+                <input type="text" name="descriptionSlogan" value="<%= product.descriptionSlogan%>">
             </div>
 
             <div class="main-link">
-                <input type="text" name="Descripción" placeholder="Descripción">
+                <input type="text" name="description" value="<%= product.description %>">
+            </div>
+
+
+            <div class="main-link">
+                <img class="image-edit" src="/img/products/<%= product.image1 %>" alt="" >
+                <input type="file" name="image1">
             </div>
 
             <div class="main-link">
-                <input type="file" name="imagen" placeholder="Imagen">
+                <img class="image-edit" src="/img/products/<%= product.image2 %>" alt="" >
+                <input type="file" name="image2">
             </div>
-     
-           
+            <div class="main-link">
+                
+                <img class="image-edit" src="/img/products/<%= product.image3 %>" alt="" >
+                <input type="file" name="image3">
+            </div>
+            <div class="main-link">
+                
+                <img class="image-edit" src="/img/products/<%= product.image4 %>" alt="" >
+                <input type="file" name="image4">
+            </div>          
      
      
             <div class="main-link">
-                <input type="text" name="categoría" placeholder="Categoría">
+                <input type="text" name="category" value="<%= product.category %>">
             </div>
 
             <div class="main-link">
-                <input type="text" name="Precio" placeholder="Precio">
+                <input type="text" name="price" value="<%= product.price %>">
             </div>
      
      
             <div class="container">
         
-                  <button type="submit" class="boton-crear">  Crear </button>
+                  <button type="submit" class="boton-crear">  modificar </button>
             </div>
+
+
      
         </div>
            

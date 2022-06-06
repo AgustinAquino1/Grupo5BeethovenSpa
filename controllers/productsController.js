@@ -119,7 +119,7 @@ const controller = {
 
 		}
 		else {
-			image1 = 'default-image.png'
+			image1 = productToEdit.image1
 		}
 		
 		let image2
@@ -130,7 +130,7 @@ const controller = {
 
 		}
 		else {
-			image2 = 'default-image.png'
+			image2 = productToEdit.image2
 		}
 
 		let image3
@@ -141,7 +141,7 @@ const controller = {
 
 		}
 		else {
-			image3 = 'default-image.png'
+			image3 = productToEdit.image3
 		}
 
 		let image4
@@ -152,13 +152,16 @@ const controller = {
 
 		}
 		else {
-			image4 = 'default-image.png'
+			image4 = productToEdit.image4
 		}
 		
 		productToEdit = {
 			id: productToEdit.id,
 			...req.body,
-			image: image
+			image1: image1,
+			image2: image2,
+			image3: image3,
+			image4: image4
 		}
 
 		let newProduct = products.map(product => {
@@ -171,7 +174,7 @@ const controller = {
 
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(newProduct));
-		res. redirect('/productDetail' + productToEdit.id)
+		res. redirect('/products/detail/' + productToEdit.id)
 	},
 
 	// Delete - Delete one product from DB
