@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('partials/head')%>
+
+    <body>
+    
+        <%- include ('partials/header')%>
+    
+    
+
+       <main class="main-login">
+          <form action="/" method="POST" class="login" >
+           <div class="general-login">
+            <h3>¡Bienvenido! Para ingresar completá tus datos:</h3>
+
+                <div class="main-link">
+                   <input type="email" name="email" placeholder="Email o usuario">
+                </div>
+
+            <div class="main-link">
+                <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Contraseña" required>
+            </div>
+        
+            <div class="send-bottom">
+               <button type="submit" class="send-buttom">  Ingresar </button>
+            </div>
+        
+            <div class="new-account">
+              <p>No tienes una cuenta? Creá una <li><a href="/register">AQUÍ</a></li></p>
+            </div>
+        
+
+            <div class="help">
+              <p>Necesitas ayuda para ingresar?</p>
+            </div>
+        </div>
+        </form>
+       </main>
+       
+    </body>
+
+        <%- include ('partials/footer')%>
+
+</html>
