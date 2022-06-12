@@ -54,6 +54,17 @@
                         <li><%= product.add %></li>
 
                     </ul>
+                    <div class="register">
+                        <button ><a href="/products/edit/<%= product.id %>" class="button-div">EDITAR</a></button>
+                       </div>
+                       
+                       <div class="button-div">
+                               <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" class="register" enctype="multipart/form-data" >
+
+                            <button type="submit">Borrar</button>
+
+                        </form>
+                           </div>
 
                 </div>
            </div>
