@@ -14,11 +14,11 @@ const controller = {
 	},
 	
 
-	// Detail - Detail from one user
-	detail: (req, res) => {
+	// profile - Detail from one user
+	profile: (req, res) => {
 		let id= req.params.id
 		let user = users.find(user => user.id == id)
-		res.render('account', {user});
+		res.render('profile', {user});
 	},
 	
 
@@ -101,7 +101,7 @@ const controller = {
 		res. redirect('/users/detail/' + userToEdit.id)
 	},
 
-	// Delete - Delete one product from DB
+	// Delete - Delete one user from DB
 	destroy : (req, res) => {
 		let id = req.params.id
 		let userToDestroy = users.indexOf (users.find(user => user.id == id ))

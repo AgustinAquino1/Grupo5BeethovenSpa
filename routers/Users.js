@@ -27,16 +27,17 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL USERS ***/ 
-router.get('/', usersController.index); 
+router.get('/users', usersController.index); 
+
 
 /*** CREATE ONE USER ***/ 
-router.get('/create', usersController.create); 
-router.post('/create', upload.any(), usersController.store); 
+router.get('/register', usersController.create); 
+router.post('/register', upload.any(), usersController.store); 
 
 
 
 /*** GET ONE USER ***/ 
-router.get('/detail/:id/', usersController.detail); 
+router.get('/profile/:id/', usersController.profile); 
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', usersController.edit); 

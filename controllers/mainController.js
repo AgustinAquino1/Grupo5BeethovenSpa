@@ -15,20 +15,10 @@ const mainController = {
         res.render('home', {simple, special})   
     },
 
-    login: (req, res) => {
-        res.render('login')   
-    },
-
-
-
-    register: (req, res) => {
-        res.render('register')   
-    },
-
  
     search: (req, res) => {
 		res.render('results')
-	},
+	}
 
     
 
