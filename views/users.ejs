@@ -8,6 +8,33 @@
     <%- include ('partials/header')%>
 
 
+        <main>
+
+
+                <section class = "servicios-main">
+
+                    <div class = "servicios-imagenes-container">
+
+                <% users.forEach(user => { %>
+                    
+                    <article class="card-servicios">
+                        <a href="/users/detail/<%= user.id %> ">
+                            <img class="servicios-imagenes" src="/img/users/<%= user.image %>">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones"><%= user.name %></h3>
+                            </div>
+                        </a>
+                    </article>
+                <%}) %>
+
+                    </div>
+                </section>
+
+
+
+            </div>
+        </main>
 
         <%- include ('partials/footer')%>
 
