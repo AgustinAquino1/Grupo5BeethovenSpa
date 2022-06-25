@@ -27,13 +27,13 @@ const controller = {
 	
 
 	// Create - Form to create
-	create: (req, res) => {
+	register: (req, res) => {
 		
 		res.render('register');
 	},
 	
 	// Create -  Method to store
-	store: (req, res) => {
+	processRegister: (req, res) => {
 
 
 

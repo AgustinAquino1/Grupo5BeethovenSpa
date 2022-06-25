@@ -9,5 +9,16 @@
     "user": "",
     "pass": ["mdklasda", "dasdasdasd"],
     "image": "new-file1655145081593.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Julieta",
+    "surname": "Ventre",
+    "birth-date": "2022-06-17",
+    "domicilio": "sasa",
+    "email": "juuventre@gmail.com",
+    "user": "julieta",
+    "pass": ["lalala", "lalala"],
+    "image": "default-image.png"
   }
 ]
