@@ -58,7 +58,7 @@ const controller = {
 		surname:req.body.surname,
 		birthdate: req.body.birthdate,
 		email:req.body.email,
-		pass:bcrypt.hashSync(req.body.pass,10), //arreglar para que funcione
+		pass:bcrypt.hashSync(req.body.pass,10), //arreglar porq no funciona
 		
 		}
 

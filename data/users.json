@@ -31,5 +31,16 @@
     "user": "lululolo",
     "pass": ["pepito123", "pepito123"],
     "image": "default-image.png"
+  },
+  {
+    "id": 4,
+    "name": "Maxi",
+    "surname": "Pardo",
+    "birth-date": "2022-06-02",
+    "domicilio": "sasa",
+    "email": "maxipardo2003@gmail.com",
+    "user": "maxi123",
+    "pass": ["", ""],
+    "image": "new-file1656196704614.jpeg"
   }
 ]

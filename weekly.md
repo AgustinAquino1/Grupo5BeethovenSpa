@@ -24,3 +24,11 @@ Miercoles 18/05/2022
 
 Terminamos de organizarnos respecto al sprint 3 y hablamos acerca de nuestras fortalezas y debilidades.
 Seguimos modificando y ordeando nuestro proyecto con los controllers.
+
+
+sabado 25/06/2022
+ Implementamos sprint 5 con bcrypt,multer,middlewares,cookies.
+ Revisamos lo que se hizo para el sprint 4 y analizamos nuestros errores a cambiar y mejorar.
+
+ Nos encontramos con problemas con bcrypt y con el formulario de login. 
+ Actualizamos trello para poder organizarnos como equipo con las tareas.
