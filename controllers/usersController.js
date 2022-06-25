@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+const bcrypt= require('bcrypt');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -52,7 +53,7 @@ const controller = {
 		id: users[users.length - 1].id + 1,
 		...req.body,
 		image: image,
-	
+			
 		}
 
 		const resultValidation = validationResult(req);
