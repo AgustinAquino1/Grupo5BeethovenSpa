@@ -20,5 +20,16 @@
     "user": "julieta",
     "pass": ["lalala", "lalala"],
     "image": "default-image.png"
+  },
+  {
+    "id": 3,
+    "surname": ["lulu", "lulu"],
+    "name": "lolo",
+    "birth-date": "2022-06-07",
+    "domicilio": "sasa",
+    "email": "pms@gmail.com",
+    "user": "lululolo",
+    "pass": ["pepito123", "pepito123"],
+    "image": "default-image.png"
   }
 ]
