@@ -9,6 +9,7 @@
 
  <main>
 
+
         <form action="/users/register" method="POST" class="register" enctype="multipart/form-data" >
         <div class="personal-information">
           <div class="title-information"><h3>Información Personal</h3></div>
@@ -17,12 +18,32 @@
      
          
             <div class="main-link">
-             <input type="text" name="name" placeholder="Nombre">
+             <input type="text" 
+             name="name" 
+             placeholder="Nombre"
+             value="<%= locals.oldData ? oldData.name : null %>">
+             <div class="errors">
+               <% if (locals.errors && errors.name) { %>
+                <%= errors.name.msg %> 
+  
+                <% } %>
+
+             </div>
             </div>
             
             
             <div class="main-link">
-             <input type="text" name="surname" placeholder="Apellido">
+             <input type="text" 
+             name="surname" 
+             placeholder="Apellido" 
+             value="<%= locals.oldData ? oldData.surname : null %>">
+             <div class="errors">
+              <% if (locals.errors && errors.surname) { %>
+               <%= errors.surname.msg %> 
+ 
+               <% } %>
+
+            </div>
            </div>
      
            <div class="main-link">
@@ -36,7 +57,17 @@
      
      
             <div class="main-link">
-             <input type="text" name="domicilio" placeholder="Domicilio">
+             <input type="text" 
+             name="domicilio" 
+             placeholder="Domicilio"
+             value="<%= locals.oldData ? oldData.domicilio : null %>">
+             <div class="errors">
+              <% if (locals.errors && errors.domicilio) { %>
+               <%= errors.domicilio.msg %> 
+ 
+               <% } %>
+
+            </div>
             </div>
      
         </div>
@@ -47,7 +78,17 @@
      
      
             <div class="main-link">
-              <input type="email" name="email" placeholder="Email">
+              <input type="email" 
+              name="email" 
+              placeholder="Email"
+              value="<%= locals.oldData ? oldData.email : null %>">
+              <div class="errors">
+                <% if (locals.errors && errors.email) { %>
+                 <%= errors.email.msg %> 
+   
+                 <% } %>
+ 
+              </div>
             </div>
      
      
@@ -58,12 +99,12 @@
      
      
             <div class="main-link">
-              <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Contraseña" required>
+              <input type="password" name="pass"  placeholder="Contraseña">
             </div>
      
      
             <div class="main-link">
-               <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Confirmar contraseña" required>
+               <input type="password" name="pass"   placeholder="Confirmar contraseña">
             </div>
 
         </div>
