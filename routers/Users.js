@@ -37,8 +37,8 @@ router.get('/', usersController.index);
 
 
 /*** CREATE ONE USER ***/ 
-router.get('/register', usersController.create); 
-router.post('/register', upload.any(), validations, usersController.store); 
+router.get('/register', usersController.register); 
+router.post('/register', upload.any(), validations, usersController.processRegister); 
 
 /*** Login ***/ 
 
