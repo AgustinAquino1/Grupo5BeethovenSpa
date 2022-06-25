@@ -56,12 +56,44 @@ const controller = {
 		}
 
 		const resultValidation = validationResult(req);
+        console.log("🚀 ~ file: usersController.js ~ line 39 ~ resultValidation", resultValidation)
 
-		users.push(newUser)
+		if(resultValidation.errors.length > 0){
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users));
+		}else{
 
-		res.redirect('/')
+			let image
+	
+			if(req.files[0] != undefined){
+	
+				image = req.files[0].filename
+	
+			}
+			else {
+				image = 'default-image.png'
+			}
+			
+			let newUser = {
+			id: users[users.length - 1].id + 1,
+			...req.body,
+			image: image,
+		
+			}
+	
+	
+	
+			users.push(newUser)
+	
+			fs.writeFileSync(usersFilePath, JSON.stringify(users));
+	
+			res.redirect('/')
+
+		}
+
 	},
 
 	// Update - Form to edit
