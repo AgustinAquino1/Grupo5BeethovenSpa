@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator')
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -12,7 +13,10 @@ const controller = {
 	index: (req, res) => {
 		res.render('users', {users});
 	},
-	
+
+	login: (req, res) => {
+        res.render('login')   
+    },
 
 	// profile - Detail from one user
 	profile: (req, res) => {
@@ -50,6 +54,9 @@ const controller = {
 		image: image,
 	
 		}
+
+		const resultValidation = validationResult(req);
+
 		users.push(newUser)
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(users));
