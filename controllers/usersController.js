@@ -60,6 +60,8 @@ const controller = {
 			id: users[users.length - 1].id + 1,
 			...req.body,
 			image: image,
+			pass: bcryptjs.hashSync(req.body.pass, 10),
+            pass2: bcryptjs.hashSync(req.body.pass2, 10)
 		
 			}
 	
