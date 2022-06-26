@@ -3,7 +3,7 @@ const app = express();
 const port = 3030
 const path = require ('path')
 const methodOverride = require('method-override');
-
+const session= require('express-session');
 
 
 const mainRouter = require ('./routers/main')
@@ -21,6 +21,8 @@ app.set('view engine','ejs');
 app.set('views', path.resolve(__dirname, 'views'));
 
 app.use (methodOverride('_method'));
+
+app.use (session({secret: "este es nuestro mensaje secreto"}));
 
 
 app.use(express.static('public'));

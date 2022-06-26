@@ -36,72 +36,47 @@ const controller = {
 	// Create -  Method to store
 	processRegister: (req, res) => {
 
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0){
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+
+        }else{
+
+            let image
+
+            if(req.files[0] != undefined){
+
+                image = req.files[0].filename
+
+            }
+            else {
+                image = 'default-image.png'
+            }
+
+            let newUser = {
+            id: users[users.length - 1].id + 1,
+            ...req.body,
+            image: image,
+            pass: bcrypt.hashSync(req.body.pass, 10),
+            //pass2: bcrypt.hashSync(req.body.pass2, 10)
+
+            }
 
 
-		let image
 
-		if(req.files[0] != undefined){
+            users.push(newUser)
 
-			image = req.files[0].filename
+            fs.writeFileSync(usersFilePath, JSON.stringify(users));
 
-		}
-		else {
-			image = 'default-image.png'
-		}
-		
-		let newUser = {
-		
-		id: users[users.length - 1].id + 1,
-		...req.body,
-		image: image,
-		name:req.body.name,
-		surname:req.body.surname,
-		birthdate: req.body.birthdate,
-		email:req.body.email,
-		pass:bcrypt.hashSync(req.body.pass,10), //arreglar porq no funciona
-		
-		}
+            res.redirect('/')
 
-		const resultValidation = validationResult(req);
-        console.log("🚀 ~ file: usersController.js ~ line 39 ~ resultValidation", resultValidation)
+        }
 
-		if(resultValidation.errors.length > 0){
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			})
-
-		}else{
-
-			let image
-	
-			if(req.files[0] != undefined){
-	
-				image = req.files[0].filename
-	
-			}
-			else {
-				image = 'default-image.png'
-			}
-			
-			let newUser = {
-			id: users[users.length - 1].id + 1,
-			...req.body,
-			image: image,
-		
-			}
-	
-	
-	
-			users.push(newUser)
-	
-			fs.writeFileSync(usersFilePath, JSON.stringify(users));
-	
-			res.redirect('/')
-
-		}
-
-	},
+    },
 
 	// Update - Form to edit
 	edit: (req, res) => {
