@@ -13,7 +13,8 @@ const multer = require ('multer')
 const validations= [
   body ('name').notEmpty().withMessage('Tenés que completar este campo'),
   body ('surname').notEmpty().withMessage('Tenés que completar este campo'),
-  body ('email').notEmpty().withMessage('Tenés que completar este campo'),
+  body ('email').notEmpty().withMessage('Tenés que completar este campo').bail()
+  .isEmail().withMessage('Debés usar un formato válido del tipo "mail@mail.com"'),
   body ('domicilio').notEmpty().withMessage('Tenés que completar este campo'),
 ]
 

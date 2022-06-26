@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const bcrypt= require('bcrypt');
+const bcrypt= require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -35,29 +35,7 @@ const controller = {
 	
 	// Create -  Method to store
 	processRegister: (req, res) => {
-
-
-
-		let image
-
-		if(req.files[0] != undefined){
-
-			image = req.files[0].filename
-
-		}
-		else {
-			image = 'default-image.png'
-		}
-		
-		let newUser = {
-		id: users[users.length - 1].id + 1,
-		...req.body,
-		image: image,
-			
-		}
-
 		const resultValidation = validationResult(req);
-        console.log("🚀 ~ file: usersController.js ~ line 39 ~ resultValidation", resultValidation)
 
 		if(resultValidation.errors.length > 0){
 			return res.render('register', {

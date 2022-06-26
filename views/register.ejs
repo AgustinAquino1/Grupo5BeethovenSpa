@@ -13,17 +13,7 @@
         <form action="/users/register" method="POST" class="register" enctype="multipart/form-data" >
         <div class="personal-information">
           <div class="title-information"><h3>Información Personal</h3></div>
-                 
-          
-          
-          <div class="main-link">
-           <input type="text" name="surname" placeholder="Apellido">
-         </div>
-   
-         <div class="main-link">
-             <input type="file" name="image" placeholder="imagen">
-         </div>   
-         
+
             <div class="main-link">
              <input type="text" 
              name="name" 
@@ -85,7 +75,7 @@
      
      
             <div class="main-link">
-              <input type="email" 
+              <input type="text" 
               name="email" 
               placeholder="Email"
               value="<%= locals.oldData ? oldData.email : null %>">
