@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const validations = require('../middlewares/validations')
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
