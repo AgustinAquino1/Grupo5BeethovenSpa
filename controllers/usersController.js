@@ -103,34 +103,48 @@ const controller = {
 		let id = req.params.id
 		let userToEdit = users.find (user => user.id ==id)
 
-		let image
+		const resultValidation = validationResult(req);
 
-		if(req.files[0] != undefined){
+		if(resultValidation.errors.length > 0){
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+		}else{
 
-			image = req.files[0].filename
 
-		}
-		else {
-			image = productToEdit.image
-		}
-		
-		productToEdit = {
-			id: userToEdit.id,
-			...req.body,
-			image: image,
-		}
-
-		let newUser = users.map(user => {
-			if (user.id == userToEdit.id) {
-
-				return user = {...userToEdit}
+			let image
+	
+			if(req.files[0] != undefined){
+	
+				image = req.files[0].filename
+	
 			}
-			return user
-		})
+			else {
+				image = productToEdit.image
+			}
+			
+			productToEdit = {
+				id: userToEdit.id,
+				...req.body,
+				image: image,
+				pass: bcryptjs.hashSync(req.body.pass, 10),
+				pass2: bcryptjs.hashSync(req.body.pass2, 10)
+			}
+	
+			let newUser = users.map(user => {
+				if (user.id == userToEdit.id) {
+	
+					return user = {...userToEdit}
+				}
+				return user
+			})
+	
+	
+			fs.writeFileSync(usersFilePath, JSON.stringify(newUser));
+			res. redirect('/users/detail/' + userToEdit.id)
+		}
 
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(newUser));
-		res. redirect('/users/detail/' + userToEdit.id)
 	},
 
 	// Delete - Delete one user from DB

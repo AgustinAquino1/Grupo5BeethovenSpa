@@ -15,7 +15,7 @@ const validations= [
 			let findByEmail = users.find(user => user.email === email)
       
       if(findByEmail){
-				throw new Error ('El email que quieres utilizar ya existe')
+				throw new Error ('El email ya está registrado')
 			} 
       return true
 			}),
@@ -35,7 +35,6 @@ const validations= [
       .custom((value, {req})=>{
         let keepUser = req.body.user
         let findByUser = users.find(user => user.user === keepUser)
-        
         if(findByUser){
           throw new Error ('El usuario que quieres utilizar ya existe')
         } 
