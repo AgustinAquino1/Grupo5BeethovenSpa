@@ -90,18 +90,39 @@
      
      
             <div class="main-link">
-              <input type="text" name="user"  minlength="5" placeholder="Nombre de Usuario" >
+              <input type="text" name="user"  minlength="5" placeholder="Nombre de Usuario" 
+
+              value="<%= locals.oldData ? oldData.user : null %>">
+              <div class="errors">
+                <% if (locals.errors && errors.user) { %>
+                 <%= errors.user.msg %> 
+   
+                 <% } %>
+ 
+              </div>
             </div>
 
      
      
             <div class="main-link">
               <input type="password" name="pass"  placeholder="Contraseña">
+              <div class="errors">
+                <% if (locals.errors && errors.pass) { %>
+                 <%= errors.pass.msg %> 
+   
+                 <% } %>
+ 
+              </div>
             </div>
      
      
             <div class="main-link">
                <input type="password" name="pass2"   placeholder="Confirmar contraseña">
+               <div class="errors">
+                <% if (locals.errors && errors.pass2) { %>
+                 <%= errors.pass2.msg %> 
+   
+                 <% } %>
             </div>
 
         </div>
