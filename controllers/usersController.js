@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const bcrypt= require('bcryptjs');
+const bcryptjs= require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -64,6 +64,18 @@ const controller = {
             pass2: bcryptjs.hashSync(req.body.pass2, 10)
 		
 			}
+
+			req.session.id = newUser.id
+			req.session.name = newUser.name
+			req.session.surname = newUser.surname
+			req.session.birth_date = newUser.birth_date
+			req.session.domicilio = newUser.domicilio
+			req.session.user = newUser.user
+			req.session.pass = newUser.pass
+			req.session.pass2 = newUser.pass2
+			req.session.image = newUser.image
+			req.session.email = newUser.email
+        
 	
 	
 	

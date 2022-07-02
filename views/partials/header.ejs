@@ -22,6 +22,12 @@
             <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href="/users/login"><i class="fa-regular fa-user"></i></a>
         </div>
+        <% if (typeof data != 'undefined'  ) { %>
+            <div>
+                <p> Bienvenid@ <%= data.user %> </p> 
+
+            </div>
+        <% } %>
 
     </div>
 
