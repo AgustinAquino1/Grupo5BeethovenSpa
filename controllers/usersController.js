@@ -15,10 +15,6 @@ const controller = {
 		res.render('users', {users});
 	},
 
-	login: (req, res) => {
-        res.render('login')   
-    },
-
 	// profile - Detail from one user
 	profile: (req, res) => {
 		let id= req.params.id
@@ -35,6 +31,7 @@ const controller = {
 	
 	// Create -  Method to store
 	processRegister: (req, res) => {
+
 		const resultValidation = validationResult(req);
 
 		if(resultValidation.errors.length > 0){
@@ -65,16 +62,6 @@ const controller = {
 		
 			}
 
-			req.session.id = newUser.id
-			req.session.name = newUser.name
-			req.session.surname = newUser.surname
-			req.session.birth_date = newUser.birth_date
-			req.session.domicilio = newUser.domicilio
-			req.session.user = newUser.user
-			req.session.pass = newUser.pass
-			req.session.pass2 = newUser.pass2
-			req.session.image = newUser.image
-			req.session.email = newUser.email
         
 	
 	
@@ -83,11 +70,43 @@ const controller = {
 	
 			fs.writeFileSync(usersFilePath, JSON.stringify(users));
 	
-			res.redirect('/')
+			res.redirect('/users/login')
 
 		}
 
 	},
+
+	login: (req, res) => {
+        res.render('login')   
+    },
+
+	loginProcess:  (req, res) => {
+		let email =  req.body.email
+		
+
+		let userToLogin = users.find (user => user.email == email)
+
+
+		if (userToLogin){
+
+			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass)
+
+            if (passwordValidation){
+				return res.send ('puedes ingresar')
+
+			}
+		}
+		else{
+			res.render('login', {
+				errors: {
+					emailLogin:{
+						msg: 'Este email no se encuentra registrado'
+					}
+				}
+			})   
+			
+		}
+    },
 
 	// Update - Form to edit
 	edit: (req, res) => {

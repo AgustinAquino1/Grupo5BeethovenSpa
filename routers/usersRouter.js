@@ -26,7 +26,7 @@ const upload = multer({ storage: storage })
 
 
 
-/*** GET ALL USERS ***/ 
+/*** GET ALL USERS  READ***/ 
 router.get('/', usersController.index); 
 
 
@@ -34,13 +34,15 @@ router.get('/', usersController.index);
 router.get('/register', usersController.register); 
 router.post('/register', upload.any(), validations, usersController.processRegister); 
 
-/*** Login ***/ 
-
-router.get('/login', usersController.login); 
 
 
 /*** GET ONE USER ***/ 
 router.get('/profile/:id/', usersController.profile); 
+
+/*** Login ***/ 
+
+router.get('/login', usersController.login); 
+router.post('/login', usersController.loginProcess);
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', usersController.edit); 
