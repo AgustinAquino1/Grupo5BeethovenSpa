@@ -9,7 +9,7 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-const User = require('../models/User');
+
 
 const controller = {
 	// Root - Show all users
@@ -104,7 +104,7 @@ const controller = {
 	// Update - Form to edit
 	edit: (req, res) => {
 
-		let id = req.params.id
+		let cookies = req.params.id
 		let user = users.find (user => user.id ==id)
 
 		res.render('userEdit', {user});
