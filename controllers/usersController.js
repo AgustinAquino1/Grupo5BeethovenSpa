@@ -9,15 +9,15 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const User = require('../models/User');
+
 const controller = {
 	// Root - Show all users
 	index: (req, res) => {
 		res.render('users', {users});
 	},
 
-	login: (req, res) => {
-        res.render('login')   
-    },
+	
 
 	// profile - Detail from one user
 	profile: (req, res) => {
@@ -25,6 +25,14 @@ const controller = {
 		let user = users.find(user => user.id == id)
 		res.render('profile', {user});
 	},
+
+	//LogOut 
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+		req.session.destroy();
+		return res.redirect('/');
+	},
+
 	
 
 	// Create - Form to create
@@ -53,7 +61,7 @@ const controller = {
 	
 			}
 			else {
-				image = 'default-image.png'
+				image = 'img-principal.png'
 			}
 			
 			let newUser = {
@@ -82,10 +90,14 @@ const controller = {
 			users.push(newUser)
 	
 			fs.writeFileSync(usersFilePath, JSON.stringify(users));
+			
 	
 			res.redirect('/')
 
 		}
+		let userCreated = User.create(newUser);
+
+		return res.redirect('/user/login');
 
 	},
 
@@ -155,7 +167,43 @@ const controller = {
 			users.splice(userToDestroy, 1)
 			fs.writeFileSync(usersFilePath, JSON.stringify(users))
 			res.redirect('/')
-	}
+	},
+	login: (req, res) => {
+        res.render('login')   
+    },
+	loginProcess: (req, res) => {
+		let userToLogin = User.findByField('email', req.body.email);
+		
+		if(userToLogin) {
+			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+			if (isOkThePassword) {
+				delete userToLogin.password;
+				req.session.userLogged = userToLogin;
+
+				if(req.body.remember_user) {
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				}
+
+				return res.redirect('/user/profile');
+			} 
+			return res.render('login', {
+				errors: {
+					email: {
+						msg: 'Las credenciales son inválidas'
+					}
+				}
+			});
+		}
+
+		return res.render('login', {
+			errors: {
+				email: {
+					msg: 'No se encuentra este email en nuestra base de datos'
+				}
+			}
+		});
+	},
+		
 };
 
 module.exports = controller;
