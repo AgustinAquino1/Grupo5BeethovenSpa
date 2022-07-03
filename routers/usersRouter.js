@@ -6,6 +6,8 @@ const validations = require('../middlewares/validations')
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
+const guestMiddleware= require('../middlewares/guestMiddlewares')
+const authMiddleware= require('../middlewares/authMiddleware')
 
 
 const multer = require ('multer')
@@ -31,25 +33,29 @@ router.get('/', usersController.index);
 
 
 /*** CREATE ONE USER ***/ 
-router.get('/register', usersController.register); 
+router.get('/register', guestMiddleware, usersController.register); 
 router.post('/register', upload.any(), validations, usersController.processRegister); 
 
 
 
 /*** GET ONE USER ***/ 
-router.get('/profile/:id/', usersController.profile); 
+router.get('/profile/', authMiddleware, usersController.profile); 
 
 /*** Login ***/ 
 
-router.get('/login', usersController.login); 
-router.post('/login', usersController.loginProcess);
+router.get('/login', guestMiddleware, usersController.login); 
+router.post('/login', upload.any(), usersController.loginProcess);
+
+// Logout
+
+router.get('/logout/', usersController.logout);
 
 /*** EDIT ONE USER ***/
 router.get('/edit/:id', usersController.edit); 
-router.put('/edit/:id', upload.any(), usersController.update); 
+router.put('/edit/:id', upload.any(), validations, usersController.update); 
 
 
 /*** DELETE ONE USER ***/ 
-router.delete('/delete/:id', usersController.destroy); 
+router.delete('/delete/:id',  usersController.destroy); 
 
 module.exports = router;

@@ -17,9 +17,9 @@ const controller = {
 
 	// profile - Detail from one user
 	profile: (req, res) => {
-		let id= req.params.id
-		let user = users.find(user => user.id == id)
-		res.render('profile', {user});
+		res.render('profile', {
+			user: req.session.userLogged
+		});
 	},
 	
 
@@ -76,37 +76,6 @@ const controller = {
 
 	},
 
-	login: (req, res) => {
-        res.render('login')   
-    },
-
-	loginProcess:  (req, res) => {
-		let email =  req.body.email
-		
-
-		let userToLogin = users.find (user => user.email == email)
-
-
-		if (userToLogin){
-
-			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass)
-
-            if (passwordValidation){
-				return res.send ('puedes ingresar')
-
-			}
-		}
-		else{
-			res.render('login', {
-				errors: {
-					emailLogin:{
-						msg: 'Este email no se encuentra registrado'
-					}
-				}
-			})   
-			
-		}
-    },
 
 	// Update - Form to edit
 	edit: (req, res) => {
@@ -174,7 +143,55 @@ const controller = {
 			users.splice(userToDestroy, 1)
 			fs.writeFileSync(usersFilePath, JSON.stringify(users))
 			res.redirect('/')
-	}
+	},
+	login: (req, res) => {
+        res.render('login')   
+    },
+
+	loginProcess:  (req, res) => {
+		let email =  req.body.email
+		
+		let userToLogin = users.find (user => user.email == email)
+
+		
+
+
+		if (userToLogin){
+
+			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass)
+
+
+            if (passwordValidation){
+				delete userToLogin.pass;
+				req.session.userLogged = userToLogin;
+				res.redirect('/users/profile')
+			} else{
+				res.render('login', {
+					errors: {
+						pass:{
+							msg: 'La contraseña no coincide con el email que deseas ingresar'
+						}
+					}
+				})  
+
+			}
+		}
+		else{
+			res.render('login', {
+				errors: {
+					email:{
+						msg: 'Este email no se encuentra registrado'
+					}
+				}
+			})   
+			
+		}
+    },
+	logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    }
 };
 
 module.exports = controller;

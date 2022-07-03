@@ -1,1 +1,37 @@
-[{"id":1,"name":"dsadsa","surname":"dasdas","birth-date":"","domicilio":"","email":"","user":"","pass":["mdklasda","dasdasdasd"],"image":"new-file1655145081593.jpg"},{"id":2,"name":"Juan","surname":"Paco","birth-date":"2022-07-07","domicilio":"pedro123","email":"juan@gmail.com","user":"juan1","pass":"$2a$10$VqOMbRy3qeOW.aoBXQ1OS.hyqx9SQfD4NsP8SFC7F3OCElN1mDcci","pass2":"$2a$10$j8H.tMm.sjcershB6x6sOuH5OVLBo1RsMYshac16wF7rM5Bri/rAS","image":"default-image.png"},{"id":3,"name":"jklsajdlkas","surname":"skladklasñd","birth-date":"2022-07-06","domicilio":"ksalñdkaslñ123","email":"jkasdjklsdjakl@gmail.com","user":"kslañdkaslñdak","pass":"$2a$10$hmikDwo8908J.DXxwXxDNO2LbMyC8XPOalBZSZA2q4j0aUDTQwqgO","pass2":"$2a$10$7Q8I34sUV3lqSKqbjpZg2evzLpg3Z0w3leQdrP8S60/EsA.DlBkBG","image":"default-image.png"}]
+[
+  {
+    "id": 1,
+    "name": "dsadsa",
+    "surname": "dasdas",
+    "birth-date": "",
+    "domicilio": "",
+    "email": "",
+    "user": "",
+    "pass": ["mdklasda", "dasdasdasd"],
+    "image": "new-file1655145081593.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Juan",
+    "surname": "Paco",
+    "birth-date": "2022-07-07",
+    "domicilio": "pedro123",
+    "email": "juan@gmail.com",
+    "user": "juan1",
+    "pass": "$2a$10$VqOMbRy3qeOW.aoBXQ1OS.hyqx9SQfD4NsP8SFC7F3OCElN1mDcci",
+    "pass2": "$2a$10$j8H.tMm.sjcershB6x6sOuH5OVLBo1RsMYshac16wF7rM5Bri/rAS",
+    "image": "default-image.png"
+  },
+  {
+    "id": 3,
+    "name": "jklsajdlkas",
+    "surname": "skladklasñd",
+    "birth-date": "2022-07-06",
+    "domicilio": "ksalñdkaslñ123",
+    "email": "jkasdjklsdjakl@gmail.com",
+    "user": "kslañdkaslñdak",
+    "pass": "$2a$10$hmikDwo8908J.DXxwXxDNO2LbMyC8XPOalBZSZA2q4j0aUDTQwqgO",
+    "pass2": "$2a$10$7Q8I34sUV3lqSKqbjpZg2evzLpg3Z0w3leQdrP8S60/EsA.DlBkBG",
+    "image": "default-image.png"
+  }
+]
