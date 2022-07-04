@@ -24,8 +24,7 @@ const controller = {
 	
 
 	// Create - Form to create
-	register: (req, res) => {
-		
+	register: (req, res) => {		
 		res.render('register');
 	},
 	
@@ -149,21 +148,20 @@ const controller = {
     },
 
 	loginProcess:  (req, res) => {
-		let email =  req.body.email
-		
+		let email =  req.body.email		
 		let userToLogin = users.find (user => user.email == email)
-
-		
 
 
 		if (userToLogin){
 
-			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass)
-
-
+			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass);
             if (passwordValidation){
 				delete userToLogin.pass;
+				delete userToLogin.pass2;
 				req.session.userLogged = userToLogin;
+				if(req.body.rememberUser){
+					res.cookie('userEmail', req.body.email, {maxAge: (1000 * 120)})
+				}
 				res.redirect('/users/profile')
 			} else{
 				res.render('login', {
@@ -173,7 +171,6 @@ const controller = {
 						}
 					}
 				})  
-
 			}
 		}
 		else{
@@ -188,7 +185,7 @@ const controller = {
 		}
     },
 	logout: (req, res) => {
-        res.clearCookie('userEmail');
+		res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     }

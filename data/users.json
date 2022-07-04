@@ -18,7 +18,7 @@
     "domicilio": "pedro123",
     "email": "juan@gmail.com",
     "user": "juan1",
-    "pass": "$2a$10$VqOMbRy3qeOW.aoBXQ1OS.hyqx9SQfD4NsP8SFC7F3OCElN1mDcci",
+    "pass": "$2a$10$j8H.tMm.sjcershB6x6sOuH5OVLBo1RsMYshac16wF7rM5Bri/rAS",
     "pass2": "$2a$10$j8H.tMm.sjcershB6x6sOuH5OVLBo1RsMYshac16wF7rM5Bri/rAS",
     "image": "default-image.png"
   },
@@ -33,5 +33,17 @@
     "pass": "$2a$10$hmikDwo8908J.DXxwXxDNO2LbMyC8XPOalBZSZA2q4j0aUDTQwqgO",
     "pass2": "$2a$10$7Q8I34sUV3lqSKqbjpZg2evzLpg3Z0w3leQdrP8S60/EsA.DlBkBG",
     "image": "default-image.png"
+  },
+  {
+    "id": 4,
+    "name": "Alan",
+    "surname": "Brado",
+    "birth-date": "2022-07-07",
+    "domicilio": "hola 123",
+    "email": "alan@gmail.com",
+    "user": "alanbrado",
+    "pass": "$2a$10$AYGzutjXZ.ZPo5q4rwXjEOyHJdfxv4NRWf1Z0EKqtMOTKeanbAu52",
+    "pass2": "$2a$10$YuUh4Ykhu5nttamYVhe7EOTOTYiDZfCvfVCERQ5Rc7jL2oQRsl9Ne",
+    "image": "new-file1656950637548.webp"
   }
 ]
