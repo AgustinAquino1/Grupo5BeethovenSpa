@@ -23,7 +23,7 @@ const validations= [
     body ('pass').notEmpty().withMessage('Tenés que completar este campo'),
     body ('pass2').notEmpty().withMessage('Tenés que completar este campo').bail()
     .custom((value, {req})=>{
-      let pass = req.body.pass
+      let pass  = req.body.pass
       let pass2 = req.body.pass2
 			
       if(pass != pass2){
@@ -33,7 +33,7 @@ const validations= [
 			}),
       body ('user').notEmpty().withMessage('Tenés que completar este campo').bail()
       .custom((value, {req})=>{
-        let keepUser = req.body.user
+        let keepUser   = req.body.user
         let findByUser = users.find(user => user.user === keepUser)
         if(findByUser){
           throw new Error ('El usuario que quieres utilizar ya existe')

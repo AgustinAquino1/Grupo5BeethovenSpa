@@ -17,13 +17,11 @@ const controller = {
 		res.render('users', {users});
 	},
 
-	
-
 	// profile - Detail from one user
 	profile: (req, res) => {
-		let id= req.params.id
-		let user = users.find(user => user.id == id)
-		res.render('profile', {user});
+		res.render('profile', {
+			user: req.session.userLogged
+		});
 	},
 
 	//LogOut 
@@ -36,13 +34,13 @@ const controller = {
 	
 
 	// Create - Form to create
-	register: (req, res) => {
-		
+	register: (req, res) => {		
 		res.render('register');
 	},
 	
 	// Create -  Method to store
 	processRegister: (req, res) => {
+
 		const resultValidation = validationResult(req);
 
 		if(resultValidation.errors.length > 0){
@@ -73,16 +71,6 @@ const controller = {
 		
 			}
 
-			req.session.id = newUser.id
-			req.session.name = newUser.name
-			req.session.surname = newUser.surname
-			req.session.birth_date = newUser.birth_date
-			req.session.domicilio = newUser.domicilio
-			req.session.user = newUser.user
-			req.session.pass = newUser.pass
-			req.session.pass2 = newUser.pass2
-			req.session.image = newUser.image
-			req.session.email = newUser.email
         
 	
 	
@@ -92,7 +80,7 @@ const controller = {
 			fs.writeFileSync(usersFilePath, JSON.stringify(users));
 			
 	
-			res.redirect('/')
+			res.redirect('/users/login')
 
 		}
 		let userCreated = User.create(newUser);
@@ -100,6 +88,7 @@ const controller = {
 		return res.redirect('/user/login');
 
 	},
+
 
 	// Update - Form to edit
 	edit: (req, res) => {
@@ -171,39 +160,49 @@ const controller = {
 	login: (req, res) => {
         res.render('login')   
     },
-	loginProcess: (req, res) => {
-		let userToLogin = User.findByField('email', req.body.email);
-		
-		if(userToLogin) {
-			let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-			if (isOkThePassword) {
-				delete userToLogin.password;
+
+	loginProcess:  (req, res) => {
+		let email =  req.body.email		
+		let userToLogin = users.find (user => user.email == email)
+
+
+		if (userToLogin){
+
+			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass);
+            if (passwordValidation){
+				delete userToLogin.pass;
+				delete userToLogin.pass2;
 				req.session.userLogged = userToLogin;
-
-				if(req.body.remember_user) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 60 })
+				if(req.body.rememberUser){
+					res.cookie('userEmail', req.body.email, {maxAge: (1000 * 120)})
 				}
-
-				return res.redirect('/user/profile');
-			} 
-			return res.render('login', {
+				res.redirect('/users/profile')
+			} else{
+				res.render('login', {
+					errors: {
+						pass:{
+							msg: 'La contraseña no coincide con el email que deseas ingresar'
+						}
+					}
+				})  
+			}
+		}
+		else{
+			res.render('login', {
 				errors: {
-					email: {
-						msg: 'Las credenciales son inválidas'
+					email:{
+						msg: 'Este email no se encuentra registrado'
 					}
 				}
-			});
+			})   
+			
 		}
-
-		return res.render('login', {
-			errors: {
-				email: {
-					msg: 'No se encuentra este email en nuestra base de datos'
-				}
-			}
-		});
-	},
-		
+    },
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    }
 };
 
 module.exports = controller;

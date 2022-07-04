@@ -1,28 +1,33 @@
 //´´´´´´´´´´´´´´ express()     (don´t touch) ***************
 const express = require ('express');
+const cookies = require ('cookie-parser')
+const session = require ('express-session')
 
 //´´´´´´´´´´´´´´ Require's  (don´t touch) ***************
 const app = express();
+const userLoggedMiddelware = require ('./middlewares/userLogedMiddelware')
 const port = 3030
 const path = require ('path')
 const methodOverride = require('method-override');
-const cookieParser = require ('cookie-parser')
-const session = require ('express-session')
 
 
 const mainRouter = require ('./routers/mainRouter')
 const productsRouter = require('./routers/productsRouter');
-const usersRouter = require('./routers/usersRouter'); 
+const usersRouter = require('./routers/usersRouter');
 
 
 //´´´´´´´´´´´´´´ Middlewares     (don´t touch) ***************
 
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use (session ({
+    secret: "mensaje secreto",
+    resave: false,
+    saveUninitialized: false}));
+app.use(cookies());
+app.use (userLoggedMiddelware);
 app.use(express.urlencoded({ extended: false}));
+app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.json());
-app.use(cookieParser())
 app.use (methodOverride('_method'));
-app.use (session ({secret: "mensaje secreto"}))
 
 //´´´´´´´´´´´´´´ Template Engine     (don´t touch) ***************
 app.set('view engine','ejs');
