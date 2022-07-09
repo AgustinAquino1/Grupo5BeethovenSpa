@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const bcrypt = require ('bcryptjs');
+const bcryptjs= require('bcryptjs');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
@@ -15,68 +15,66 @@ const controller = {
 		res.render('users', {users});
 	},
 
-	login: (req, res) => {
-        res.render('login')   
-    },
-
 	// profile - Detail from one user
 	profile: (req, res) => {
-		let id= req.params.id
-		let user = users.find(user => user.id == id)
-		res.render('profile', {user});
+		res.render('profile', {
+			user: req.session.userLogged
+		});
 	},
 	
 
 	// Create - Form to create
-	register: (req, res) => {
-		
+	register: (req, res) => {		
 		res.render('register');
 	},
 	
 	// Create -  Method to store
 	processRegister: (req, res) => {
 
-        const resultValidation = validationResult(req);
+		const resultValidation = validationResult(req);
 
-        if(resultValidation.errors.length > 0){
-            return res.render('register', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
+		if(resultValidation.errors.length > 0){
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
 
-        }else{
+		}else{
 
-            let image
+			let image
+	
+			if(req.files[0] != undefined){
+	
+				image = req.files[0].filename
+	
+			}
+			else {
+				image = 'default-image.png'
+			}
+			
+			let newUser = {
+			id: users[users.length - 1].id + 1,
+			...req.body,
+			image: image,
+			pass: bcryptjs.hashSync(req.body.pass, 10),
+            pass2: bcryptjs.hashSync(req.body.pass2, 10)
+		
+			}
 
-            if(req.files[0] != undefined){
+        
+	
+	
+	
+			users.push(newUser)
+	
+			fs.writeFileSync(usersFilePath, JSON.stringify(users));
+	
+			res.redirect('/users/login')
 
-                image = req.files[0].filename
+		}
 
-            }
-            else {
-                image = 'default-image.png'
-            }
+	},
 
-            let newUser = {
-            id: users[users.length - 1].id + 1,
-            ...req.body,
-            image: image,
-            pass: bcrypt.hashSync(req.body.pass, 10),
-            //pass2: bcrypt.hashSync(req.body.pass2, 10)
-
-            }
-
-
-
-            users.push(newUser)
-
-            fs.writeFileSync(usersFilePath, JSON.stringify(users));
-
-            res.redirect('/')
-
-        }
-
-    },
 
 	// Update - Form to edit
 	edit: (req, res) => {
@@ -92,34 +90,48 @@ const controller = {
 		let id = req.params.id
 		let userToEdit = users.find (user => user.id ==id)
 
-		let image
+		const resultValidation = validationResult(req);
 
-		if(req.files[0] != undefined){
+		if(resultValidation.errors.length > 0){
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+		}else{
 
-			image = req.files[0].filename
 
-		}
-		else {
-			image = productToEdit.image
-		}
-		
-		productToEdit = {
-			id: userToEdit.id,
-			...req.body,
-			image: image,
-		}
-
-		let newUser = users.map(user => {
-			if (user.id == userToEdit.id) {
-
-				return user = {...userToEdit}
+			let image
+	
+			if(req.files[0] != undefined){
+	
+				image = req.files[0].filename
+	
 			}
-			return user
-		})
+			else {
+				image = productToEdit.image
+			}
+			
+			productToEdit = {
+				id: userToEdit.id,
+				...req.body,
+				image: image,
+				pass: bcryptjs.hashSync(req.body.pass, 10),
+				pass2: bcryptjs.hashSync(req.body.pass2, 10)
+			}
+	
+			let newUser = users.map(user => {
+				if (user.id == userToEdit.id) {
+	
+					return user = {...userToEdit}
+				}
+				return user
+			})
+	
+	
+			fs.writeFileSync(usersFilePath, JSON.stringify(newUser));
+			res. redirect('/users/detail/' + userToEdit.id)
+		}
 
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(newUser));
-		res. redirect('/users/detail/' + userToEdit.id)
 	},
 
 	// Delete - Delete one user from DB
@@ -130,7 +142,53 @@ const controller = {
 			users.splice(userToDestroy, 1)
 			fs.writeFileSync(usersFilePath, JSON.stringify(users))
 			res.redirect('/')
-	}
+	},
+	login: (req, res) => {
+        res.render('login')   
+    },
+
+	loginProcess:  (req, res) => {
+		let email =  req.body.email		
+		let userToLogin = users.find (user => user.email == email)
+
+
+		if (userToLogin){
+
+			let passwordValidation = bcryptjs.compareSync(req.body.pass, userToLogin.pass);
+            if (passwordValidation){
+				delete userToLogin.pass;
+				delete userToLogin.pass2;
+				req.session.userLogged = userToLogin;
+				if(req.body.rememberUser){
+					res.cookie('userEmail', req.body.email, {maxAge: (1000 * 120)})
+				}
+				res.redirect('/users/profile')
+			} else{
+				res.render('login', {
+					errors: {
+						pass:{
+							msg: 'La contraseña no coincide con el email que deseas ingresar'
+						}
+					}
+				})  
+			}
+		}
+		else{
+			res.render('login', {
+				errors: {
+					email:{
+						msg: 'Este email no se encuentra registrado'
+					}
+				}
+			})   
+			
+		}
+    },
+	logout: (req, res) => {
+		res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    }
 };
 
 module.exports = controller;

@@ -10,17 +10,41 @@
     
 
        <main class="main-login">
-          <form action="/users/create" method="POST" class="login" enctype="multipart/form-data" >
-           <div class="general-login">
+
+          <form 
+          action="/users/login" 
+          method="POST" 
+          class="login" 
+          enctype="multipart/form-data" >
+           
+            <div class="general-login">
             <h3>¡Bienvenido! Para ingresar completá tus datos:</h3>
 
                 <div class="main-link">
-                   <input type="email" name="email" placeholder="Email o usuario">
+                   <input type="text" name="email" placeholder="Email">
+                   <div class="errors">
+                    <% if (locals.errors && errors.email) { %>
+                     <%= errors.email.msg %> 
+       
+                     <% } %>
+     
+                  </div>
                 </div>
 
             <div class="main-link">
                 <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Contraseña" required>
+                <div class="errors">
+                  <% if (locals.errors && errors.pass) { %>
+                   <%= errors.pass.msg %> 
+     
+                   <% } %>
+   
+                </div>
             </div>
+
+            <label>
+              <input type="checkbox" name="rememberUser">Recordar mi usuario
+            </label>
         
             <div class="send-bottom">
                <button type="submit" class="send-buttom">  Ingresar </button>

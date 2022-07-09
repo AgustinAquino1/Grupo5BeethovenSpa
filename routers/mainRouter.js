@@ -1,6 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 const mainController = require ('../controllers/mainController')
+const validations = require('../middlewares/validations')
 
 
 router.get("/", mainController.index );

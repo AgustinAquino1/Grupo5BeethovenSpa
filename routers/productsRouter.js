@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const validations = require('../middlewares/validations')
+const authMiddleware= require('../middlewares/authMiddleware')
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -30,7 +32,7 @@ const upload = multer({ storage: storage })
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create', productsController.create); 
+router.get('/create', authMiddleware, productsController.create); 
 router.post('/create', upload.any(), productsController.store); 
 
 router.get("/cart", productsController.cart);
@@ -40,7 +42,7 @@ router.get("/cart", productsController.cart);
 router.get('/detail/:id/', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/edit/:id', productsController.edit); 
+router.get('/edit/:id', authMiddleware, productsController.edit); 
 router.put('/edit/:id', upload.any(), productsController.update); 
 
 
