@@ -91,6 +91,7 @@ h1 {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
+
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
 
 .carrousel-conteiner {
@@ -463,10 +464,29 @@ button {
   display: flex;
   justify-content: space-between;
 }
- 
+ /* vista perfil mobile*/
+.perfiles-container{
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
 
-  
+.imagenes-perfiles{
+  width: 70%;
+}
 
+.nombre-prefiles{
+    text-decoration: none;
+}
+
+.card-users{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  width: auto;
+  align-content: center;
+}
 /** H O M E - H E A D E R - T A B L E T **/
 
 @media  (min-width: 426px){
@@ -506,8 +526,26 @@ button {
     box-shadow: 0px 0px 10px rgb(100, 100, 100)
   }
 
-
-
+  /*vista perfil tablet (arreglar)*/
+  .perfiles-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .imagenes-perfiles{
+    width: 70%;
+  }
+  
+  .nombre-prefiles{
+      text-decoration: none;
+  }
+  
+  .card-users{
+    margin-bottom: 5%;
+    margin-top: 5%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    width: 30%;
+  }
 
   
 /*---- product detail---*/
@@ -611,8 +649,6 @@ button {
   color: #FF3A5E;
 
 }
-
- 
 }
 /*** desktop MAIN ***/
 @media  (min-width: 1024px){
@@ -670,7 +706,6 @@ button{
   list-style: none;
 }
 
-}
 
 
 .servicios-imagenes-container {
@@ -741,3 +776,18 @@ button{
 margin: auto;
 }
 
+/*compu vista perfil*/
+.perfiles-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.imagenes-perfiles{
+  width: 70%;
+}
+
+.nombre-prefiles{
+    text-decoration: none;
+}
+}

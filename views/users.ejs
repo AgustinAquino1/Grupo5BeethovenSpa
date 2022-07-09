@@ -13,16 +13,16 @@
 
                 <section class = "servicios-main">
 
-                    <div class = "servicios-imagenes-container">
+                    <div class = "perfiles-container">
 
                 <% users.forEach(user => { %>
                     
-                    <article class="card-servicios">
+                    <article class="card-users">
                         <a href="/users/profile/<%= user.id %> ">
-                            <img class="servicios-imagenes" src="/img/users/<%= user.image %>">
-                            <div class="caracteristicas">
+                            <img class="imagenes-perfiles" src="/img/users/<%= user.image %>">
+                            <div class="perfil-nombre">
                                 <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones"><%= user.name %></h3>
+                                <h3 class="nombre-prefiles"><%= user.name %></h3>
                             </div>
                         </a>
                     </article>
