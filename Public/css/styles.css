@@ -473,8 +473,31 @@ button {
 }
 
 
+/** PROFILE - **/
 
+.card-profile{
+
+}
+
+.profile-imagenes{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 15%;
   
+}
+  
+.usuario-nombre{
+
+  margin-left: 10px;
+  text-align: left;
+}
+
+.info-usuario{
+text-align: left;
+margin-left: 10px;
+}
 
 /** H O M E - H E A D E R - T A B L E T **/
 

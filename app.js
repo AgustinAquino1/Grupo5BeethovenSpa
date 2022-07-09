@@ -9,7 +9,6 @@ const userLoggedMiddelware = require ('./middlewares/userLogedMiddelware')
 const port = 3030
 const path = require ('path')
 const methodOverride = require('method-override');
-const session= require('express-session');
 
 const mainRouter = require ('./routers/mainRouter')
 const productsRouter = require('./routers/productsRouter');
