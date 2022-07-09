@@ -20,7 +20,13 @@
 
         <div class = "nav-right">
             <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/login"><i class="fa-regular fa-user"></i></a>
+            <% if (locals.isLogged) { %>
+                <a href="/users/profile"><img src="/img/users/<%= locals.userLogged.image %>" width="70" style="border-radius: 100%;"></a>
+                <a  href="/users/logout">Logout</a>               
+            <% } else {%>
+
+                <a href="/users/login"><i class="fa-regular fa-user"></i></a>
+            <% } %>
         </div>
 
     </div>

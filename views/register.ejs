@@ -5,27 +5,48 @@
 
     <body>
     
-        <%- include ('partials/header')%>
+      <%- include ('partials/header')%>
 
- <main>
+<main>
 
-        <form action="/" method="POST" class="register" >
+
+        <form action="/users/register" method="POST" class="register" enctype="multipart/form-data" >
         <div class="personal-information">
           <div class="title-information"><h3>Información Personal</h3></div>
-                 
-          
-     
-         
+
             <div class="main-link">
-             <input type="text" name="name" placeholder="Nombre">
+             <input type="text" 
+             name="name" 
+             placeholder="Nombre"
+             value="<%= locals.oldData ? oldData.name : null %>">
+             <div class="errors">
+               <% if (locals.errors && errors.name) { %>
+                <%= errors.name.msg %> 
+  
+                <% } %>
+
+             </div>
             </div>
-     
-           
-           <div class="main-link">
-             <input type="text" name="surname" placeholder="Apellido">
+            
+            
+            <div class="main-link">
+             <input type="text" 
+             name="surname" 
+             placeholder="Apellido" 
+             value="<%= locals.oldData ? oldData.surname : null %>">
+             <div class="errors">
+              <% if (locals.errors && errors.surname) { %>
+               <%= errors.surname.msg %> 
+ 
+               <% } %>
+
+            </div>
            </div>
      
-     
+           <div class="main-link">
+               <input type="file" name="image" placeholder="imagen">
+           </div>   
+           
            <div class="main-link">
             <label for="month">Fecha de Nacimiento:</label>
             <input type="date" name="birth-date">         
@@ -33,7 +54,17 @@
      
      
             <div class="main-link">
-             <input type="text" name="domicilio" placeholder="Domicilio">
+             <input type="text" 
+             name="domicilio" 
+             placeholder="Domicilio"
+             value="<%= locals.oldData ? oldData.domicilio : null %>">
+             <div class="errors">
+              <% if (locals.errors && errors.domicilio) { %>
+               <%= errors.domicilio.msg %> 
+ 
+               <% } %>
+
+            </div>
             </div>
      
         </div>
@@ -44,42 +75,77 @@
      
      
             <div class="main-link">
-              <input type="email" name="email" placeholder="Email">
+              <input type="text" 
+              name="email" 
+              placeholder="Email"
+              value="<%= locals.oldData ? oldData.email : null %>">
+              <div class="errors">
+                <% if (locals.errors && errors.email) { %>
+                 <%= errors.email.msg %> 
+   
+                 <% } %>
+ 
+              </div>
             </div>
      
      
             <div class="main-link">
-              <input type="text" name="user"  minlength="5" placeholder="Nombre de Usuario" >
+              <input type="text" name="user"  minlength="5" placeholder="Nombre de Usuario" 
+
+              value="<%= locals.oldData ? oldData.user : null %>">
+              <div class="errors">
+                <% if (locals.errors && errors.user) { %>
+                 <%= errors.user.msg %> 
+   
+                 <% } %>
+ 
+              </div>
+            </div>
+
+     
+     
+            <div class="main-link">
+              <input type="password" name="pass"  placeholder="Contraseña">
+              <div class="errors">
+                <% if (locals.errors && errors.pass) { %>
+                 <%= errors.pass.msg %> 
+   
+                 <% } %>
+ 
+              </div>
             </div>
      
      
             <div class="main-link">
-              <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Contraseña" required>
-            </div>
-     
-     
-            <div class="main-link">
-               <input type="password" name="pass"  minlength="6" maxlength="10" placeholder="Confirmar contraseña" required>
+               <input type="password" name="pass2"   placeholder="Confirmar contraseña">
+               <div class="errors">
+                <% if (locals.errors && errors.pass2) { %>
+                 <%= errors.pass2.msg %> 
+   
+                 <% } %>
             </div>
 
         </div>
                 
+        <div class="container">
+          <div class="subscription">
+            <input type="checkbox" name="subscription" value="1">
+            <label for="subscription">Suscribirse a nuevas ofertas </label>
+          </div>
+            <button type="submit" class="send-buttom">  Registrarse </button>
+      </div>
+
     </form>
 
-        <div class="container">
-            <div class="subscription">
-              <input type="checkbox" name="subscription" value="1">
-              <label for="subscription">Suscribirse a nuevas ofertas </label>
-            </div>
-              <button type="submit" class="send-buttom">  Registrarse </button>
-        </div>
-        
-      </main>
 
-      </body>
+
+    
+    
+</main>
+
+    </body>
 
 
         <%- include ('partials/footer')%>
 
 </html>
-

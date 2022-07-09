@@ -2,7 +2,7 @@
 
 Primer sprint 
 
-Empezamos el proyecto poniendonos de acuerdo la tematica
+Empezamos el proyecto poniendonos de acuerdo la tematica.
 
 
 
