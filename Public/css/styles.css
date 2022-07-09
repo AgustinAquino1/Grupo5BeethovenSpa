@@ -208,14 +208,14 @@ footer div section h5 {
 h3{
   padding-top:10px;
   padding-bottom: 20px;
-  font-size:16px;
+  font-size:18px;
 }
 
 .main-link{
 
     display: flex;
     flex-direction: column;
-    padding:10px;
+    padding:2px;
     align-items: center;
 }
 
@@ -271,27 +271,54 @@ label{
 }
 
 /*================== REGISTER ===============*/
+
+.logo-register{
+ width: 50%;
+ display: flex;
+ justify-content: center;
+ margin:20% auto;
+
+}
+
 form.register{
   display:flex;
+  background-color: #FFD7D7;
+  justify-content:right;
 }
 
 
 
 .title-information{
-  color: #ffa8cd;
+  color: black;
   text-align: center;
 }
 
-.personal-information{
-  padding:5%;
-  width: 70%;
-  border-right: #ffa8cd solid;
-}
 
 .login-information{
-  padding:5%;
-  width: 70%;
-  border-left: #ffa8cd solid;
+  width: 40%;
+  background-color: white;
+  text-align: center;
+  margin: 90px auto;
+  margin-right: 100px;
+  border-radius: 1%;
+  justify-content:right;
+}
+
+.main-link-register{
+
+  display: flex;
+  flex-direction: column;
+  padding:2px;
+  align-items: center;
+  padding: 1%;
+}
+
+
+.main-link-register input{
+background-color: white;
+width: 60%;
+border: #FFD7D7 solid;
+padding: 1%;
 }
 
 .subscription{
@@ -302,6 +329,22 @@ form.register{
 
 .container{
   text-align: center;
+}
+
+.send-buttom-register{
+  margin:20px;
+  color: #090909;
+  padding: 5px 70px 5px 70px;
+  font-size: 14px;
+  background: #FFD7D7;
+  border: 2px solid black;
+  transition: all .3s #FFD7D7;
+
+}
+
+.send-buttom-register:hover{
+  background-color: #FFD7D7;
+  color: black;
 }
 
 .errors{

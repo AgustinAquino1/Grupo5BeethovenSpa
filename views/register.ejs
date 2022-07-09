@@ -10,17 +10,22 @@
 <main>
 
 
+
+
   <form action="/users/register" method="POST" class="register" enctype="multipart/form-data" >
      
            
+    <div class = "logo-register">
+      <a href="/"><img class="logo-register" src="/img/BeethovenSpaLogo.png"></a>
+  </div>
      
     <div class="login-information">
         <div class="title-information"> <h3>Registrate</h3></div>
-        <div class="text-validation"> <h4>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</h4></div>
+        <div class="text-validation"> <p>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</p></div>
 
 
 
-       <div class="main-link">
+       <div class="main-link-register">
          <input type="text" 
          name="name" 
          placeholder="Nombre"
@@ -35,7 +40,7 @@
         </div>
         
         
-        <div class="main-link">
+        <div class="main-link-register">
          <input type="text" 
          name="surname" 
          placeholder="Apellido" 
@@ -49,17 +54,17 @@
         </div>
        </div>
  
-       <div class="main-link">
+       <div class="main-link-register">
            <input type="file" name="image" placeholder="imagen">
        </div>   
        
-       <div class="main-link">
+       <div class="main-link-register">
         <label for="month">Fecha de Nacimiento:</label>
         <input type="date" name="birth-date">         
        </div>
  
  
-        <div class="main-link">
+        <div class="main-link-register">
          <input type="text" 
          name="domicilio" 
          placeholder="Domicilio"
@@ -74,7 +79,7 @@
         </div>
  
  
-        <div class="main-link">
+        <div class="main-link-register">
           <input type="text" 
           name="email" 
           placeholder="Email"
@@ -88,23 +93,9 @@
           </div>
         </div>
  
- 
-        <div class="main-link">
-          <input type="text" name="user"  minlength="5" placeholder="Nombre de Usuario" 
-
-          value="<%= locals.oldData ? oldData.user : null %>">
-          <div class="errors">
-            <% if (locals.errors && errors.user) { %>
-             <%= errors.user.msg %> 
-
-             <% } %>
-
-          </div>
-        </div>
 
  
- 
-        <div class="main-link">
+        <div class="main-link-register">
           <input type="password" name="pass"  placeholder="Contraseña">
           <div class="errors">
             <% if (locals.errors && errors.pass) { %>
@@ -116,7 +107,7 @@
         </div>
  
  
-        <div class="main-link">
+        <div class="main-link-register">
            <input type="password" name="pass2"   placeholder="Confirmar contraseña">
            <div class="errors">
             <% if (locals.errors && errors.pass2) { %>
@@ -132,9 +123,9 @@
         <input type="checkbox" name="subscription" value="1">
         <label for="subscription">Suscribirse a nuevas ofertas </label>
       </div>
-        <button type="submit" class="send-buttom">  Registrarse </button>
+        <button type="submit" class="send-buttom-register">  Registrarse </button>
   </div>
-
+</div>
 </form>
 
 
