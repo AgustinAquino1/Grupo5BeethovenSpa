@@ -464,6 +464,15 @@ button {
   justify-content: space-between;
 }
  
+/**Article.card-servicios **/
+
+.servicios-imagenes-container{
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 
   
 
@@ -492,6 +501,7 @@ button {
   }
 .servicios-imagenes-container {
   display: flex;
+
 }
   .card-servicios {
     margin-left: 5px;
