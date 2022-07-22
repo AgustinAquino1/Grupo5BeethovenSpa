@@ -29,7 +29,7 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL USERS  READ***/ 
-router.get('/', usersController.index); 
+router.get('/', authMiddleware, usersController.index); 
 
 
 /*** CREATE ONE USER ***/ 
@@ -39,7 +39,7 @@ router.post('/register', upload.any(), validations, usersController.processRegis
 
 
 /*** GET ONE USER ***/ 
-router.get('/profile/', authMiddleware, usersController.profile); 
+router.get('/profile/:name/', authMiddleware, usersController.profile); 
 
 /*** Login ***/ 
 
@@ -51,11 +51,11 @@ router.post('/login', upload.any(), usersController.loginProcess);
 router.get('/logout/', usersController.logout);
 
 /*** EDIT ONE USER ***/
-router.get('/edit/:id', usersController.edit); 
-router.put('/edit/:id', upload.any(), validations, usersController.update); 
+router.get('/edit/:name', authMiddleware, usersController.edit); 
+router.put('/edit/:name', authMiddleware, upload.any(), validations, usersController.update); 
 
 
 /*** DELETE ONE USER ***/ 
-router.delete('/delete/:id',  usersController.destroy); 
+router.delete('/delete/:id', authMiddleware,  usersController.destroy); 
 
 module.exports = router;

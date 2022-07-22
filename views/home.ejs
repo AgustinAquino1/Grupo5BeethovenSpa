@@ -20,11 +20,12 @@
                     <h3>Nuestros Servicios</h3>
                     <div class = "servicios-imagenes-container">
 
-                <% simple.forEach(product => { %>
+
+                <% products.forEach(product => { %>
                     
                     <article class="card-servicios">
                         <a href="/products/detail/<%= product.id %> ">
-                            <img class="servicios-imagenes" src="/img/products/<%= product.image1 %>">
+                            <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
                             <div class="caracteristicas">
                                 <i class="fa-solid fa-paw"></i>
                                 <h3 class="descripciones"><%= product.name %></h3>
@@ -40,11 +41,11 @@
                     <h3>Paquetes Especiales</h3>
                     <div class = "servicios-imagenes-container">
 
-                        <% special.forEach(product => { %>
+                        <% products.forEach(product => { %>
                     
                             <article class="card-servicios">
                                 <a href="/products/detail/<%= product.id %> ">
-                                    <img class="servicios-imagenes" src="/img/products/<%= product.image1 %>">
+                                    <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
                                     <div class="caracteristicas">
                                         <i class="fa-solid fa-paw"></i>
                                         <h3 class="descripciones"><%= product.name %></h3>

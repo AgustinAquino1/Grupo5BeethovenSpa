@@ -24,3 +24,11 @@ Miercoles 18/05/2022
 
 Terminamos de organizarnos respecto al sprint 3 y hablamos acerca de nuestras fortalezas y debilidades.
 Seguimos modificando y ordeando nuestro proyecto con los controllers.
+
+sabado 02/07/2022
+Se terminaron las validaciones
+
+domingo 03/07/2022
+
+Arreglamos problemas al visualizar los usuarios los cuales al sobrepasar cierta cantidad se dejan de ver.
+Agregamos botones que nos lleven a la vista e usuarios y a la vista de productos.
