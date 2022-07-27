@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const validations = require('../middlewares/validations')
+const validations = require('../middlewares/productValidations')
 const authMiddleware= require('../middlewares/authMiddleware')
 
 // ************ Controller Require ************
@@ -33,7 +33,7 @@ router.get('/', productsController.index);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create',authMiddleware, productsController.create); 
-router.post('/create', upload.any(), productsController.store); 
+router.post('/create', upload.any(), validations, productsController.store); 
 
 router.get("/cart", productsController.cart);
 

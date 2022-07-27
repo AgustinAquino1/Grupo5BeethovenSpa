@@ -18,30 +18,79 @@
          
             <div class="main-link">
              <input type="text" name="name" placeholder="Nombre del producto">
+             <div class="errors">
+                <% if (locals.errors && errors.name) { %>
+                 <%= errors.name.msg %> 
+     
+                 <% } %>
+     
+              </div>
             </div>
 
             <div class="main-link">
                 <input type="text" name="brand" placeholder="Marca del producto">
+                <div class="errors">
+                    <% if (locals.errors && errors.brand) { %>
+                     <%= errors.brand.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             <div class="main-link">
                 <input type="text" name="description" placeholder="Descripción">
+                <div class="errors">
+                    <% if (locals.errors && errors.description) { %>
+                     <%= errors.description.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             
             <div class="main-link">
                 <input type="text" name="color" placeholder="color">
+                <div class="errors">
+                    <% if (locals.errors && errors.color) { %>
+                     <%= errors.color.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
             <div class="main-link">
                 <input type="text" name="stock" placeholder="Stock">
+                <div class="errors">
+                    <% if (locals.errors && errors.stock) { %>
+                     <%= errors.stock.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             <div class="main-link">
                 <input type="text" name="price" placeholder="Precio">
+                <div class="errors">
+                    <% if (locals.errors && errors.price) { %>
+                     <%= errors.price.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             <div class="main-link">
                 <input type="text" name="pet_type" placeholder="Tipo de Mascota">
+                <div class="errors">
+                    <% if (locals.errors && errors.pet_type) { %>
+                     <%= errors.pet_type.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             <div class="main-link">
@@ -58,16 +107,44 @@
 
             <div class="main-link">
                 <input type="file" name="f_image" placeholder="Imagen Principal">
+                <div class="errors">
+                    <% if (locals.errors && errors.f_image) { %>
+                     <%= errors.f_image.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
 
             <div class="main-link">
                 <input type="file" name="image" placeholder="otra imagen">
+                <div class="errors">
+                    <% if (locals.errors && errors.image) { %>
+                     <%= errors.image.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
             <div class="main-link">
                 <input type="file" name="image1" placeholder="otra imagen">
+                <div class="errors">
+                    <% if (locals.errors && errors.image1) { %>
+                     <%= errors.image1.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>
             <div class="main-link">
                 <input type="file" name="image2" placeholder="otra imagen">
+                <div class="errors">
+                    <% if (locals.errors && errors.image2) { %>
+                     <%= errors.image2.msg %> 
+         
+                     <% } %>
+         
+                  </div>
             </div>          
      
      

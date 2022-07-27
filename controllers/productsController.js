@@ -47,6 +47,17 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
+		const resultValidation = validationResult(req);
+        
+
+		if(resultValidation.errors.length > 0){
+			return res.render('productCreate', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+
+		}else{
+
 
 
 		let f_image
@@ -109,6 +120,7 @@ const controller = {
 		 res.redirect("/")
 			 
 		 }) 
+		}
 
 	},
 

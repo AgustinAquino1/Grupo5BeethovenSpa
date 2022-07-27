@@ -42,8 +42,10 @@ header {
 }
 
 .nav-right {
+  position: relative;
   display: flex;
   width: 10%;
+  align-items: baseline;
 }
 
 .fa-cart-shopping{
@@ -74,10 +76,10 @@ h1 {
   display: flex;
   margin: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
+  justify-content: center;
 }
 .barra {
-  width: 100%;
+  width: 70%;
   height: 30px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -90,6 +92,37 @@ h1 {
   border-style: none;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+.search{
+  
+  background-color: #FFF;
+  padding: 5px;
+  border-style: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.avatar{
+  display: block;
+  top: 10px;
+  left: 50px;
+  position:absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+
+}
+
+#logout{
+ 
+  text-decoration: none;
+  color: black;
+  align-self: center;
+  
 }
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
 

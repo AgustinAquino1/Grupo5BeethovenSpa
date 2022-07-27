@@ -5,7 +5,7 @@ const db = require('../data/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Users = db.User;
-console.log("🚀 ~ file: usersController.js ~ line 8 ~ Users", Users)
+
 
 
 
@@ -52,6 +52,7 @@ const controller = {
 	processRegister: (req, res) => {
 
 		const resultValidation = validationResult(req);
+        
 
 		if(resultValidation.errors.length > 0){
 			return res.render('register', {

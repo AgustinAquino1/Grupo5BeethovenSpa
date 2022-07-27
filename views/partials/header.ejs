@@ -14,7 +14,7 @@
             <div class="buscador">
                 <form action="/" method="POST" enctype="multipart/form-data">
                 <input name ="searchProducts" class="barra" type="search" placeholder="Buscar productos y/o servicios">
-                <button type="submit" class="send-buttom"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
 
@@ -23,8 +23,8 @@
         <div class = "nav-right">
             <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <% if (locals.isLogged) { %>
-                <a href="/users/profile"><img src="/img/users/<%= locals.userLogged.image %>" width="70" style="border-radius: 100%;"></a>
-                <a  href="/users/logout">Logout</a>               
+                <a href="/users/profile/<%= locals.userLogged.name %>"><img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar"></a>
+                <a id="logout"  href="/users/logout">Logout</a>               
             <% } else {%>
 
                 <a href="/users/login"><i class="fa-regular fa-user"></i></a>

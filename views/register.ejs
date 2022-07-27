@@ -54,8 +54,19 @@
         </div>
        </div>
  
-       <div class="main-link-register">
-        <input type="file" name="avatar" placeholder="Sube una foto para tu perfil">
+
+        <div class="main-link-register">
+          <input type="file" 
+          name="avatar" 
+          placeholder="Sube una foto para tu perfil">
+          <div class="errors">
+            <% if (locals.errors && errors.avatar) { %>
+             <%= errors.avatar.msg %> 
+  
+             <% } %>
+  
+           </div>
+          
     </div>
        
        <div class="main-link-register">
@@ -68,10 +79,10 @@
          <input type="text" 
          name="adress" 
          placeholder="Domicilio"
-         value="<%= locals.oldData ? oldData.domicilio : null %>">
+         value="<%= locals.oldData ? oldData.adress : null %>">
          <div class="errors">
-          <% if (locals.errors && errors.domicilio) { %>
-           <%= errors.domicilio.msg %> 
+          <% if (locals.errors && errors.adress) { %>
+           <%= errors.adress.msg %> 
 
            <% } %>
 
