@@ -21,52 +21,54 @@
                     <div class = "servicios-imagenes-container">
 
 
-                <% products.forEach(product => { %>
+
                     
                     <article class="card-servicios">
-                        <a href="/products/detail/<%= product.id %> ">
-                            <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
+                        <a href="/products/detail/1 ">
+                            <img class="servicios-imagenes" src="/img/products/default-image.png">
                             <div class="caracteristicas">
                                 <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones"><%= product.name %></h3>
+                                <h3 class="descripciones">EXPERIENCIA SPA</h3>
                             </div>
                         </a>
                     </article>
-                <%}) %>
+                    <article class="card-servicios">
+                        <a href="/products/detail/1 ">
+                            <img class="servicios-imagenes" src="/img/products/default-image.png">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones">EXPERIENCIA GOURMET</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="card-servicios">
+                        <a href="/products/detail/1 ">
+                            <img class="servicios-imagenes" src="/img/products/default-image.png">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones">ACCESORIOS</h3>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="card-servicios">
+                        <a href="/products/detail/1 ">
+                            <img class="servicios-imagenes" src="/img/products/default-image.png">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones">ROPA</h3>
+                            </div>
+                        </a>
+                    </article>
+
+
 
                     </div>
                 </section>
-
-                <section class = "servicios-main">
-                    <h3>Paquetes Especiales</h3>
-                    <div class = "servicios-imagenes-container">
-
-                        <% products.forEach(product => { %>
-                    
-                            <article class="card-servicios">
-                                <a href="/products/detail/<%= product.id %> ">
-                                    <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
-                                    <div class="caracteristicas">
-                                        <i class="fa-solid fa-paw"></i>
-                                        <h3 class="descripciones"><%= product.name %></h3>
-                                    </div>
-                                </a>
-                            </article>
-                        <%}) %>
-
-
-
-
-                    </div>
-                </section>
-
-                
-
 
             </div>
         </main>
 
         <%- include ('partials/footer')%>
-
+        <script type="text/javascript" src="/js/home.js"></script>
 </body>
 </html>

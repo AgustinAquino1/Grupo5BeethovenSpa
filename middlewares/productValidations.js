@@ -2,7 +2,6 @@ const { body } = require ('express-validator')
 const path = require('path');
 const db = require('../data/models');
 const Users = db.User;
-const imageValidation = require('./imageValidation')
 
 const validations= [
     body ('name').notEmpty().withMessage('Tenés que completar este campo')
@@ -12,7 +11,13 @@ const validations= [
     body ('description').isLength({ min: 20 }).withMessage('La descripción debe tener por lo menos 20 letras'),
     body(['f_image', 'image','image1','image2']).custom((value, { req }) => {
         
-        let file = req.files[0]
+        console.log(req.files)
+        let file
+
+        for(let i = 0; i < req.files.length; i++){
+          file = req.files[i] 
+          console.log("🚀 ~ file ", file )
+        }
  
         let acceptedExtensions = ['.jpg', '.png', '.gif'];
     

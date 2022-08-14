@@ -37,12 +37,72 @@ header {
   border: 0.5px solid   #C1C1C1;
   border-radius: 5px;
 }
-.burguer {
+/***********************MENÚ HAMBURGUESA**************/
+.fa-user:hover {
+  color: #ffa5b5;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+.rotate-bars{
+  transform: rotate(-90deg);
+  transition-duration: 1s;
+}
+.menu{
   width: 10%;
+
+}
+.burger {
+  position: relative;
+  left: -2000%;
+  opacity:1;
+  padding-top: 40px;
+  width: 0%;
+  transition-duration: 0.5s;
+
+}
+.menu-items{
+  height: 100%;
+  gap: 40px;
+  list-style: none;
+  display:flex;
+  flex-direction: column;
+  margin-top: 40px;
+  background-color: white;
+  position: fixed;
+}
+
+
+.menu-link:hover{
+  color:#FFD7D7;
+
+}
+.menu-link{
+  font-size: 25px;
+  text-decoration: none;
+  color: #FF3A5E;
+  margin-left: 20px;
+  text-overflow: wrap;
+
+}
+.activate-menu-items{
+  position: absolute;
+  left:0%;
+  opacity: 1;
+  right: 0px;
+  transition-duration: 0.3s;
+}
+
+.fa-bars {
+  color: #FF3A5E;
+  font-size: 30px;
+  margin-top: 20px;
+  cursor:pointer;
+  transition-duration: 1s;
 }
 
 .nav-right {
-  position: relative;
+
   display: flex;
   width: 10%;
   align-items: baseline;
@@ -60,11 +120,7 @@ header {
   margin-top: 20px;
   color: #FF3A5E;
 }
-.fa-bars {
-  color: #FF3A5E;
-  font-size: 30px;
-  margin-top: 20px;
-}
+
 h1 {
   margin: auto;
   font-size: 20px;
@@ -118,12 +174,11 @@ h1 {
 }
 
 #logout{
- 
   text-decoration: none;
   color: black;
   align-self: center;
-  
 }
+
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
 
 .carrousel-conteiner {
@@ -141,12 +196,24 @@ h1 {
   text-align: center;
   padding: 15px;
   border-top: 1px solid #e8e8e8;
+  width: 100%;
+}
+.servicios-imagenes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
 }
 
 .card-servicios {
-    margin-bottom: 5%;
-    margin-top: 5%;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: none;
+  width: 100%;
+  
 }
 
 
@@ -158,10 +225,8 @@ h1 {
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
 footer {
-
   border-top: 1px solid #C1C1C1 ; 
   background-color: #FFD7D7;
-
 }
 
 .footer-section-container {
@@ -272,7 +337,6 @@ label{
   background: #00969f;
   border: 2px solid #00969f;
   transition: all .3s #00969f;
-
 }
 
 .send-buttom:hover{
@@ -363,6 +427,20 @@ padding: 1%;
 .container{
   text-align: center;
 }
+.is-valid{
+ color: green;
+ outline: solid 1px green;
+}
+.is-invalid{
+  color: red;
+  outline: solid 2px red;
+}
+.is-invalid::placeholder{
+  color:red
+}
+.error{
+  color: red;
+}
 
 .send-buttom-register{
   margin:20px;
@@ -381,7 +459,51 @@ padding: 1%;
 }
 
 .errors{
-  color:#FF0000
+  color:#FF0000;
+  font-size:15px;
+  padding: 5px;
+  
+}
+
+/*********************** V I S T A  P E R F I L    M O B I L E ***************/
+.perfiles-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+
+.imagenes-perfiles{
+  width: 100%;
+}
+
+.nombre-prefiles{
+    text-decoration: none;
+}
+
+.card-users{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  width: 100%;
+  text-align: center;
+  justify-items: center;
+
+  align-content: center;
+}
+
+.user-main{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  justify-items: center;
+
+  align-content: center;
 }
 
 
@@ -507,38 +629,83 @@ button {
 
 /*** MOBILE - PRODUCT CART ***/
 
+
+  main section div article:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100)
+  }
+
+  body::-webkit-scrollbar {
+    width: 8px;            
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ebebeb;    
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #ebebeb ;   
+    border-radius: 20px;      
+    border: 2px solid #666;  
+  }
+/*  cart desktop*/
+/*.img-perrocomida{}
+ /*agregar despues*/
+
+.carrito{
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.precio{
+  display: flex;
+  justify-content: end;
+  
+}
 .card-carrito{
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
   display: flex;
   flex-direction: row;
   border: solid rgb(255, 192, 203);
   margin-bottom: 20px;
   box-shadow: 0px 15px 20px rgba(255, 192, 203, 0.5);
+  margin: auto;
+font-size: 15px;
 }
+.contenedor-costo-desc-total{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.costo-desc-total{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-button-div-cart{
+  justify-content: end;
+  display: flex;
+  padding: 15px;
+}
+.button-div-cart{
+    width: 20%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  
+}
+
   
   .card-carrito img {
     width: 100px;
   }
-  .card-carrito h2{
-    font-size: 15px;
-  }
-  .costo-desc-total{
-    display: flex;
-    flex-direction: column;
-      }
+
+
   .costo-desc-total h3,h4{
     color:rgba(0, 0, 0, 0.88);
     margin-bottom: 20px;
   }
-
-  .carrito{
-    margin-top: 20px;
-    margin-bottom:20px;
-  }
-.button-div-cart{
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-}
  
 /** USER MOBILE  **/
 
@@ -562,12 +729,7 @@ button {
     color: #ffa5b5;
   }
 
-  .fa-user:hover {
-    color: #ffa5b5;
-  }
-  .fa-bars:hover {
-    color: #ffa5b5;
-  }
+
 .servicios-imagenes-container {
   display: flex;
 }
@@ -654,7 +816,7 @@ button {
 }
 
 
- /** T A B L E T - F O O T E R **/
+/** T A B L E T - F O O T E R **/
 
 .footer-section-container {
   display: flex ;
@@ -676,7 +838,7 @@ button {
 .fa-facebook:hover {
 
   color: #FF3A5E;
-
+  
 }
 
 .fa-instagram:hover {
@@ -687,13 +849,57 @@ button {
 .fa-whatsapp:hover {
   
   color: #FF3A5E;
+  
+}
 
+/*vista perfil tablet (arreglar)*/
+.perfiles-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.imagenes-perfiles{
+  width: 70%;
+}
+
+.nombre-prefiles{
+    text-decoration: none;
+}
+
+.card-users{
+  margin-bottom: 5%;
+  margin-top: 5%;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  width: 30%;
+  height: 30%;
 }
 
  
 }
 /*** desktop MAIN ***/
 @media  (min-width: 1024px){
+  .servicios-main{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:space-around;
+  }
+
+  .servicios-imagenes-container {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content:space-around;
+    width: 100%;
+    
+
+  }
+  
+  .card-servicios {
+    
+      box-shadow: 0px 0px 10px rgb(100, 100, 100);
+      margin: 20px;
+  }
 
   .bloque-1{
     margin-top:50px;
@@ -708,9 +914,9 @@ button {
      
 }
 .img-small{
-display:flex;
-flex-direction: column;
-margin-top: 40px;
+  display:flex;
+  flex-direction: column;
+  margin-top: 40px;
 }
 
 .img-product2{
@@ -748,74 +954,37 @@ button{
   list-style: none;
 }
 
-}
-
-
-.servicios-imagenes-container {
-  display: flex; 
-}
-
-  .card-servicios {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    box-shadow: none;
-    width: 45%;
-  }
-
-  main section div article:hover{
-    box-shadow: 0px 0px 10px rgb(100, 100, 100)
-  }
-
-  body::-webkit-scrollbar {
-    width: 8px;            
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #ebebeb;    
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #ebebeb ;   
-    border-radius: 20px;      
-    border: 2px solid #666;  
-  }
-/*  cart desktop*/
-/*.img-perrocomida{}
- /*agregar despues*/
-
-.carrito{
-  margin-left: 15px;
-}
-.precio{
+/*compu vista perfil*/
+.perfiles-container{
   display: flex;
-  justify-content: end;
-  
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+ 
+
 }
-.card-carrito{
-  justify-content: space-between;
-  padding: 15px;
+
+.imagenes-perfiles{
+  object-fit: contain;
+  width: 200px;
+  height: 200px;
+
+}
+.user-main{
+  display: flex; 
+  text-align: center;
   align-items: center;
 }
-.contenedor-costo-desc-total{
-  justify-content: end;
-  display: flex;
-  padding: 15px;
+
+.nombre-prefiles{
+    text-decoration: none;
 }
-.costo-desc-total{
-  width: 20%;
+
+
 }
-.contenedor-button-div-cart{
-  justify-content: end;
-  display: flex;
-  padding: 15px;
-}
-.button-div-cart{
-    width: 20%;
-  
-}
-.card-carrito h2{
-margin: auto;
-}
+
+
+
 
