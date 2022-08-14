@@ -49,8 +49,10 @@ const controller = {
 
 		const resultValidation = validationResult(req);
         
-
+		
 		if(resultValidation.errors.length > 0){
+			console.log("🚀 ~ resultValidation", resultValidation)
+			
 			return res.render('productCreate', {
 				errors: resultValidation.mapped(),
 				oldData: req.body
@@ -68,7 +70,7 @@ const controller = {
 
 		}
 		else {
-			f_image = 'default-image.png'
+			req.files[0] = 'default-image.png'
 		}
 		
 		let image
@@ -79,29 +81,22 @@ const controller = {
 
 		}
 		else {
-			image = 'default-image.png'
+			req.files[1] = 'default-image.png'
 		}
 
 		let image1
 
 		if(req.files[2] != undefined){
-
-			image1 = req.files[2].filename
-
 		}
 		else {
-			image1 = 'default-image.png'
+			req.files[2] = 'default-image.png'
 		}
-
 		let image2
-
 		if(req.files[3] != undefined){
-
 			image2 = req.files[3].filename
-
 		}
 		else {
-			image2 = 'default-image.png'
+			req.files[3] = 'default-image.png'
 		}
 		
 		Products.create({
