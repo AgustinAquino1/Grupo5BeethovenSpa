@@ -32,7 +32,7 @@ const upload = multer({ storage: storage })
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create',authMiddleware, productsController.create); 
+router.get('/create',/*authMiddleware*,*/ productsController.create); 
 router.post('/create', upload.any(), validations, productsController.store); 
 
 router.get("/cart", productsController.cart);

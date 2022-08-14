@@ -626,6 +626,81 @@ button {
   font-style: oblique;
   color: rgb(227, 31, 100);
 }
+/*** MOBILE - PRODUCT CREATE **************************/
+.main-form{
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  margin-bottom: 0px;
+  height:80vh ;
+  background-color: lightgray;
+  align-items: center;
+}
+.form-product{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 500px;
+  width: 70%;
+  background-color:  #FFD7D7;
+  box-shadow:  5px 5px 5px 3px black;
+}
+.main-link input{
+  border: 2px solid #fff;
+}
+
+
+
+.foward{
+  display: flex;
+  justify-content:center;
+  cursor: pointer;
+}
+
+.product-fa{
+  color: white;
+  text-shadow: 0 0 2px red;
+  font-size: 20px;
+  padding: 20px;
+}
+.uno{
+  color:#FF3A5E;
+
+}
+.dos{
+  color: white;
+  text-shadow: 0 0 2px red;
+
+}
+
+.product-fa:hover{
+  color:#FF3A5E;
+
+}
+.first{
+  display:block;
+
+}
+.second{
+  display:none;
+
+}
+.third{
+  display:none;
+
+}
+.fourths{
+  display:none;
+
+}
+
+.activate-product-view{
+  display:block;
+
+}
+.desactivate-product-view{
+  display: none;
+}
 
 /*** MOBILE - PRODUCT CART ***/
 

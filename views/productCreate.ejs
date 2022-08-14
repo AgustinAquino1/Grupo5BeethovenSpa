@@ -7,145 +7,203 @@
 
     <%- include ('partials/header')%>
 
-    <main>
+    <main class="main-form">
 
-        <form action="/products/create" method="POST" class="register" enctype="multipart/form-data" >
+        <form action="/products/create" method="POST" class="form-product" enctype="multipart/form-data" >
             <div class="personal-information">
                 <div class="title-information"><h3>Crear producto</h3></div>
                  
           
      
-         
-            <div class="main-link">
-             <input type="text" name="name" placeholder="Nombre del producto">
-             <div class="errors">
-                <% if (locals.errors && errors.name) { %>
-                 <%= errors.name.msg %> 
-     
-                 <% } %>
-     
-              </div>
-            </div>
+           <div class="first">
 
-            <div class="main-link">
-                <input type="text" name="brand" placeholder="Marca del producto">
+               <div class="main-link">
+                <input type="text" name="name" placeholder="Nombre del producto" class="input name"
+                value="<%= locals.oldData ? oldData.name : null %>">
                 <div class="errors">
-                    <% if (locals.errors && errors.brand) { %>
-                     <%= errors.brand.msg %> 
-         
-                     <% } %>
-         
+                   <% if (locals.errors && errors.name) { %>
+                    <%= errors.name.msg %> 
+        
+                    <% } %>
+        
+                 </div>
+               </div>
+   
+               <div class="main-link ">
+                   <input type="text" name="category" placeholder="Categoría" class="input category"
+                   value="<%= locals.oldData ? oldData.category : null %>">
+                   <div class="errors">
+                      <% if (locals.errors && errors.category) { %>
+                       <%= errors.category.msg %> 
+           
+                       <% } %>
+           
+                    </div>
                   </div>
-            </div>
-
-            <div class="main-link">
-                <input type="text" name="description" placeholder="Descripción">
-                <div class="errors">
-                    <% if (locals.errors && errors.description) { %>
-                     <%= errors.description.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
-
+   
+               <div class="main-link">
+                   <input type="text" name="brand" placeholder="Marca del producto" class="input brand"
+                   value="<%= locals.oldData ? oldData.brand : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.brand) { %>
+                        <%= errors.brand.msg %> 
             
-            <div class="main-link">
-                <input type="text" name="color" placeholder="color">
-                <div class="errors">
-                    <% if (locals.errors && errors.color) { %>
-                     <%= errors.color.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
-            <div class="main-link">
-                <input type="text" name="stock" placeholder="Stock">
-                <div class="errors">
-                    <% if (locals.errors && errors.stock) { %>
-                     <%= errors.stock.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
+                        <% } %>
+            
+                     </div>
+               </div>
+           </div>
+           <div class="second">
 
-            <div class="main-link">
-                <input type="text" name="price" placeholder="Precio">
-                <div class="errors">
-                    <% if (locals.errors && errors.price) { %>
-                     <%= errors.price.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
+               <div class="main-link">
+                   <input type="text" name="description" placeholder="Descripción" class="input description"
+                   value="<%= locals.oldData ? oldData.description : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.description) { %>
+                        <%= errors.description.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+    
+               
+               <div class="main-link">
+                   <input type="text" name="color" placeholder="Color" class="input color"
+                   value="<%= locals.oldData ? oldData.color : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.color) { %>
+                        <%= errors.color.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+               <div class="main-link">
+                   <input type="text" name="stock" placeholder="Stock" class="input stock"
+                   value="<%= locals.oldData ? oldData.stock : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.stock) { %>
+                        <%= errors.stock.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+    
+               <div class="main-link">
+                   <input type="text" name="price" placeholder="Precio" class="input price"
+                   value="<%= locals.oldData ? oldData.price : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.price) { %>
+                        <%= errors.price.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+           </div>
 
-            <div class="main-link">
-                <input type="text" name="pet_type" placeholder="Tipo de Mascota">
-                <div class="errors">
-                    <% if (locals.errors && errors.pet_type) { %>
-                     <%= errors.pet_type.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
+           <div class="third">
 
-            <div class="main-link">
-                <input type="text" name="pet_size" placeholder="Tamaño de la mascota">
-            </div>
 
-            <div class="main-link">
-                <input type="text" name="pet_age" placeholder="Edad de la mascota">
-            </div>
+               <div class="main-link">
+                   <input type="text" name="pet_type" placeholder="Tipo de Mascota" class="input pet_type"
+                   value="<%= locals.oldData ? oldData.pet_type : null %>">
+                   <div class="errors">
+                       <% if (locals.errors && errors.pet_type) { %>
+                        <%= errors.pet_type.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+    
+               <div class="main-link">
+                   <input type="text" name="pet_size" placeholder="Tamaño de la mascota" class="input pet_size"
+                   value="<%= locals.oldData ? oldData.pet_size : null %>">
+               <div class="errors">
+                   <% if (locals.errors && errors.pet_size) { %>
+                    <%= errors.pet_size.msg %> 
+        
+                    <% } %>
+        
+                 </div>
+                 </div>
+                 
+    
+               <div class="main-link">
+                   <input type="text" name="pet_age" placeholder="Edad de la mascota" class="input pet_age"
+                   value="<%= locals.oldData ? oldData.pet_age : null %>">
+               </div>
+               <div class="errors">
+                   <% if (locals.errors && errors.pet_age) { %>
+                    <%= errors.pet_age.msg %> 
+        
+                    <% } %>
+        
+                 </div>
+    
+               <div class="main-link">
+                   <input type="text" name="breed" placeholder="Raza" class="input breed"
+                   value="<%= locals.oldData ? oldData.breed : null %>">
+               </div>
+               <div class="errors">
+                   <% if (locals.errors && errors.breed) { %>
+                    <%= errors.f_image.msg %> 
+        
+                    <% } %>
+        
+                 </div>
+           </div>
 
-            <div class="main-link">
-                <input type="text" name="breed" placeholder="Raza">
-            </div>
+           <div class="fourths">
 
-            <div class="main-link">
-                <input type="file" name="f_image" placeholder="Imagen Principal">
-                <div class="errors">
-                    <% if (locals.errors && errors.f_image) { %>
-                     <%= errors.f_image.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
+               <div class="main-link">
+                   <input type="file" name="f_image" placeholder="Imagen Principal" class="input f_image"> 
+                   <div class="errors">
+                       <% if (locals.errors && errors.f_image) { %>
+                        <%= errors.f_image.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+    
+               <div class="main-link">
+                   <input type="file" name="image" placeholder="otra imagen" class="input image"> 
+                   <div class="errors">
+                       <% if (locals.errors && errors.image) { %>
+                        <%= errors.image.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+               <div class="main-link">
+                   <input type="file" name="image1" placeholder="otra imagen" class="input image1">
+                   <div class="errors">
+                       <% if (locals.errors && errors.image1) { %>
+                        <%= errors.image1.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>
+               <div class="main-link">
+                   <input type="file" name="image2" placeholder="otra imagen" class="input image2">
+                   <div class="errors">
+                       <% if (locals.errors && errors.image2) { %>
+                        <%= errors.image2.msg %> 
+            
+                        <% } %>
+            
+                     </div>
+               </div>          
+           </div>
 
-            <div class="main-link">
-                <input type="file" name="image" placeholder="otra imagen">
-                <div class="errors">
-                    <% if (locals.errors && errors.image) { %>
-                     <%= errors.image.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
-            <div class="main-link">
-                <input type="file" name="image1" placeholder="otra imagen">
-                <div class="errors">
-                    <% if (locals.errors && errors.image1) { %>
-                     <%= errors.image1.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>
-            <div class="main-link">
-                <input type="file" name="image2" placeholder="otra imagen">
-                <div class="errors">
-                    <% if (locals.errors && errors.image2) { %>
-                     <%= errors.image2.msg %> 
-         
-                     <% } %>
-         
-                  </div>
-            </div>          
+
+
      
      
             <div class="container">
@@ -158,12 +216,15 @@
     
                 
     </form>
+    <div class="form foward">
 
+        <i class="fa-solid fa-paw product-fa uno 1"></i> <i class="fa-solid fa-paw product-fa 2"></i> <i class="fa-solid fa-paw product-fa 3"></i> <i class="fa-solid fa-paw product-fa 4"></i>
+    </div>
         
       </main>
 
 
         <%- include ('partials/footer')%>
-
+        <script type="text/javascript" src="/js/productCreate.js"></script>
 </body>
 </html>

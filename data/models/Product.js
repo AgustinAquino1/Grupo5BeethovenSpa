@@ -13,21 +13,22 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
+        category: {
+            type: dataTypes.STRING(255),
+            allowNull: false
+        },
         pet_size: {
             type: dataTypes.STRING(255),
             allowNull: false
         },
         pet_type: {
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         pet_age: {
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         breed: {
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         f_image:{
             type: dataTypes.STRING(500),
@@ -47,7 +48,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         color:{
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         description:{
             type: dataTypes.STRING(1000),
