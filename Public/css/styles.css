@@ -5,13 +5,25 @@ celeste :#60E2EB;
 verdeagua:#A8EBDF;
 azul verdoso: #9AC2D2;
 verde:#DBEFEB;------*/
-
+:root {
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+}
 
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0%;
+  padding: 0%;
+  border: 0;
   box-sizing: border-box;
-  font-family: roboto
+  vertical-align: baseline;
+  font-family: roboto;
+
 }
 /***************************************** M O B I L E - H E A D E R  *************************************************/
 header {
@@ -21,6 +33,7 @@ header {
    display:flex;
    justify-content: space-around;
    padding: 10px;
+   
   }
 .logo {
   width: 60px;
@@ -32,7 +45,7 @@ header {
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: #FFD7D7;
+  background-color: #fff;
   align-items: center;
   border: 0.5px solid   #C1C1C1;
   border-radius: 5px;
@@ -94,11 +107,12 @@ header {
 }
 
 .fa-bars {
-  color: #FF3A5E;
+  color: #f9cccc;
   font-size: 30px;
   margin-top: 20px;
   cursor:pointer;
   transition-duration: 1s;
+  text-shadow: 1px 1px 1px #FF3A5E ;
 }
 
 .nav-right {
@@ -109,58 +123,67 @@ header {
 }
 
 .fa-cart-shopping{
-  color: #FF3A5E;
+  color: #f9cccc;
   font-size: 30px;
   margin-top: 20px;
+  text-shadow: 1px 1px 1px #FF3A5E ;
 }
 
 .fa-user {
   visibility: hidden;
   font-size: 30px;
   margin-top: 20px;
-  color: #FF3A5E;
+  color: #f9cccc;
+  text-shadow: 1px 1px 1px #FF3A5E ;
 }
 
 h1 {
   margin: auto;
   font-size: 20px;
-  color: #fff;
+  color: black;
   font-weight: lighter;
 }
 
-.buscador {
-  display: flex;
-  margin: 10px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  justify-content: center;
-}
+
 .barra {
+  
   width: 70%;
   height: 30px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
-  border-color: #FFF;
-  border-style: none;
+  box-shadow: 2px 0px 2px 0px  #FF3A5E;
+
+
+}
+.search{
+  position: relative;
+  background-color: transparent;
+  border-radius: 0%;
+  box-shadow: none;
+  margin: 0%;
+  padding: 0%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 20px;
+  bottom: -4px;
+  left: -4px;
+  
+}
+.search:hover{
+ color:pink
 }
 .fa-magnifying-glass {
   background-color: #FFF;
   padding: 5px;
-  border-style: none;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-width: 0px;
+
+
 }
-.search{
-  
-  background-color: #FFF;
-  padding: 5px;
-  border-style: none;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-	color: inherit;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.form-buscador{
+  text-align: center;
+
 }
+
 
 .avatar{
   display: block;
@@ -181,22 +204,104 @@ h1 {
 
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
 
-.carrousel-conteiner {
+
+
+/*********************************CARROUSEL*****************************/
+
+.div-carrousel-conteiner{
+  font-family: var(--tipo-principal);
+  font-size: 100%;
+  line-height: 1.4em;
+  min-height: 30vh;
+  background-color: var(--blanco);
+  color: var(--negro);
+  -webkit-hyphens: auto;
+          hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
-  width: 100%;
-  margin: auto;
-  padding: 10px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+  margin-left: 5%;
+  margin-right: 5%;
   
 }
+.carrousel-conteiner {
+  width: 30% ;
+  max-width: 140em;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  overflow: hidden;
+  
 
-.carrousel {
-  width: 100%
 }
+
+.carrousel-img {
+  width: calc( 100% / 2 - 2em);
+  max-height: 40vh;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+}
+.big{
+  width: 400%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
+  transition: all 0.5s ease;
+  transform: translateX(0%);
+ 
+}
+.spots{
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+  
+}
+.spot{
+  position: relative;
+  top: -10px;
+  width: 1em;
+  height: 1em;
+  margin: 1em 1em 0;
+  color: var(--negro);
+  transition: all 0.4s ease;
+  border-radius: 1em;
+  background-color: var(--blanco);
+  box-shadow: 3px 3px 3px #FF3A5E ;
+
+}
+.activo {
+  background-color: lightblue;
+
+}
+
 .servicios-main {
   text-align: center;
   padding: 15px;
-  border-top: 1px solid #e8e8e8;
+  border-top: 0.5px solid lightgray;
+  border-bottom: 0.5px solid lightgray;
   width: 100%;
+  background-color: lightblue;
+  margin-bottom: 0%;
+
 }
 .servicios-imagenes-container {
   display: flex;
@@ -204,6 +309,7 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 70%;
+  margin-bottom: 0%;
 }
 
 .card-servicios {
@@ -215,6 +321,9 @@ h1 {
   width: 100%;
   
 }
+.card-servicios:hover{
+  box-shadow:0px 10px 10px rgb(152, 5, 115);
+}
 
 
 .servicios-imagenes{
@@ -225,12 +334,15 @@ h1 {
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
 footer {
-  border-top: 1px solid #C1C1C1 ; 
-  background-color: #FFD7D7;
+background-color: lightgrey;
 }
 
 .footer-section-container {
   padding: 15px;
+  border-top: 1px solid #C1C1C1 ; 
+  background-color: #FFD7D7;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .iconos-contacto {
@@ -281,7 +393,10 @@ footer div section h5 {
 }
 
   /*============== LOGIN =============*/
-
+.main-login{
+  min-height: 70vh;
+  margin-top: -23px;
+}
 
   form.login {
 
@@ -379,7 +494,7 @@ label{
 
 form.register{
   display:flex;
-  background-color: #FFD7D7;
+  background-color: lightgray;
   justify-content:right;
 }
 
@@ -511,9 +626,7 @@ padding: 1%;
 /*********************************************************************************************************************/
 /***************************************** M A I N- MOBILE *************************************************/
 /*********************************************************************************************************************/
-main{
-  margin-bottom: 90px;
-}
+
 
 
 .te-puede-interesar{
@@ -575,6 +688,13 @@ main{
   display: flex;
   justify-content: center;
 }
+.link-descripciones{
+  text-decoration: none;
+  color: #000;
+}
+.caracteristicas{
+  background-color: white;
+}
 .button-div{
   display: flex;
   justify-content: center;
@@ -626,7 +746,14 @@ button {
   font-style: oblique;
   color: rgb(227, 31, 100);
 }
+
+
+
 /*** MOBILE - PRODUCT CREATE **************************/
+/*** MOBILE - PRODUCT CREATE **************************/
+
+
+
 .main-form{
   display:flex;
   justify-content:center;
@@ -640,13 +767,14 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  min-height: 500px;
-  width: 70%;
+  min-height: 300px;
+  width: 90%;
   background-color:  #FFD7D7;
   box-shadow:  5px 5px 5px 3px black;
 }
 .main-link input{
   border: 2px solid #fff;
+  width: 80%;
 }
 
 
@@ -793,7 +921,8 @@ font-size: 15px;
 
   .fa-user {
     visibility:visible;
-    color: #FF3A5E;
+    color: #f9cccc;
+    text-shadow: 1px 1px 1px #FF3A5E ;
   }
 
   .nav-right {
@@ -949,16 +1078,12 @@ font-size: 15px;
   height: 30%;
 }
 
+
  
 }
 /*** desktop MAIN ***/
 @media  (min-width: 1024px){
-  .servicios-main{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    justify-content:space-around;
-  }
+
 
   .servicios-imagenes-container {
     display: flex;
@@ -1055,6 +1180,15 @@ button{
 
 .nombre-prefiles{
     text-decoration: none;
+}
+
+/*** desktop - PRODUCT CREATE **************************/
+.form-product{
+  min-height: 300px;
+  width: 30%;
+}
+.main-form{
+  height:70vh ;
 }
 
 

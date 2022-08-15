@@ -12,7 +12,7 @@ window.onload = ()=>{
       email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
       image:/\.(jpe?g|png|gif|bmp)$/i
    }
-   console.log({inputImage})
+
    inputName.focus()
    
    form.addEventListener("submit", (e) =>{
