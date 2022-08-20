@@ -1,38 +1,50 @@
+//´´´´´´´´´´´´´´ express()     (don´t touch) ***************
 const express = require ('express');
+const cookies = require ('cookie-parser')
+const session = require ('express-session')
+
+//´´´´´´´´´´´´´´ Require's  (don´t touch) ***************
 const app = express();
-const path = require ('path');
-const publicPath = path.resolve (__dirname, './public')
-
-const port= 3030;
-
-
-app.listen (port, () =>
-    console.log('inicia el servidor'));
-
-app.use(express.static(publicPath));
-
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'))   
-});
-
-app.get("/productDetail", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productDetail.html'))   
-});
-
-app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/home.html'))   
-});
+const userLoggedMiddelware = require ('./middlewares/userLogedMiddelware')
+const port = 3030
+const path = require ('path')
+const methodOverride = require('method-override');
 
 
-app.get("/Cart", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/productCart.html'))   
-});
+const mainRouter = require ('./routers/mainRouter')
+const productsRouter = require('./routers/productsRouter');
+const usersRouter = require('./routers/usersRouter');
 
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/login.html'))
+//´´´´´´´´´´´´´´ Middlewares     (don´t touch) ***************
+
+app.use (session ({
+    secret: "mensaje secreto",
+    resave: false,
+    saveUninitialized: false}));
+app.use(cookies());
+app.use (userLoggedMiddelware);
+app.use(express.urlencoded({ extended: false}));
+app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.json());
+app.use (methodOverride('_method'));
+
+//´´´´´´´´´´´´´´ Template Engine     (don´t touch) ***************
+app.set('view engine','ejs');
+app.set('views', path.resolve(__dirname, 'views'));
+
+
+
+
+
+
+app.listen ( port, () => {
+    console.log ("servidor funcionando")
 })
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, './views/register.html'))
-})
+app.use("/", mainRouter)
+
+
+app.use('/products', productsRouter);
+
+app.use('/users', usersRouter);

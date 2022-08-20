@@ -1,0 +1,37 @@
+<header>
+
+    <div class = "top-header">
+       
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <div class = "logo-container-buscador">
+            <div class = "logo-container">
+                <a href="/"><img class="logo" src="/img/BeethovenSpaLogo.png"></a>
+                <h1>Beethoven Spa</h1>
+            </div>
+            <div class="buscador">
+                <form action="/" method="POST" enctype="multipart/form-data">
+                <input name ="searchProducts" class="barra" type="search" placeholder="Buscar productos y/o servicios">
+                <button type="submit" class="send-buttom"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class = "nav-right">
+            <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <% if (locals.isLogged) { %>
+                <a href="/users/profile"><img src="/img/users/<%= locals.userLogged.image %>" width="70" style="border-radius: 100%;"></a>
+                <a  href="/users/logout">Logout</a>               
+            <% } else {%>
+
+                <a href="/users/login"><i class="fa-regular fa-user"></i></a>
+            <% } %>
+        </div>
+
+    </div>
+
+    
+</header>

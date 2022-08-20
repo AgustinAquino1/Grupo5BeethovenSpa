@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head')%>
+
+<body>
+
+    <%- include ('partials/header')%>
+
+
+        <main>
+
+            <div class = "main-section-container">
+                
+                <div class = "carrousel-conteiner">
+                    <img class="carrousel" src="/img/products/pelocorto.jpg">
+                </div>
+                
+                <section class = "servicios-main">
+                    <h3>Nuestros Servicios</h3>
+                    <div class = "servicios-imagenes-container">
+
+
+                <% products.forEach(product => { %>
+                    
+                    <article class="card-servicios">
+                        <a href="/products/detail/<%= product.id %> ">
+                            <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones"><%= product.name %></h3>
+                            </div>
+                        </a>
+                    </article>
+                <%}) %>
+
+                    </div>
+                </section>
+
+                <section class = "servicios-main">
+                    <h3>Paquetes Especiales</h3>
+                    <div class = "servicios-imagenes-container">
+
+                        <% products.forEach(product => { %>
+                    
+                            <article class="card-servicios">
+                                <a href="/products/detail/<%= product.id %> ">
+                                    <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
+                                    <div class="caracteristicas">
+                                        <i class="fa-solid fa-paw"></i>
+                                        <h3 class="descripciones"><%= product.name %></h3>
+                                    </div>
+                                </a>
+                            </article>
+                        <%}) %>
+
+
+
+
+                    </div>
+                </section>
+
+                
+
+
+            </div>
+        </main>
+
+        <%- include ('partials/footer')%>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head')%>
+
+<body>
+
+    <%- include ('partials/header')%>
+
+
+        <main>
+
+
+                <section class = "servicios-main">
+
+                    <div class = "servicios-imagenes-container">
+
+
+
+
+
+                <% products.forEach(product => { %>
+                    
+                    <article class="card-servicios">
+                        <a href="/products/detail/<%= product.id %> ">
+                            <img class="servicios-imagenes" src="/img/products/<%= product.f_image %>">
+                            <div class="caracteristicas">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="descripciones"><%= product.name %></h3>
+                            </div>
+                        </a>
+                    </article>
+                <%}) %>
+
+                    </div>
+                </section>
+
+
+
+            </div>
+        </main>
+
+        <%- include ('partials/footer')%>
+
+</body>
+</html>
