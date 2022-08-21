@@ -15,3 +15,8 @@ Tercer sprint
 
 Recibimos nuevos compañeros al equipo
 
+septimo sprint 
+
+Nos organizamos para avanzar con los sprint,
+ver que nos falta hacer de los anteriores  y del nuevo 
+
