@@ -13,10 +13,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
-        category: {
-            type: dataTypes.STRING(255),
-            allowNull: false
-        },
+        category_id: dataTypes.BIGINT(10).UNSIGNED,
         pet_size: {
             type: dataTypes.STRING(255),
             allowNull: false
@@ -32,19 +29,15 @@ module.exports = (sequelize, dataTypes) => {
         },
         f_image:{
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         image:{
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         image1:{
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         image2:{
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         color:{
             type: dataTypes.STRING(500),
@@ -76,13 +69,10 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = function (models) {
 
-        Product.belongsToMany(models.User, {
+        Product.belongsTo(models.Category, {
             
-            as: "users",
-            foreignKey: "product_id",
-            through: "order",
-            otherKey: "user_id",
-            timestamps: false
+            as: "category",
+            foreignKey: "category_id",
         })
     }
 

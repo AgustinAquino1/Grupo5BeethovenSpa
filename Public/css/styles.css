@@ -36,7 +36,13 @@ header {
    
   }
 .logo {
-  width: 60px;
+  width: 70px;
+  box-shadow: 1px 1px 20px 1px pink inset;
+  border-radius: 20px;
+
+  }
+  .link-logo{
+    margin-left: 10px;
   }
 .logo-container-buscador{
     width: 70%;
@@ -47,7 +53,7 @@ header {
   height: 60px;
   background-color: #fff;
   align-items: center;
-  border: 0.5px solid   #C1C1C1;
+  border: 0.5px solid   #FFD7D7;
   border-radius: 5px;
 }
 /***********************MENÚ HAMBURGUESA**************/
@@ -83,6 +89,10 @@ header {
   margin-top: 40px;
   background-color: white;
   position: fixed;
+  padding-right: 10px;
+  padding-top: 10px;
+  border-right: 0.5px solid   #FFD7D7 ;
+  border-top: 0.5px solid   #FFD7D7;
 }
 
 
@@ -107,6 +117,7 @@ header {
 }
 
 .fa-bars {
+  position: relative;
   color: #f9cccc;
   font-size: 30px;
   margin-top: 20px;
@@ -203,33 +214,26 @@ h1 {
 }
 
 /***************************************** M O B I L E - M A I N - H O M E *************************************************/
+.home-main{
+  display: flex;
+  align-items: center;
+  line-height: 1.4em;
+  min-height: 100vh;
+  background-color: pink;
 
+}
 
 
 /*********************************CARROUSEL*****************************/
 
-.div-carrousel-conteiner{
-  font-family: var(--tipo-principal);
-  font-size: 100%;
+.div-carousel-conteiner{
   line-height: 1.4em;
-  min-height: 30vh;
-  background-color: var(--blanco);
-  color: var(--negro);
-  -webkit-hyphens: auto;
-          hyphens: auto;
-  font-smooth: always;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+  min-height: 10vh;
   background-color: pink;
-  margin-left: 5%;
-  margin-right: 5%;
+
   
 }
-.carrousel-conteiner {
+.carousel-conteiner {
   width: 30% ;
   max-width: 140em;
   color: var(--negro);
@@ -241,7 +245,7 @@ h1 {
 
 }
 
-.carrousel-img {
+.carousel-img {
   width: calc( 100% / 2 - 2em);
   max-height: 40vh;
   color: var(--negro);
@@ -292,23 +296,20 @@ h1 {
   background-color: lightblue;
 
 }
+.home-main{
 
+}
 .servicios-main {
   text-align: center;
-  padding: 15px;
-  border-top: 0.5px solid lightgray;
-  border-bottom: 0.5px solid lightgray;
-  width: 100%;
+  padding: 40px;
   background-color: lightblue;
-  margin-bottom: 0%;
-
+  box-shadow: 1px 1px 20px 1px black ;
 }
 .servicios-imagenes-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 70%;
   margin-bottom: 0%;
 }
 
@@ -333,13 +334,10 @@ h1 {
 
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
-footer {
-background-color: lightgrey;
-}
+
 
 .footer-section-container {
   padding: 15px;
-  border-top: 1px solid #C1C1C1 ; 
   background-color: #FFD7D7;
   margin-left: 5%;
   margin-right: 5%;

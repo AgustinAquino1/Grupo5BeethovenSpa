@@ -30,11 +30,11 @@
                </div>
    
                <div class="main-link ">
-                   <input type="text" name="category" placeholder="Categoría" class="input category"
-                   value="<%= locals.oldData ? oldData.category : null %>">
+                   <input type="text" name="category_id" placeholder="Categoría" class="input category"
+                   value="<%= locals.oldData ? oldData.category_id : null %>">
                    <div class="errors">
-                      <% if (locals.errors && errors.category) { %>
-                       <%= errors.category.msg %> 
+                      <% if (locals.errors && errors.category_id) { %>
+                       <%= errors.category_id.msg %> 
            
                        <% } %>
            
@@ -226,5 +226,6 @@
 
         <%- include ('partials/footer')%>
         <script type="text/javascript" src="/js/productCreate.js"></script>
+        
 </body>
 </html>

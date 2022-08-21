@@ -16,39 +16,58 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `orders`
+-- Table structure for table `categories`
 --
 
 DROP DATABASE IF EXISTS beethoven_db;
 CREATE DATABASE beethoven_db;
 USE beethoven_db;
 
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `orders` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE `categories` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `user_id` int(10) unsigned NOT NULL,
-  `product_id` int(10) unsigned NOT NULL,
-  `state` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `orders_user_id_foreign` (`user_id`),
-  KEY `orders_product_id_foreign` (`product_id`),
-  CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `orders_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=149 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `category_name` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4	 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `orders`
+-- Dumping data for table `categories`
 --
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,NULL,NULL,20,1,'inProcess'),(2,NULL,NULL,20,2,'canceled'),(3,NULL,NULL,20,3,'completed'),(4,NULL,NULL,18,4,'stopped'),(5,NULL,NULL,15,5,'inProcess'),(6,NULL,NULL,12,1,'stopped'),(7,NULL,NULL,14,2,'canceled'),(8,NULL,NULL,8,3,'completed'),(9,NULL,NULL,7,4,'completed'),(10,NULL,NULL,6,5,'completed');
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,NULL,NULL,'accesorios'),(2,NULL,NULL,'ropa'),(3,NULL,NULL,'gourmet'),(4,NULL,NULL,'spa');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+--
+-- Table structure for table `permissions`
+--
+
+DROP TABLE IF EXISTS `permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `permissions` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp null default null,
+  `updated_at` timestamp null default null,
+  `permission_name` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permissions`
+--
+
+LOCK TABLES `permissions` WRITE;
+/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
+INSERT INTO `permissions` VALUES (1,null,null,"admin"),(2,null,null,"loged"),(3,null,null,"visitor");
+/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -62,17 +81,20 @@ CREATE TABLE `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `surname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `birth_date` date NOT NULL,
+  `birth` date default null,
   `adress` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   `pass2` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `userType` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `permission_id` int(10) unsigned NULL DEFAULT NULL,
   `avatar` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  
+  PRIMARY KEY (`id`),
+  KEY `users_permission_id_foreign` (`permission_id`),
+  CONSTRAINT `users_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,7 +103,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Zsazsa','Cossins','2/10/2022','4 Monica Lane','zcossins0@alibaba.com',12345678,12345678,'client',null,null,null),(2,'Avie','Cotgrave','1/25/2022','5500 Melrose Plaza','acotgrave1@homestead.com',12345678,12345678,'client',null,null,null),(3,'Carina','Sallans','7/8/2022','411 Crescent Oaks Avenue','csallans2@geocities.jp',12345678,12345678,'guest',null,null,null),(4,'Freeland','Faustin','5/19/2022','1 Old Gate Lane','ffaustin3@tinyurl.com',12345678,12345678,'guest',null,null,null);
+INSERT INTO `users` VALUES (1,'Pablo','Mccartney','2/10/2022','4 Monica Lane','Pablo@gmail.com',12345678,12345678,1,null,null,null),(2,'Ricardo','Starkey','2/10/2022','4 Monica Lane','Ricardo@gmail.com',12345678,12345678,1,null,null,null),(3,'Juan','Lennon','2/10/2022','4 Monica Lane','Juan@gmail.com',12345678,12345678,1,null,null,null),(4,'Jorge','Harrison','2/10/2022','4 Monica Lane','Jorge@gmail.com',12345678,12345678,1,null,null,null),(5,'Mercedes','Sosa','2/10/2022','4 Monica Lane','Mercedes@gmail.com',12345678,12345678,2,null,null,null),(6,'Julieta','Venegas','2/10/2022','4 Monica Lane','Julieta@gmail.com',12345678,12345678,2,null,null,null),(7,'Fabiana','Cantilo','2/10/2022','4 Monica Lane','Fabiana@gmail.com',12345678,12345678,2,null,null,null),(8,'Rogelio','Waters','2/10/2022','4 Monica Lane','Rogelio@gmail.com',12345678,12345678,2,null,null,null),(9,'Natalia','Lafourcade','2/10/2022','4 Monica Lane','Natalia@gmail.com',12345678,12345678,2,null,null,null),(10,'Carlos','Garcia','2/10/2022','4 Monica Lane','Carlos@gmail.com',12345678,12345678,2,null,null,null),(11,'Luis','Spinetta','2/10/2022','4 Monica Lane','Luis@gmail.com',12345678,12345678,2,null,null,null),(12,'Rodrigo','Bueno','2/10/2022','4 Monica Lane','Rodrigo@gmail.com',12345678,12345678,2,null,null,null),(13,'Diego','Capusotto','2/10/2022','4 Monica Lane','Diego@gmail.com',12345678,12345678,2,null,null,null),(14,'Emilia','Clarke','2/10/2022','4 Monica Lane','Emilia@gmail.com',12345678,12345678,2,null,null,null),(15,'Guido','Kaczka','2/10/2022','4 Monica Lane','Guido@gmail.com',12345678,12345678,2,null,null,null),(16,'Mirtha','Legrand','2/10/2022','4 Monica Lane','Mirtha@gmail.com',12345678,12345678,2,null,null,null),(17,'Moria','Casán','2/10/2022','4 Monica Lane','Moria@gmail.com',12345678,12345678,2,null,null,null),(18,'María Elena','Walsh','2/10/2022','4 Monica Lane','MariaElena@gmail.com',12345678,12345678,2,null,null,null),(19,'Jennifer','Aniston','2/10/2022','4 Monica Lane','Jennifer@gmail.com',12345678,12345678,2,null,null,null),(20,'Esteban','Carell','2/10/2022','4 Monica Lane','Esteban@gmail.com',12345678,12345678,2,null,null,null);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,6 +117,7 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `category_id` int(10) unsigned NOT NULL,
   `pet_size` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pet_type` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `pet_age` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
@@ -105,13 +128,16 @@ CREATE TABLE `products` (
   `image2` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `color` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `description` varchar(1000) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `price` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `stock` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `price` int(10) COLLATE utf8_unicode_ci NOT NULL,
+  `stock` int(10) COLLATE utf8_unicode_ci NOT NULL,
   `brand` varchar(500) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  
+  PRIMARY KEY (`id`),
+  KEY `products_category_id_foreign` (`category_id`),
+  CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +146,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'BUZO','pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null);
+INSERT INTO `products` VALUES (1,'BUZO AMARILLO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(2,'CEPILLO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(3,'COLLAR',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(4,'EXPERIENCIA SPA COMPLETA',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(5,'MASAJAE DESCONTRACTURADOR',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(6,'PELAJE RENOVADO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(7,'MAÑANA DE CAMPO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(8,'EXPERIENCIA GOURMET COMPLETA',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(9,'ALIMENTO FRACCIONADO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(10,'PLATO GOURMET',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(11,'EXPERIENCIA SPA COMPLETA',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(12,'MASAJAE DESCONTRACTURADOR',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(13,'PELAJE RENOVADO',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(14,'MAÑANA DE CAMPO',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(15,'EXPERIENCIA GOURMET COMPLETA',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(16,'ALIMENTO FRACCIONADO',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(17,'PLATO GOURMET',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(18,'COLLAR',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(19,'COLLAR',1,'pequeño','gato','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(20,'BUZO AMARILLO',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(21,'MEDIAS',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(22,'MEDIAS',1,'mediano','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(23,'BUZO AZUL',1,'grande','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(24,'MEDIAS',1,'mediano','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(25,'COLLAR',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(26,'COLLAR',1,'mediano','gato','adulto','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(27,'PRETAL',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(28,'CORREA LARGA',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(29,'CORREA MEDIANA',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null),(30,'CORREA CORTA',1,'pequeño','perro','cachorro','caniche',null,null,null,null,null,null,2000,1000,null,null,null);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

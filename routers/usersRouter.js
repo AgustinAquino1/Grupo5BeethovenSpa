@@ -29,7 +29,7 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL USERS  READ***/ 
-router.get('/', authMiddleware, usersController.index); 
+router.get('/'/*, authMiddleware*/, usersController.index); 
 
 
 /*** CREATE ONE USER ***/ 

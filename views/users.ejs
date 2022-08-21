@@ -25,6 +25,14 @@
                             <div class="perfil-nombre">
                                 <i class="fa-solid fa-paw"></i>
                                 <h3 class="nombre-prefiles"><%= user.name %></h3>
+                                <% permissions.forEach(permission => { %>
+                                    
+                                    <h3 class="descripciones"><%= user.permission_id == permission.id ? permission.permission_name : ""%></h3>
+                                       
+                    
+                                    
+                                 
+                                <% }) %>
                             </div>
                         </a>
                     </article>

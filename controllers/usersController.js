@@ -5,6 +5,7 @@ const db = require('../data/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const Users = db.User;
+const Permissions = db.Permission;
 
 
 
@@ -18,12 +19,13 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 const controller = {
-	index:(req,res) => {
-		db.User.findAll()
-		.then(users => {
-			res.render('users', {users})
-		})
-
+	index: (req, res) => {
+		let promiseUser = Users.findAll()
+		let promisePermission= Permissions.findAll()
+	 
+		 Promise
+		 .all([promiseUser, promisePermission])
+		 .then(([users, permissions]) => res.render("users", {users, permissions}))
 	}
 	,
 
@@ -55,7 +57,9 @@ const controller = {
         
 
 		if(resultValidation.errors.length > 0){
+			console.log("🚀 ~ resultValidation", resultValidation)
 			return res.render('register', {
+				
 				errors: resultValidation.mapped(),
 				oldData: req.body
 			})
@@ -78,7 +82,8 @@ const controller = {
 				...req.body,
 				avatar: avatar,
 				pass: bcryptjs.hashSync(req.body.pass, 10),
-				pass2: bcryptjs.hashSync(req.body.pass2, 10)
+				pass2: bcryptjs.hashSync(req.body.pass2, 10),
+				permission_id: req.body.permission_id ? req.body.permission_id : "2" 
 				 
 				 })
 		 
@@ -160,6 +165,7 @@ const controller = {
 				})
 				
 				.then(() => res.redirect("/users/login"))
+				.catch((error)=> console.log(error) )
 			}
 			
 		})

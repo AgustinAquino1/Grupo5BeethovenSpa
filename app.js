@@ -14,6 +14,8 @@ const methodOverride = require('method-override');
 const mainRouter = require ('./routers/mainRouter')
 const productsRouter = require('./routers/productsRouter');
 const usersRouter = require('./routers/usersRouter');
+const apiProductsRouter = require('./routers/apiRouters/apiProductsRouter')
+const apiUsersRouter = require('./routers/apiRouters/apiUsersRouter')
 
 
 //´´´´´´´´´´´´´´ Middlewares     (don´t touch) ***************
@@ -48,3 +50,7 @@ app.use("/", mainRouter)
 app.use('/products', productsRouter);
 
 app.use('/users', usersRouter);
+
+app.use('/api', apiProductsRouter)
+
+app.use('/api', apiUsersRouter);

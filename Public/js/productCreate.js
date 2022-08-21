@@ -19,7 +19,7 @@ window.onload = ()=>{
 
     inputName.focus()
     
-    /*form.addEventListener("submit", (e) =>{
+    form.addEventListener("submit", (e) =>{
       let emptyElements = []
       for (let i = 0; i < formElements.length; i++){
          let input =  formElements[i] 
@@ -81,7 +81,7 @@ window.onload = ()=>{
          }
          input.addEventListener('keyup', validations)
        input.addEventListener('blur', validations)
-       }*/
+       }
 
 
        for (let i = 0; i < paws.length; i++){
