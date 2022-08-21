@@ -43,3 +43,11 @@ Miercoles 03/08/2022
 
 Empezamos a arreglar el css y las vistas del proyecto.
 
+
+Miercoles 17/08
+
+Preparamos listado de todas las cosas que aún nos quedan pendientes en el projecto y organizamos proximo encuentro para trabajarlos juntos.
+
+Sabado 20/08
+
+Nos reunimos y estuvimos trabajando en la base de datos
