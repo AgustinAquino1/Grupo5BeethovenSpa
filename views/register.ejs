@@ -22,7 +22,6 @@
     <div class="login-information">
         <div class="title-information"> <h3>Registrate</h3></div>
         <div class="text-validation"> <p>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</p></div>
-<<<<<<< HEAD
 
 
 
@@ -36,7 +35,6 @@
           
            <% if (locals.errors && errors.name) { %>
             <%= errors.name.msg %> 
-
             <% } %>
 
          </div>
@@ -54,7 +52,6 @@
          <div class="errors">
           <% if (locals.errors && errors.surname) { %>
            <%= errors.surname.msg %> 
-
            <% } %>
 
         </div>
@@ -94,7 +91,6 @@
          <div class="errors">
           <% if (locals.errors && errors.adress) { %>
            <%= errors.adress.msg %> 
-
            <% } %>
 
          </div>
@@ -110,94 +106,18 @@
           <div class="errors">
             <% if (locals.errors && errors.email) { %>
              <%= errors.email.msg %> 
-
              <% } %>
 
-=======
-
-
-
-       <div class="main-link-register">
-         <input type="text" 
-         name="name" 
-         placeholder="Nombre"
-         value="<%= locals.oldData ? oldData.name : null %>">
-         <div class="errors">
-           <% if (locals.errors && errors.name) { %>
-            <%= errors.name.msg %> 
-
-            <% } %>
-
-         </div>
-        </div>
-        
-        
-        <div class="main-link-register">
-         <input type="text" 
-         name="surname" 
-         placeholder="Apellido" 
-         value="<%= locals.oldData ? oldData.surname : null %>">
-         <div class="errors">
-          <% if (locals.errors && errors.surname) { %>
-           <%= errors.surname.msg %> 
-
-           <% } %>
-
-        </div>
-       </div>
- 
-       <div class="main-link-register">
-           <input type="file" name="image" placeholder="imagen">
-       </div>   
-       
-       <div class="main-link-register">
-        <label for="month">Fecha de Nacimiento:</label>
-        <input type="date" name="birth-date">         
-       </div>
- 
- 
-        <div class="main-link-register">
-         <input type="text" 
-         name="domicilio" 
-         placeholder="Domicilio"
-         value="<%= locals.oldData ? oldData.domicilio : null %>">
-         <div class="errors">
-          <% if (locals.errors && errors.domicilio) { %>
-           <%= errors.domicilio.msg %> 
-
-           <% } %>
-
-         </div>
-        </div>
- 
- 
-        <div class="main-link-register">
-          <input type="text" 
-          name="email" 
-          placeholder="Email"
-          value="<%= locals.oldData ? oldData.email : null %>">
-          <div class="errors">
-            <% if (locals.errors && errors.email) { %>
-             <%= errors.email.msg %> 
-
-             <% } %>
-
->>>>>>> main
           </div>
         </div>
  
 
  
         <div class="main-link-register">
-<<<<<<< HEAD
           <input class = "input pass" type="password" name="pass"  placeholder="Contraseña">
-=======
-          <input type="password" name="pass"  placeholder="Contraseña">
->>>>>>> main
           <div class="errors">
             <% if (locals.errors && errors.pass) { %>
              <%= errors.pass.msg %> 
-
              <% } %>
 
           </div>
@@ -205,32 +125,20 @@
  
  
         <div class="main-link-register">
-<<<<<<< HEAD
            <input class = "input" type="password" name="pass2"   placeholder="Confirmar contraseña">
-=======
-           <input type="password" name="pass2"   placeholder="Confirmar contraseña">
->>>>>>> main
            <div class="errors">
             <% if (locals.errors && errors.pass2) { %>
              <%= errors.pass2.msg %> 
-
              <% } %>
         </div>
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> main
     </div>
             
     <div class="container">
       <div class="subscription">
-<<<<<<< HEAD
         <input class = "subscription" type="checkbox" name="subscription" value="1">
-=======
-        <input type="checkbox" name="subscription" value="1">
->>>>>>> main
         <label for="subscription">Suscribirse a nuevas ofertas </label>
       </div>
         <button type="submit" class="send-buttom-register">  Registrarse </button>
@@ -238,12 +146,6 @@
 </div>
 </form>
 
-<<<<<<< HEAD
-=======
-
-    
-    
->>>>>>> main
 </main>
 <%- include ('partials/footer')%>
 

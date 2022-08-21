@@ -74,7 +74,6 @@ const controller = {
 	
 			}
 			else {
-<<<<<<< HEAD
 				avatar = 'img-principal.png'
 			}
 
@@ -94,35 +93,8 @@ const controller = {
 				 res.redirect("/users/login")
 					 
 				 }) 
-=======
-				image = 'img-principal.png'
-			}
-			
-			let newUser = {
-			id: users[users.length - 1].id + 1,
-			...req.body,
-			image: image,
-			pass: bcryptjs.hashSync(req.body.pass, 10),
-            pass2: bcryptjs.hashSync(req.body.pass2, 10)
-		
-			}
-
-        
-	
-	
-	
-			users.push(newUser)
-	
-			fs.writeFileSync(usersFilePath, JSON.stringify(users));
-			
-	
-			res.redirect('/users/login')
->>>>>>> main
 
 		}
-		let userCreated = User.create(newUser);
-
-		return res.redirect('/user/login');
 
 	},
 
@@ -140,19 +112,12 @@ const controller = {
 		.then(user => {
 			if(user){
 
-<<<<<<< HEAD
 				res.render('userEdit', {user})
 			}
 			else{
 				res.redirect ('/')
 			}
 		})
-=======
-		let cookies = req.params.id
-		let user = users.find (user => user.id ==id)
-
-		res.render('userEdit', {user});
->>>>>>> main
 	},
 // Update - Method to update
 	update: (req, res) => {

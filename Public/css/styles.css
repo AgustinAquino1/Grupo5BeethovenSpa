@@ -296,9 +296,7 @@ h1 {
   background-color: lightblue;
 
 }
-.home-main{
 
-}
 .servicios-main {
   text-align: center;
   padding: 40px;
@@ -492,11 +490,7 @@ label{
 
 form.register{
   display:flex;
-<<<<<<< HEAD
   background-color: lightgray;
-=======
-  background-color: #FFD7D7;
->>>>>>> main
   justify-content:right;
 }
 
@@ -557,22 +551,6 @@ padding: 1%;
 }
 .error{
   color: red;
-}
-
-.send-buttom-register{
-  margin:20px;
-  color: #090909;
-  padding: 5px 70px 5px 70px;
-  font-size: 14px;
-  background: #FFD7D7;
-  border: 2px solid black;
-  transition: all .3s #FFD7D7;
-
-}
-
-.send-buttom-register:hover{
-  background-color: #FFD7D7;
-  color: black;
 }
 
 .send-buttom-register{
@@ -1211,7 +1189,3 @@ button{
 
 
 }
-
-
-
-
