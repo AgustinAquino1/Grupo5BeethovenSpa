@@ -17,9 +17,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(500),
             allowNull: false
         },
-        birth_date: {
+        birth: {
             type: dataTypes.STRING(500),
-            allowNull: false
         },
         adress: {
             type: dataTypes.STRING(500),
@@ -37,10 +36,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(500),
             allowNull: false
         },
-        userType:{
-            type: dataTypes.STRING(500),
-            allowNull: true
-        },
+        permission_id: dataTypes.BIGINT(10).UNSIGNED,
         avatar:{
             type: dataTypes.STRING(500),
             allowNull: false
@@ -56,17 +52,11 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = function (models) {
 
-        User.belongsToMany(models.Product, {
-            
-            as: "products",
-            foreignKey: "user_id",
-            through: "order",
-            otherKey: "product_id",
-            timestamps: false
+        User.belongsTo(models.Permission, {
+            as: "permission",
+            foreignKey: "permission_id",
         })
     }
-
-
 
     return User
 };

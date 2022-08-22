@@ -8,28 +8,38 @@
     <%- include ('partials/header')%>
 
 
-        <main>
+        <main class="user-main">
 
 
-                <section class = "servicios-main">
 
-                    <div class = "servicios-imagenes-container">
+                    <div class = "perfiles-container">
 
                 <% users.forEach(user => { %>
                     
-                    <article class="card-servicios">
+                    <article class="card-users">
                         <a href="/users/profile/<%= user.id %> ">
-                            <img class="servicios-imagenes" src="/img/users/<%= user.avatar %>">
-                            <div class="caracteristicas">
+                            <div class="div-imagenes-perfiles">
+
+                                <img class="imagenes-perfiles" src="/img/users/<%= user.avatar %>">
+                            </div>
+                            <div class="perfil-nombre">
                                 <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones"><%= user.name %></h3>
+                                <h3 class="nombre-prefiles"><%= user.name %></h3>
+                                <% permissions.forEach(permission => { %>
+                                    
+                                    <h3 class="descripciones"><%= user.permission_id == permission.id ? permission.permission_name : ""%></h3>
+                                       
+                    
+                                    
+                                 
+                                <% }) %>
                             </div>
                         </a>
                     </article>
                 <%}) %>
 
                     </div>
-                </section>
+
 
 
 

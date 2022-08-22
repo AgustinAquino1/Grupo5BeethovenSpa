@@ -27,52 +27,70 @@
 
        <div class="main-link-register">
          <input type="text" 
+         class = "input name"
          name="name" 
          placeholder="Nombre"
          value="<%= locals.oldData ? oldData.name : null %>">
          <div class="errors">
+          
            <% if (locals.errors && errors.name) { %>
             <%= errors.name.msg %> 
-
             <% } %>
 
          </div>
         </div>
+
+        
         
         
         <div class="main-link-register">
          <input type="text" 
+         class = "input surname"
          name="surname" 
          placeholder="Apellido" 
          value="<%= locals.oldData ? oldData.surname : null %>">
          <div class="errors">
           <% if (locals.errors && errors.surname) { %>
            <%= errors.surname.msg %> 
-
            <% } %>
 
         </div>
        </div>
  
-       <div class="main-link-register">
-        <input type="file" name="avatar" placeholder="Sube una foto para tu perfil">
+        <div class="main-link-register">
+          <input type="file" 
+          class = "input imageAvatar"
+          name="avatar" 
+          placeholder="Sube una foto para tu perfil">
+          <div class="errors">
+            <% if (locals.errors && errors.avatar) { %>
+             <%= errors.avatar.msg %> 
+  
+             <% } %>
+  
+           </div>
+          
     </div>
        
        <div class="main-link-register">
         <label for="month">Fecha de Nacimiento:</label>
-        <input type="date" name="birth_date">         
+        <input class = "input birthDate" type="date" name="birth">         
+       </div>
+       <div class="errors">
+
+
        </div>
  
  
         <div class="main-link-register">
          <input type="text" 
+         class = "input adress"
          name="adress" 
          placeholder="Domicilio"
-         value="<%= locals.oldData ? oldData.domicilio : null %>">
+         value="<%= locals.oldData ? oldData.adress : null %>">
          <div class="errors">
-          <% if (locals.errors && errors.domicilio) { %>
-           <%= errors.domicilio.msg %> 
-
+          <% if (locals.errors && errors.adress) { %>
+           <%= errors.adress.msg %> 
            <% } %>
 
          </div>
@@ -81,13 +99,13 @@
  
         <div class="main-link-register">
           <input type="text" 
+          class = "input email"
           name="email" 
           placeholder="Email"
           value="<%= locals.oldData ? oldData.email : null %>">
           <div class="errors">
             <% if (locals.errors && errors.email) { %>
              <%= errors.email.msg %> 
-
              <% } %>
 
           </div>
@@ -96,11 +114,10 @@
 
  
         <div class="main-link-register">
-          <input type="password" name="pass"  placeholder="Contraseña">
+          <input class = "input pass" type="password" name="pass"  placeholder="Contraseña">
           <div class="errors">
             <% if (locals.errors && errors.pass) { %>
              <%= errors.pass.msg %> 
-
              <% } %>
 
           </div>
@@ -108,11 +125,10 @@
  
  
         <div class="main-link-register">
-           <input type="password" name="pass2"   placeholder="Confirmar contraseña">
+           <input class = "input" type="password" name="pass2"   placeholder="Confirmar contraseña">
            <div class="errors">
             <% if (locals.errors && errors.pass2) { %>
              <%= errors.pass2.msg %> 
-
              <% } %>
         </div>
 
@@ -122,7 +138,7 @@
             
     <div class="container">
       <div class="subscription">
-        <input type="checkbox" name="subscription" value="1">
+        <input class = "subscription" type="checkbox" name="subscription" value="1">
         <label for="subscription">Suscribirse a nuevas ofertas </label>
       </div>
         <button type="submit" class="send-buttom-register">  Registrarse </button>
@@ -130,14 +146,12 @@
 </div>
 </form>
 
-
-    
-    
 </main>
+<%- include ('partials/footer')%>
 
-    </body>
 
+<script type="text/javascript" src="/js/register.js"></script>
+</body>
 
-        <%- include ('partials/footer')%>
 
 </html>

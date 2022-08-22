@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const validations = require('../middlewares/validations')
+const validations = require('../middlewares/userValidations')
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
@@ -29,7 +29,7 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL USERS  READ***/ 
-router.get('/', authMiddleware, usersController.index); 
+router.get('/'/*, authMiddleware*/, usersController.index); 
 
 
 /*** CREATE ONE USER ***/ 

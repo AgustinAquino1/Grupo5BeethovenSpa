@@ -32,3 +32,25 @@ domingo 03/07/2022
 
 Arreglamos problemas al visualizar los usuarios los cuales al sobrepasar cierta cantidad se dejan de ver.
 Agregamos botones que nos lleven a la vista e usuarios y a la vista de productos.
+<<<<<<< HEAD
+=======
+
+
+Miercoles  27/07/2022
+
+Empezamos a armar las validaciones del front end. Nos faltan terminar de escribirlas y organizarlas.
+Las validaciones del back end ya las tenemos.
+
+Miercoles 03/08/2022
+
+Empezamos a arreglar el css y las vistas del proyecto.
+
+
+Miercoles 17/08
+
+Preparamos listado de todas las cosas que aún nos quedan pendientes en el projecto y organizamos proximo encuentro para trabajarlos juntos.
+
+Sabado 20/08
+
+Nos reunimos y estuvimos trabajando en la base de datos
+>>>>>>> main

@@ -1,20 +1,40 @@
 <header>
 
     <div class = "top-header">
-       
-        <div class="burger">
-            <i class="fas fa-bars"></i>
-        </div>
+        <div class="menu">
+           <i class="fas fa-bars"></i>
+           <div class="burger">
+               <ul class="menu-items">
+                <li class="menu-item">
+                    <a  href="/" class="menu-link">HOME</a>
+                </li>
+                <li class="menu-item">
+                    <a  href="#" class="menu-link">ROPA</a>
+                </li>
+                <li class="menu-item">
+                    <a  href="#" class="menu-link">ACCESORIOS</a>
+                </li>
+                <li class="menu-item">
+                    <a  href="#" class="menu-link">EXPERIENCIA SPA</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"  class="menu-link">EXPERIENCIA GOURMET</a>
+                </li>                            
+            </ul>
+           </div>
+
+
+       </div>
 
         <div class = "logo-container-buscador">
             <div class = "logo-container">
-                <a href="/"><img class="logo" src="/img/BeethovenSpaLogo.png"></a>
-                <h1>Beethoven Spa</h1>
+                <a class="link-logo" href="/"><img class="logo" src="/img/BeethovenSpaLogo.png"></a>
+                <h1><b>Beethoven Spa</b></h1>
             </div>
             <div class="buscador">
-                <form action="/" method="POST" enctype="multipart/form-data">
+                <form action="/" method="POST" class="form-buscador" enctype="multipart/form-data">
                 <input name ="searchProducts" class="barra" type="search" placeholder="Buscar productos y/o servicios">
-                <button type="submit" class="send-buttom"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
             </div>
 
@@ -23,8 +43,8 @@
         <div class = "nav-right">
             <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <% if (locals.isLogged) { %>
-                <a href="/users/profile"><img src="/img/users/<%= locals.userLogged.image %>" width="70" style="border-radius: 100%;"></a>
-                <a  href="/users/logout">Logout</a>               
+                <a href="/users/profile/<%= locals.userLogged.name %>"><img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar"></a>
+                <a id="logout"  href="/users/logout">Logout</a>               
             <% } else {%>
 
                 <a href="/users/login"><i class="fa-regular fa-user"></i></a>
@@ -32,6 +52,6 @@
         </div>
 
     </div>
-
+    
     
 </header>

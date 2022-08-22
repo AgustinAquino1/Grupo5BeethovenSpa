@@ -4,10 +4,11 @@ const { validationResult } = require('express-validator');
 const db = require('../data/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
+const Products = db.Product;
+const Categories = db.Category;
 
 
 const User = db.User;
-const Products = db.Product;
 
 
 
@@ -17,10 +18,12 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		Products.findAll()
-		.then(products => {
-			res.render('products', {products})
-		})
+		let promiseProduct = Products.findAll()
+		let promiseCategory= Categories.findAll()
+	 
+		 Promise
+		 .all([promiseProduct, promiseCategory])
+		 .then(([products, categories]) => res.render("products", {products, categories}))
 	},
 	
 
@@ -47,6 +50,19 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 
+		const resultValidation = validationResult(req);
+        
+		
+		if(resultValidation.errors.length > 0){
+			console.log("🚀 ~ resultValidation", resultValidation)
+			
+			return res.render('productCreate', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			})
+
+		}else{
+
 
 
 		let f_image
@@ -57,7 +73,7 @@ const controller = {
 
 		}
 		else {
-			f_image = 'default-image.png'
+			req.files[0] = 'default-image.png'
 		}
 		
 		let image
@@ -68,29 +84,23 @@ const controller = {
 
 		}
 		else {
-			image = 'default-image.png'
+			req.files[1] = 'default-image.png'
 		}
 
 		let image1
 
 		if(req.files[2] != undefined){
-
 			image1 = req.files[2].filename
-
 		}
 		else {
-			image1 = 'default-image.png'
+			req.files[2] = 'default-image.png'
 		}
-
 		let image2
-
 		if(req.files[3] != undefined){
-
 			image2 = req.files[3].filename
-
 		}
 		else {
-			image2 = 'default-image.png'
+			req.files[3] = 'default-image.png'
 		}
 		
 		Products.create({
@@ -109,6 +119,7 @@ const controller = {
 		 res.redirect("/")
 			 
 		 }) 
+		}
 
 	},
 
