@@ -38,7 +38,7 @@ const controller = {
 	
 	// Cart
 	cart: (req, res) => {
-        res.render('productCart')   
+	  	  res.render('productCart')   
     },
 
 	// Create - Form to create

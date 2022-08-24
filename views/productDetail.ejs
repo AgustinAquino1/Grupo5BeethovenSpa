@@ -30,7 +30,40 @@
             </div>
 
            <div class="button-div">
-            <button>Agregar al carrito</button>
+            <button id="botonCarrito">Agregar al carrito</button>
+            <script> 
+                function addToCart(event){ 
+                    const productName = "<%= product.name %>"
+                    const productId = "<%= product.id %>"
+                    const productPrice = "<%= product.price %>"
+                    const productDescription = "<%= product.description %>"
+                    const productImage = "<%= product.image %>"
+                    const cart = localStorage.getItem("cart")
+                    if (!cart){ 
+                        const newCart = new Array()
+                        newCart.push({
+                            name: productName,
+                            id: productId,
+                            price: productPrice,
+                            description: productDescription,
+                            image: productImage
+                        })
+                        localStorage.setItem("cart", JSON.stringify(newCart))
+                    }    
+                    else { 
+                        const parseCart = JSON.parse(cart)
+                        parseCart.push({
+                            name: productName,
+                            id: productId,
+                            price: productPrice,
+                            description: productDescription,
+                            image: productImage
+                        })
+                        localStorage.setItem("cart", JSON.stringify(parseCart))
+                    }
+                } 
+                document.getElementById("botonCarrito").onclick = addToCart
+                  </script>
            </div>
 
            <div class="description-art">
@@ -113,4 +146,5 @@
 <%- include ('partials/footer')%>
 
   </body>
+
 </html>
