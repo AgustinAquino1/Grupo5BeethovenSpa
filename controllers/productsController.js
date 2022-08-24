@@ -18,9 +18,31 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
 	// Root - Show all products
 	index: (req, res) => {
-		let promiseProduct = Products.findAll()
+
+		let showCategories = req.query.page
+		let promiseProduct
+		
+		if(req.query.page){
+			
+			 promiseProduct = Products.findAll({include: Categories,
+				where:{
+					[Op.or]: [
+						{category_id:showCategories},
+					]
+				}})
+			}
+			else{
+				 promiseProduct = Products.findAll({include: Categories
+				})
+				
+			}
+			
+			console.log("🚀 ~ showCategories", showCategories)
+		
+		
+		
 		let promiseCategory= Categories.findAll()
-	 
+	     
 		 Promise
 		 .all([promiseProduct, promiseCategory])
 		 .then(([products, categories]) => res.render("products", {products, categories}))
@@ -110,6 +132,7 @@ const controller = {
 			image: image,
 			image1: image1,
 			image2: image2
+			
 		 
 		 })
  

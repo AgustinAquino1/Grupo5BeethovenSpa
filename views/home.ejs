@@ -12,48 +12,34 @@
         
         <div class = "main-section-container">
 
+            <section class="banner">
+                <div class="image-div">
+                    <img class="image-home" src="/img/spa_perro-1275x640.jpg" >  
+                    <h4 class="texto-home">Un sitio de descanso para tu mascota</h4>
+                    <a class="enlace-button-tienda" href="/products/"><button class="button-tienda">TIENDA</button></a>
+                </div>
+               
+            </section>
+
 
                 <section class = "servicios-main">
                     <div class = "servicios-imagenes-container">
+                        
+                        <% categories.forEach(category => { %>                 
+                            <article class="card-servicios">
+                                <a class="link-descripciones "href="/products/?page=<%= category.id %> ">
+                                    <img class="servicios-imagenes" src="/img/category/<%= category.image %> ">
+                                    <div class="caracteristicas">
+                                        <i class="fa-solid fa-paw"></i>
+                                        <h3 class="descripciones"><%= category.category_name %> </h3>
+                                    </div>
+                                </a>
+                            </article>
+                            <% }) %>
             
             
                     
-                    <article class="card-servicios">
-                        <a class="link-descripciones "href="/products/detail/1 ">
-                            <img class="servicios-imagenes" src="/img/category/perrospa.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">EXPERIENCIA SPA</h3>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="card-servicios">
-                        <a class="link-descripciones "href="/products/detail/1 " >
-                            <img class="servicios-imagenes" src="/img/category/gatogourmet.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">EXPERIENCIA GOURMET</h3>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="card-servicios">
-                        <a class="link-descripciones "href="/products/detail/1 ">
-                            <img class="servicios-imagenes" src="/img/category/accesorios.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">ACCESORIOS</h3>
-                            </div>
-                        </a>
-                    </article>
-                    <article class="card-servicios">
-                        <a class="link-descripciones "href="/products/detail/1 ">
-                            <img class="servicios-imagenes" src="/img/category/450_1000.jpg">
-                            <div class="caracteristicas">
-                                <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones">ROPA</h3>
-                            </div>
-                        </a>
-                    </article>
+                  
             
             
             

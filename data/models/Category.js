@@ -12,6 +12,9 @@ module.exports = (sequelize, dataTypes) => {
         category_name: {
             type: dataTypes.STRING(255),
             allowNull: false
+        },
+        image: {
+            type: dataTypes.STRING(255)
         }
 
     };

@@ -28,10 +28,17 @@
         
                  </div>
                </div>
-   
+                
                <div class="main-link ">
-                   <input type="text" name="category_id" placeholder="Categoría" class="input category"
-                   value="<%= locals.oldData ? oldData.category_id : null %>">
+                   <input type="text" name="category_id" multiple placeholder="Categoría" class="input category"
+                   value="<%= locals.oldData ? oldData.category_id : null %>" list="category" required size="64">
+                   <datalist id="category">
+                    <option value="1">Accesorios</option>
+                    <option value="2">Ropa</option>
+                    <option value="3">Gourmet</option>
+                    <option value="4">Spa</option>
+                    
+                  </datalist>
                    <div class="errors">
                       <% if (locals.errors && errors.category_id) { %>
                        <%= errors.category_id.msg %> 
@@ -108,8 +115,14 @@
 
 
                <div class="main-link">
-                   <input type="text" name="pet_type" placeholder="Tipo de Mascota" class="input pet_type"
-                   value="<%= locals.oldData ? oldData.pet_type : null %>">
+                   <input type="text" name="pet_type" multiple placeholder="Tipo de Mascota" class="input pet_type"
+                   value="<%= locals.oldData ? oldData.pet_type : null %>" list="pet_type" required size="64">
+                   <datalist id="pet_type">
+                    <option value="Perro"></option>
+                    <option value="Gato"></option>
+                    
+                    
+                  </datalist>
                    <div class="errors">
                        <% if (locals.errors && errors.pet_type) { %>
                         <%= errors.pet_type.msg %> 
@@ -120,8 +133,14 @@
                </div>
     
                <div class="main-link">
-                   <input type="text" name="pet_size" placeholder="Tamaño de la mascota" class="input pet_size"
-                   value="<%= locals.oldData ? oldData.pet_size : null %>">
+                   <input type="text" name="pet_size" multiple placeholder="Tamaño de la mascota" class="input pet_size"
+                   value="<%= locals.oldData ? oldData.pet_size : null %>" list="pet_size" required size="64">
+                   <datalist id="pet_size">
+                    <option value="Chico"></option>
+                    <option value="Mediano"></option>
+                    <option value="Grande"></option>
+
+                  </datalist>
                <div class="errors">
                    <% if (locals.errors && errors.pet_size) { %>
                     <%= errors.pet_size.msg %> 
@@ -133,8 +152,13 @@
                  
     
                <div class="main-link">
-                   <input type="text" name="pet_age" placeholder="Edad de la mascota" class="input pet_age"
-                   value="<%= locals.oldData ? oldData.pet_age : null %>">
+                   <input type="text" name="pet_age" multiple placeholder="Edad de la mascota" class="input pet_age"
+                   value="<%= locals.oldData ? oldData.pet_age : null %>" list="pet_age" required size="64">
+                   <datalist id="pet_age">
+                    <option value="Cachorro"></option>
+                    <option value="Adulto"></option>
+
+                  </datalist>
                </div>
                <div class="errors">
                    <% if (locals.errors && errors.pet_age) { %>

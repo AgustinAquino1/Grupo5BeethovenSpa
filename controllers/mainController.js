@@ -7,6 +7,7 @@ const { Op } = require("sequelize");
 const Users = db.User;
 
 const Products = db.Product;
+const Categories = db.Category;
 
 
 
@@ -20,16 +21,20 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const mainController = {
 
     index: (req, res) => {
+        let promiseProduct = Products.findAll()
+		let promiseCategory= Categories.findAll()
+	 
+		 Promise
+		 .all([promiseProduct, promiseCategory])
 
-        Products.findAll()
-		.then(products => {
+		.then(([products, categories]) => {
             if(req.session && req.session.user){
                 let data = req.session
                 
-                res.render('home', {data:data ,products})
+                res.render('home', {data:data ,products, categories})
             }
     
-                res.render('home', {products}) 
+                res.render('home', {products, categories}) 
 		})
 
 
