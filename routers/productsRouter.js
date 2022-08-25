@@ -35,7 +35,7 @@ router.get('/', productsController.index);
 router.get('/create',/*authMiddleware*,*/ productsController.create); 
 router.post('/create', upload.any(), validations, productsController.store); 
 
-router.get("/cart", productsController.cart);
+
 
 
 /*** GET ONE PRODUCT ***/ 

@@ -16,7 +16,7 @@ const productsRouter = require('./routers/productsRouter');
 const usersRouter = require('./routers/usersRouter');
 const apiProductsRouter = require('./routers/apiRouters/apiProductsRouter')
 const apiUsersRouter = require('./routers/apiRouters/apiUsersRouter')
-
+const cartsRouter = require('./routers/cartsRouter')
 
 //´´´´´´´´´´´´´´ Middlewares     (don´t touch) ***************
 
@@ -54,3 +54,5 @@ app.use('/users', usersRouter);
 app.use('/api', apiProductsRouter)
 
 app.use('/api', apiUsersRouter);
+
+app.use('/cart', cartsRouter);

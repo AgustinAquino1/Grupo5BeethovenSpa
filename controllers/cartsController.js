@@ -12,10 +12,45 @@ const controller = {
     index : (req,res) => { 
        const user = res.locals.userLogged
        if (!user) {
-            res.redirect("/login")
+            res.redirect("/users/login")
         }
-       let promiseCart = Carts.findOne() 
-       //to do buscar carrito por user.id 
-       // agregar create , bindear front end
+        Carts.findOne({
+        where: { 
+            user_id: user.id
+        }
+        }).then(cart => {
+            if (!cart) {
+                res.render('productCart',[])
+            } 
+            else {
+            
+            res.render('productCart', {
+                id : cart.id ,
+                products : JSON.parse(cart.products)
+
+            })
+            }
+		      
+        })  
+       //to do 
+       // bindear front end
+    },
+
+    create: (req,res) => { 
+        const user = res.locals.userLogged
+       if (!user) {
+            res.redirect("/users/login")
+        }
+        Carts.create({ 
+            user_id : user.id , 
+            products : req.body.products 
+
+        })
+        
+        res.send(201)
+
     }
+
 }
+
+module.exports = controller
