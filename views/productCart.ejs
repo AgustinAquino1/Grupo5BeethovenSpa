@@ -14,19 +14,21 @@
             </div>
   
             <div class="card-carrito">
-              <img
-                src="/img/products/perro+comida.jpg"
-                alt="foto-perro-comida"
+              <% products.forEach(product => { %> 
+                <% if (product) { %>
+                <img
+                src="/img/products/<%= product.f_image %>"
+                alt="<%= product.description %>"
                 class="img-perrocomida"
-              />
-              <div>
+                />
+                <div>
   
                 <h2 class="perro-articulo">
-                  Servicio de Cocina Gourmet 
+                  <%= product.name %>
                 </h2>
-              </div>
+                </div>
   
-              <div class="cantidad">
+                <div class="cantidad">
                 <form action="/cantidad"method="GET">
                     <label>cantidad</label>
                     <select name="cantidad" >
@@ -38,12 +40,14 @@
                         <option  value="6" min="1" max="10" >6</option>
                     </select>
                 </form>
-              </div>
+                </div>
   
-              <div class="precio">
-                  <h3>U$S100</h3>
-              </div>
-            </div>
+                <div class="precio">
+                  <h3>U$S <%= product.price %></h3>
+                </div>
+                </div>
+             <% } %>
+            <% }) %>
             <div class="contenedor-costo-desc-total">
   
             <div class="costo-desc-total">
@@ -71,8 +75,6 @@
     <%- include ('partials/footer')%>
     
       </body>
-    <script> 
-    const cart = localStorage.getItem("cart")
-    </script>
+    
 
     </html>

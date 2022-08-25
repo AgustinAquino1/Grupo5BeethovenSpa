@@ -41,7 +41,7 @@
         </div>
 
         <div class = "nav-right">
-            <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <% if (locals.isLogged) { %>
                 <a href="/users/profile/<%= locals.userLogged.name %>"><img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar"></a>
                 <a id="logout"  href="/users/logout">Logout</a>               
