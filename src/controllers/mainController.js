@@ -43,15 +43,26 @@ const mainController = {
  
     search: (req, res) => {
        let findProducts = req.body.searchProducts
+            if(findProducts == "accesorios"){
+                findProducts = "1"
+            }
+            else if(findProducts == "ropa"){
+                findProducts = "2"
+            }
+            else if(findProducts == "gourmet"){
+                findProducts = "3"
+            }
+            else if(findProducts == "spa"){
+                findProducts = "4"
+            }
 
-
-        Products.findOne({
+        Products.findAll({include: Categories,
             where: {    
                 [Op.or]: [
-                { name : findProducts  },
+                { name : {[Op.startsWith]: `${findProducts}`}},
+                {category_id:findProducts},
                 { pet_type : findProducts},
                 { pet_size : findProducts},
-                { pet_type : findProducts},
                 { brand : findProducts},
                 { description : findProducts},
                 { pet_age : findProducts},
@@ -60,14 +71,18 @@ const mainController = {
               ]}
         })
 		.then(products => {
-            if(products){
-            res.redirect ('/products/detail/' + products.id)
-            }else{
+            let productsArray = products
+            if(products[0] && findProducts != ""){
+                res.redirect (`/products?page=${findProducts}`)
+            }
+            else{
                 res.send ('No se encontró el producto')
-
             }
 
 		})
+
+
+
 	}
 
     

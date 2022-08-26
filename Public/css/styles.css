@@ -78,6 +78,7 @@ header {
   padding-top: 40px;
   width: 0%;
   transition-duration: 0.6s;
+  z-index: 100;
 
 }
 .menu-items{
@@ -250,78 +251,8 @@ h1 {
 }
 
 
-/*********************************CARROUSEL*****************************/
 
-.div-carousel-conteiner{
-  line-height: 1.4em;
-  min-height: 10vh;
-  background-color: pink;
 
-  
-}
-.carousel-conteiner {
-  width: 30% ;
-  max-width: 140em;
-  color: var(--negro);
-  transition: all 0.4s ease;
-  border-radius: 1em;
-  background-color: var(--blanco);
-  overflow: hidden;
-  
-
-}
-
-.carousel-img {
-  width: calc( 100% / 2 - 2em);
-  max-height: 40vh;
-  color: var(--negro);
-  transition: all 0.4s ease;
-  border-radius: 1em;
-  background-color: var(--blanco);
-  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-}
-.big{
-  width: 400%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--negro);
-  transition: all 0.4s ease;
-  border-radius: 1em;
-  background-color: var(--blanco);
-  box-shadow: 1em 1em 2em var(--sombra-ppal), -1em -1em 2em var(--sombra-sec), inset 0 0 0 transparent, inset 0 0 0 transparent;
-  transition: all 0.5s ease;
-  transform: translateX(0%);
- 
-}
-.spots{
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-
-  
-}
-.spot{
-  position: relative;
-  top: -10px;
-  width: 1em;
-  height: 1em;
-  margin: 1em 1em 0;
-  color: var(--negro);
-  transition: all 0.4s ease;
-  border-radius: 1em;
-  background-color: var(--blanco);
-  box-shadow: 3px 3px 3px #FF3A5E ;
-
-}
-.activo {
-  background-color: lightblue;
-
-}
 
 .servicios-main {
   text-align: center;
@@ -363,8 +294,7 @@ h1 {
 .footer-section-container {
   padding: 15px;
   background-color: #FFD7D7;
-  margin-left: 5%;
-  margin-right: 5%;
+
 }
 
 .iconos-contacto {

@@ -28,6 +28,13 @@ const controller = {
 				where:{
 					[Op.or]: [
 						{category_id:showCategories},
+						{ name : {[Op.startsWith]: `${showCategories}`}  },
+						{ pet_type : showCategories},
+						{ pet_size : showCategories},
+						{ brand : showCategories},
+						{ description : showCategories},
+						{ pet_age : showCategories},
+						{ breed : showCategories},
 					]
 				}})
 			}
@@ -37,7 +44,7 @@ const controller = {
 				
 			}
 			
-			console.log("🚀 ~ showCategories", showCategories)
+			
 		
 		
 		

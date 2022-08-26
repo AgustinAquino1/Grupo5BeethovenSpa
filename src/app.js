@@ -27,7 +27,7 @@ app.use (session ({
 app.use(cookies());
 app.use (userLoggedMiddelware);
 app.use(express.urlencoded({ extended: false}));
-app.use(express.static(path.resolve(__dirname, './public')));
+app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(express.json());
 app.use (methodOverride('_method'));
 
