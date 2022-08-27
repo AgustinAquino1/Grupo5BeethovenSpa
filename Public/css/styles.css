@@ -139,6 +139,7 @@ header {
   font-size: 30px;
   margin-top: 20px;
   text-shadow: 1px 1px 1px #FF3A5E ;
+  display: none;
 }
 
 .fa-user {
@@ -201,7 +202,6 @@ h1 {
   display: block;
   top: 10px;
   left: 50px;
-  position:absolute;
   height: 50px;
   width: 50px;
   border-radius: 100%;
@@ -588,10 +588,7 @@ padding: 1%;
   font-size: 0.5cm;
  
 }
-.bloque-te-puede-interesar{
-  width: 50%;
-  
-}
+
 
 .bloque-1{
   width: 100%;
@@ -650,6 +647,7 @@ padding: 1%;
 .button-div{
   display: flex;
   justify-content: center;
+  margin-top:10px;
 }
 
 
@@ -927,6 +925,7 @@ font-size: 15px;
 
 .img-te-puede-interesar{
   display: flex;
+  justify-content: center;
 }
 
 .img-product3{
@@ -1132,8 +1131,8 @@ font-size: 15px;
   margin-bottom: 100px;
 }
 .button-div{
- display: flex;
-flex-direction: column;
+ display: inline-block;
+flex-direction: row;
 }
 button{
   margin-bottom: 20px;
@@ -1142,6 +1141,14 @@ button{
 .description-art ul{
   list-style: none;
 }
+
+
+
+.bloque-te-puede-interesar{
+ width:50% ;
+ 
+}
+
 
 /*compu vista perfil*/
 .perfiles-container{
