@@ -1165,10 +1165,7 @@ font-size: 15px;
 .perro-articulo{
   margin-bottom: 100px;
 }
-.button-div{
- display: inline-block;
-flex-direction: row;
-}
+
 button{
   margin-bottom: 20px;
 
