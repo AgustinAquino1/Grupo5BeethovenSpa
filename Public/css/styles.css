@@ -847,9 +847,7 @@ button {
     border: 2px solid #666;  
   }
 /*  cart desktop*/
-.img-product-cart{
-  
-}
+
 
 
  /*agregar despues*/
@@ -858,6 +856,8 @@ button {
   margin-left: 15px;
   margin-top: 20px;
   margin-bottom:20px;
+  color: #ffa5b5;
+  font-style:  Helvetica;
 }
 .precio{
   display: flex;
@@ -885,9 +885,10 @@ font-size: 15px;
   flex-direction: column;
 }
 .contenedor-button-div-cart{
-  justify-content: end;
+  justify-content: space-between;
   display: flex;
   padding: 15px;
+  margin-left:20px;
 }
 .button-div-cart{
     width: 20%;
@@ -896,10 +897,14 @@ font-size: 15px;
     justify-content: space-between;
   
 }
+.button-comprar{
+  margin-right: 30px;
+}
 
   
   .card-carrito img {
     width: 100px;
+    
   }
 
 
@@ -994,8 +999,9 @@ font-size: 15px;
 }
 .card-carrito{
   justify-content: space-between;
+  align-items:flex-start;
   padding: 15px;
-  align-items: center;
+  width: 90%;
 }
 .contenedor-costo-desc-total{
   justify-content: end;
@@ -1006,12 +1012,15 @@ font-size: 15px;
   width: 50%;
 }
 .contenedor-button-div-cart{
-  justify-content: end;
+  justify-content: center;
   display: flex;
   padding: 15px;
 }
 .button-div-cart{
     width: 50%;
+  }
+  .button-comprar{
+    margin-right: 100px;
   }
   
 .description-art h4{
@@ -1152,6 +1161,13 @@ button{
   margin-bottom: 20px;
 
 }
+.costo-desc-total h3{
+  justify-content:end;
+  display: flex;
+  padding: 50px;
+  
+}
+
 .description-art ul{
   list-style: none;
 }
