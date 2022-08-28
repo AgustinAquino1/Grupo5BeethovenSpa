@@ -140,6 +140,7 @@ header {
   margin-top: 20px;
   text-shadow: 1px 1px 1px #FF3A5E ;
   display: none;
+  
 }
 
 .fa-user {
@@ -197,10 +198,7 @@ h1 {
 
 }
 
-.fa-cart-shopping{
-display: none;
-visibility: hidden;
-}
+
 .avatar{
   display: block;
   top: 10px;
@@ -1119,6 +1117,7 @@ font-size: 15px;
   background-size: 100% ;
   
 }
+
 .image-home{
   position: relative;
   width: 100%;
