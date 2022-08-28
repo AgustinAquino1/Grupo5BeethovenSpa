@@ -197,7 +197,10 @@ h1 {
 
 }
 
-
+.fa-cart-shopping{
+display: none;
+visibility: hidden;
+}
 .avatar{
   display: block;
   top: 10px;
