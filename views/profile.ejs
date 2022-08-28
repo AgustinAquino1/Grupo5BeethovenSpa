@@ -6,7 +6,7 @@
 <body>
 
     <%- include ('partials/header')%>
-
+    
     <article class="card-servicios">
         <a href="/users/profile/<%= user.id %> ">
             <img class="servicios-imagenes" src="/img/users/<%= user.avatar %>">
@@ -16,6 +16,17 @@
             </div>
         </a>
     </article>
+
+    <div class ='info-personal-profile'>
+        
+         <h2>Informacion Personal</h2>
+        <h4><%= user.name %></h4>
+        <h4><%= user.surname %></h4>
+        <h4><%= user.birth %></h4>
+        <h4><%= user.email %></h4>
+        <h4><%= user.adress %></h4>
+        
+    </div>
 
 
         <%- include ('partials/footer')%>

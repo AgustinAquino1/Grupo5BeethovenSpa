@@ -274,9 +274,11 @@ h1 {
   margin-bottom: 10px;
   margin-top: 10px;
   box-shadow: none;
-  width: 100%;
+  width: 50%;
   
 }
+
+
 .card-servicios:hover{
   box-shadow:0px 10px 10px rgb(152, 5, 115);
 }
@@ -284,6 +286,22 @@ h1 {
 
 .servicios-imagenes{
   width: 100%;
+}
+.info-personal-profile{
+  margin-left: 20px;
+  justify-content: center;
+  width: 50%;
+}
+.info-personal-profile h2{
+  font-family:'Helvetica';
+  color: #FE87B0;
+  margin-bottom: 20px;
+}
+.info-personal-profile h4{
+  font-family:'Helvetica';
+  color: #C570E3;
+  
+  
 }
 
 
@@ -887,14 +905,14 @@ font-size: 15px;
 .servicios-imagenes-container {
   display: flex;
 }
-  .card-servicios {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+  .card-servicios  {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     box-shadow: none;
-    width: 50%;
+      width: 25%;
   }
+ 
 
   main section div article:hover{
     box-shadow: 0px 0px 10px rgb(100, 100, 100)
@@ -1020,6 +1038,22 @@ font-size: 15px;
 .nombre-prefiles{
     text-decoration: none;
 }
+.info-personal-profile{
+  margin-left: 20px;
+  justify-content: center;
+  width: 50%;
+}
+.info-personal-profile h2{
+  font-family:'Helvetica';
+  color: #FE87B0;
+  margin-bottom: 20px;
+}
+.info-personal-profile h4{
+  font-family:'Helvetica';
+  color: #C570E3;
+  
+  
+}
 
 .card-users{
   margin-bottom: 5%;
@@ -1050,6 +1084,7 @@ font-size: 15px;
     
       box-shadow: 0px 0px 10px rgb(100, 100, 100);
       margin: 20px;
+      width: 15%;
   }
 
   .bloque-1{
@@ -1176,7 +1211,23 @@ button{
 
 .nombre-prefiles{
     text-decoration: none;
-}
+  }
+  .info-personal-profile{
+    margin-left: 20px;
+    justify-content: center;
+    width: 50%;
+  }
+  .info-personal-profile h2{
+    font-family:'Helvetica';
+    color: #FE87B0;
+    margin-bottom: 20px;
+  }
+  .info-personal-profile h4{
+    font-family:'Helvetica';
+    color: #C570E3;
+    
+    
+  }
 
 /*** desktop - PRODUCT CREATE **************************/
 .form-product{
