@@ -1067,7 +1067,7 @@ font-size: 15px;
 .img-small{
   display:flex;
   flex-direction: column;
-  margin-top: 40px;
+  
 }
 .image-div{
   position: relative;
