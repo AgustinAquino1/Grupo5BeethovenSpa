@@ -56,3 +56,21 @@ app.use('/api', apiProductsRouter)
 app.use('/api', apiUsersRouter);
 
 app.use('/cart', cartsRouter);
+
+app.use((req,res,next) => { 
+    const err = new Error("Not Found")
+    err.status = 404
+    next(err)
+ });
+
+app.use((err, req, res, next) =>{ 
+    if (res.headersSent){ 
+        return next (err)
+    }
+    res.status(404)
+    res.render("../views/error.ejs" , { 
+      error: err,
+      message: err.message    
+      }) 
+  });
+      
