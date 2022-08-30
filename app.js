@@ -58,7 +58,7 @@ app.use('/api', apiUsersRouter);
 app.use('/cart', cartsRouter);
 
 app.use((req,res,next) => { 
-    const err = new Error("Not Found")
+    const err = new Error("VUELVE CON TU MASCOTA")
     err.status = 404
     next(err)
  });
