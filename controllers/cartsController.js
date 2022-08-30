@@ -68,8 +68,27 @@ const controller = {
             }
             res.send(201)
         })
-                        
+                                
+    },
+    delete : (req , res) => {  
+        const user = res.locals.userLogged
+        if (!user) {
+            res.redirect("/users/login")
+        }
+        Carts.findOne({
+            where: { 
+                user_id: user.id
+            }
+        }).then(cart => { 
+            
+            if (cart) { 
+                cart.destroy()
+                res.send(200)
+            }
+        })
+
     }
+
 
 }
 

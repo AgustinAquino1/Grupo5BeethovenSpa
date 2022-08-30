@@ -12,6 +12,7 @@ router.get('/', cartsController.index);
 /*** CREATE CART FOR USER ***/ 
 
 router.post('/create', cartsController.create); 
+router.post('/delete',cartsController.delete);
 
 
 module.exports = router ; 

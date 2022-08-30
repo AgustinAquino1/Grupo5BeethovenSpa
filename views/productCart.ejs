@@ -14,7 +14,7 @@
             </div>
   
             
-              <% products.forEach(product => { %> 
+              <% products.forEach((product, index) => { %> 
                 <div class="card-carrito">
                 <% if (product) { %>
                 <img
@@ -32,19 +32,24 @@
                 <div class="cantidad">
                 <form action="/cantidad"method="GET">
                     <label>cantidad</label>
-                    <select name="cantidad" >
+                    <select  name="cantidad" onchange="sumaProductos" id="<%= index %>">
                         <option  value="1" min="1" max="10" >1</option>
                         <option  value="2" min="1" max="10" >2</option>
                         <option  value="3" min="1" max="10" >3</option>
                         <option  value="4" min="1" max="10" >4</option>
                         <option  value="5" min="1" max="10" >5</option>
                         <option  value="6" min="1" max="10" >6</option>
+                        <option  value="7" min="1" max="10" >7</option>
+                        <option  value="8" min="1" max="10" >8</option>
+                        <option  value="9" min="1" max="10" >9</option>
+                        <option  value="10" min="1" max="10" >10</option>
+
                     </select>
                 </form>
                 </div>
   
                 <div class="precio">
-                  <h3>U$S <%= product.price %></h3>
+                  <h3>U$S <%= product.price %> </h3>
                 </div>
                 </div>
              <% } %>
@@ -54,14 +59,15 @@
             <div class="costo-desc-total">
               <h3>Costo del envío</h3>
               <h3>Descuentos</h3>
-              <h3>Total a Pagar</h3>
+              <h3>Total a Pagar</h3> 
+              U$S <span id="total">  </span>
             </div>
   
           </div>
            <div class="contenedor-button-div-cart">
             <div class="button-div-cart">
-              <button class="button-comprar">comprar</button>
-              <button>Seguir comprando</button>
+              <button class="button-comprar" onclick="deleteCarrito('<%= id %>')">comprar</button>
+              <a class="button-seguirComprando" href="/products" >Seguir comprando</a>
             </div>
           </div>
           
@@ -75,7 +81,48 @@
 
     <%- include ('partials/footer')%>
     
-      </body>
+    <script> function sumaProductos(evt) { 
+        //console.log(evt.target.value, evt.target.id)
+        valorMultiplicador[evt.target.id] = parseInt(evt.target.value)
+        const total = document.getElementById("total")
+        total.textContent = calcularTotal(valorMultiplicador,pricesArray)
+        }
+        function calcularTotal(valorMultiplicador, pricesArray ) {
+          let total = 0
+          for (let i= 0 ; i<pricesArray.length ; i++) {
+            total += valorMultiplicador[i] * pricesArray[i]
+            //console.log(valorMultiplicador[i] * pricesArray[i])
+          }
+          //console.log(valorMultiplicador,pricesArray)
+          return total
+        }
+    const elements = document.getElementsByName("cantidad")
+    const valorMultiplicador = []
+     elements.forEach((element) =>{
+       element.onchange = sumaProductos
+       valorMultiplicador.push(1) 
+      })
+    const pricesArrayElements = document.getElementsByClassName("precio")
+    const pricesArray = []  
+    for(let i = 0 ; i<pricesArrayElements.length ; i++) { 
+      //console.log(pricesArrayElements[i].children[0].textContent)
+      pricesArray.push(parseInt( pricesArrayElements[i].children[0].textContent.split(" ")[1],10))
+      }
+      //console.log(pricesArray)    
+      
+      function deleteCarrito(id){ 
+        
+        fetch("/cart/delete", { 
+          method : "POST",
+          headers:  {'Content-Type':'application/json'},
+        }).then(response => { 
+            if (response.status === 200) { 
+              window.location.href = "http://localhost:3030/"
+            }
+        })
+      }
     
+     </script>
+      </body>
 
     </html>
