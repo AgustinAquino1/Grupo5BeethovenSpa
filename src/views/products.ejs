@@ -8,25 +8,23 @@
     <%- include ('partials/header')%>
 
 
-        <main>
-
-
-                <section class = "servicios-main">
-
-                    <div class = "servicios-imagenes-container">
+        <main class="user-main">
 
 
 
-
+                    <div class = "perfiles-container">
 
                 <% products.forEach(product => { %>
                     
-                    <article class="card-servicios">
-                        <a href="/products/detail/<%= product.id %> ">
-                            <img class="servicios-imagenes" src="../img/products/<%= product.f_image %>">
-                            <div class="caracteristicas">
+                    <article class="card-users">
+                        <a href="/users/profile/<%= product.id %> ">
+                            <div class="div-imagenes-perfiles">
+
+                                <img class="imagenes-perfiles" src="/img/products/<%= product.f_image %>">
+                            </div>
+                            <div class="perfil-nombre">
                                 <i class="fa-solid fa-paw"></i>
-                                <h3 class="descripciones"><%= product.name %></h3>
+                                <h3 class="nombre-prefiles"><%= product.name %></h3>
                                 <% categories.forEach(category => { %>
                                     
                                     <h3 class="descripciones"><%= product.category_id == category.id ? category.category_name : ""%></h3>
@@ -41,7 +39,7 @@
                 <%}) %>
 
                     </div>
-                </section>
+
 
 
 

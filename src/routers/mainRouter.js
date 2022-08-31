@@ -22,8 +22,7 @@ const upload = multer({ storage: storage })
 
 
 router.get("/", mainController.index );
-router.post("/", upload.any(), mainController.search);
-
+router.post("/", upload.any(), mainController.search); 
 
 
 

@@ -6,7 +6,7 @@ const session = require ('express-session')
 //´´´´´´´´´´´´´´ Require's  (don´t touch) ***************
 const app = express();
 const userLoggedMiddelware = require ('./middlewares/userLogedMiddelware')
-const port = 3000
+const port = 3030
 const path = require ('path')
 const methodOverride = require('method-override');
 
@@ -17,7 +17,6 @@ const usersRouter = require('./routers/usersRouter');
 const apiProductsRouter = require('./routers/apiRouters/apiProductsRouter')
 const apiUsersRouter = require('./routers/apiRouters/apiUsersRouter')
 const cartsRouter = require('./routers/cartsRouter')
-
 
 //´´´´´´´´´´´´´´ Middlewares     (don´t touch) ***************
 
@@ -56,7 +55,6 @@ app.use('/api', apiProductsRouter)
 
 app.use('/api', apiUsersRouter);
 
-
 app.use('/cart', cartsRouter);
 
 app.use((req,res,next) => { 
@@ -75,3 +73,4 @@ app.use((err, req, res, next) =>{
       message: err.message    
       }) 
   });
+      

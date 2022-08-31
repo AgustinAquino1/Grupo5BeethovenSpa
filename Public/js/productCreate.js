@@ -59,8 +59,8 @@ window.onload = ()=>{
           }
  
           //validation ALL MIN 4
-          else if (elements.value.length < 4 && (elements.name !== ("description") && elements.name !== ("category_id") )){
-             errorDiv.innerHTML =  `El campo ${input.placeholder} debe tener  4 letras como mínimo`
+          else if (elements.value.length < 4 && elements.name !== ("description")){
+             errorDiv.innerHTML =  `El campo ${input.placeholder} debe tener entre 4 letras como mínimo`
              elements.classList.add("is-invalid")     
           }
           else if (elements.value.length < 20 && elements.name === ("description")){
@@ -68,18 +68,10 @@ window.onload = ()=>{
             elements.classList.add("is-invalid")     
          }
           //validation ADRESS NOT SPECIAL CHARACTER
-          else if(fieldValidation == false && elements.name !== ("category_id") && (elements.name !== ("f_image") && elements.name !== ("image") && elements.name !== ("image1") && elements.name !== ("image2")) ){
+          else if(fieldValidation == false){
              errorDiv.innerHTML =  `El campo ${input.placeholder} no puede caracteres especiales, solo se permiten ( . ), ( , ) y ( ° )`
              elements.classList.add("is-invalid") 
           }
-
-          else if((elements.name === ("f_image") || elements.name === ("image") || elements.name === ("image1") || elements.name === ("image2")) && acceptedExtensions === false){
-         
-           
-          
-            errorDiv.innerHTML =  `El campo ${input.placeholder} debe tener un formato del tipo ".jpg", ".jpeg", ".png" o ".gif"`
-            elements.classList.add("is-invalid") 
-         }
  
           else{
              errorDiv.innerHTML =  ""

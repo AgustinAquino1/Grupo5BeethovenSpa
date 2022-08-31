@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Proyecto: Beethoven Spa\r Producto: e-commerce\r Servicios: Hospedaje temporal, SPA, estetica, higiene, salud, clases de adiestramiento, pasea perros\r Objetivo: Dog Hotel le brinda a tu mascota la mejor experiencia de su vida. Tu fiel companero canino podrá disfrutar de los mejores servicios brindados en el país.",
   "main": "app.js",
-  "proxy": "http://localhost:3000/",
   "scripts": {
     "start": "nodemon src/app.js"
   },
@@ -30,6 +29,9 @@
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.16",
-    "sequelize": "^6.21.3"
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }

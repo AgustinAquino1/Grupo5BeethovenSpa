@@ -9,16 +9,16 @@
                     <a  href="/" class="menu-link">HOME</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="/products/?page=2" class="menu-link">ROPA</a>
+                    <a  href="#" class="menu-link">ROPA</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="/products/?page=1" class="menu-link">ACCESORIOS</a>
+                    <a  href="#" class="menu-link">ACCESORIOS</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="/products/?page=4" class="menu-link">EXPERIENCIA SPA</a>
+                    <a  href="#" class="menu-link">EXPERIENCIA SPA</a>
                 </li>
                 <li class="menu-item">
-                    <a href="/products/?page=3"  class="menu-link">EXPERIENCIA GOURMET</a>
+                    <a href="#"  class="menu-link">EXPERIENCIA GOURMET</a>
                 </li>                            
             </ul>
            </div>
@@ -41,7 +41,7 @@
         </div>
 
         <div class = "nav-right">
-            <a href="/products/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <% if (locals.isLogged) { %>
                 <a href="/users/profile/<%= locals.userLogged.name %>"><img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar"></a>
                 <a id="logout"  href="/users/logout">Logout</a>               
