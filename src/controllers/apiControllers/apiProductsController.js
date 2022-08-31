@@ -52,7 +52,7 @@ const apiProductsController = {
                         category: product.Category.category_name,
                         url:"http://localhost:3000/api/products/"+product.id
                                }                                          
-                               
+                                
                             })
 
                             productos.forEach((product, i) => {
