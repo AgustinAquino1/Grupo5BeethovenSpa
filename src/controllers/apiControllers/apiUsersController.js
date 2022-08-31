@@ -41,7 +41,7 @@ const apiUsersController = {
                         previousUrl: page && (page != 0) ? `http://localhost:3000/api/users?page=${page-1}&limit=${size}` : "",
                     },
                    data: usersData
-                    
+                     
                    
                 }
                 
