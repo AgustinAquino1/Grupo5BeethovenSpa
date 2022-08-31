@@ -6,7 +6,7 @@ const session = require ('express-session')
 //´´´´´´´´´´´´´´ Require's  (don´t touch) ***************
 const app = express();
 const userLoggedMiddelware = require ('./middlewares/userLogedMiddelware')
-const port = 3030
+const port = 3000
 const path = require ('path')
 const methodOverride = require('method-override');
 
