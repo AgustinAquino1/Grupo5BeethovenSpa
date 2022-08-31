@@ -11,14 +11,14 @@ const apiProductsController = {
         let categoriesData =[]
 
         const pageAsNumber = Number.parseInt(req.query.page)
-        const sizeAsNumber = Number.parseInt(req.query.size)
+        const sizeAsNumber = Number.parseInt(req.query.limit)
         let page= 0;
         if(!Number.isNaN(pageAsNumber) && pageAsNumber> 0){
             page = pageAsNumber
         }
 
         let size = 10
-        if(!Number.isNaN(sizeAsNumber) && sizeAsNumber> 0 && sizeAsNumber<10){
+        if(!Number.isNaN(sizeAsNumber) && sizeAsNumber>= 0 && sizeAsNumber<=30){
             size= sizeAsNumber
         }
         let productsMeta = Products.findAndCountAll({include: Categories})
@@ -50,7 +50,7 @@ const apiProductsController = {
                         name: product.name,
                         description: product.description,
                         category: product.Category.category_name,
-                        url:"http://localhost:3030/api/products/"+product.id
+                        url:"http://localhost:3000/api/products/"+product.id
                                }                                          
                                
                             })
@@ -95,8 +95,8 @@ const apiProductsController = {
                         },
                         url: "api/products",
                         totalPages: Math.ceil(productsRows.count / size),
-                        nextUrl: page >=0  && (page != ((Math.ceil(productsRows.count / size))-1))? `http://localhost:3030/api/products?page=${page+1}&size=${size}` : "",
-                        previousUrl: page && (page != 0) ? `http://localhost:3030/api/products?page=${page-1}&size=${size}` : "",
+                        nextUrl: page >=0  && (page != ((Math.ceil(productsRows.count / size))-1))? `http://localhost:3000/api/products?page=${page+1}&limit=${size}` : "",
+                        previousUrl: page && (page != 0) ? `http://localhost:3000/api/products?page=${page-1}&limit=${size}` : "",
                     },
                     data: productsData
                 }
@@ -112,7 +112,7 @@ const apiProductsController = {
                 let respuesta = {
                     meta:{
                         status: 200,
-                        url: "http://localhost:3030/api/products/"+productsId
+                        url: "http://localhost:3000/api/products/"+productsId
                     },
                     data: product
                 }
