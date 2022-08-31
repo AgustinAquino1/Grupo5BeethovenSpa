@@ -76,7 +76,7 @@ const mainController = {
                 res.redirect (`/products?page=${findProducts}`)
             }
             else{
-                res.send ('No se encontró el producto')
+                res.redirect ('/error')
             }
 
 		})
