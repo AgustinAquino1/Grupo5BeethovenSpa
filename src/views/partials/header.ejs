@@ -9,17 +9,27 @@
                     <a  href="/" class="menu-link">HOME</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="#" class="menu-link">ROPA</a>
+                    <a  href="/products/?page=2" class="menu-link">ROPA</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="#" class="menu-link">ACCESORIOS</a>
+                    <a  href="/products/?page=1" class="menu-link">ACCESORIOS</a>
                 </li>
                 <li class="menu-item">
-                    <a  href="#" class="menu-link">EXPERIENCIA SPA</a>
+                    <a  href="/products/?page=4" class="menu-link">EXPERIENCIA SPA</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#"  class="menu-link">EXPERIENCIA GOURMET</a>
-                </li>                            
+                    <a href="/products/?page=3"  class="menu-link">EXPERIENCIA GOURMET</a>
+                </li> 
+                <% if (locals.isLogged && locals.userLogged && userLogged.permission_id ===2) { %>
+                    <li class="menu-item carrito-link">
+                        <a href="/cart"  class="menu-link">CARRITO</a>
+                    </li>  
+                <% } %>  
+                <% if (locals.isLogged && locals.userLogged && userLogged.permission_id ===1) { %>
+                    <li class="menu-item">
+                        <a href="/users"  class="menu-link">LISTADO DE USUARIOS</a>
+                    </li>  
+                <% } %>                         
             </ul>
            </div>
 

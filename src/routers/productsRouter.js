@@ -3,7 +3,8 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const validations = require('../middlewares/productValidations')
-const authMiddleware= require('../middlewares/authMiddleware')
+const authMiddlewareUnLogged= require('../middlewares/authMiddlewareUnLogged')
+const authMiddlewareNotAdmin= require('../middlewares/authMiddlewareNotAdmin')
 
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
@@ -32,8 +33,8 @@ const upload = multer({ storage: storage })
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
-router.get('/create',/*authMiddleware*,*/ productsController.create); 
-router.post('/create', upload.any(), validations, productsController.store); 
+router.get('/create',authMiddlewareNotAdmin, productsController.create); 
+router.post('/create', upload.any(),authMiddlewareNotAdmin, validations, productsController.store); 
 
 
 
@@ -42,11 +43,11 @@ router.post('/create', upload.any(), validations, productsController.store);
 router.get('/detail/:id/', productsController.detail); 
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/edit/:id',authMiddleware, productsController.edit); 
-router.put('/edit/:id', upload.any(), productsController.update); 
+router.get('/edit/:id',authMiddlewareNotAdmin, productsController.edit); 
+router.put('/edit/:id', upload.any(),authMiddlewareNotAdmin, productsController.update); 
 
 
 /*** DELETE ONE PRODUCT ***/ 
-router.delete('/delete/:id', productsController.destroy); 
+router.delete('/delete/:id', authMiddlewareNotAdmin, productsController.destroy); 
 
 module.exports = router;

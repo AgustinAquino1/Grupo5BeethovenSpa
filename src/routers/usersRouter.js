@@ -7,7 +7,9 @@ const validations = require('../middlewares/userValidations')
 // ************ Controller Require ************
 const usersController = require('../controllers/usersController');
 const guestMiddleware= require('../middlewares/guestMiddlewares')
-const authMiddleware= require('../middlewares/authMiddleware')
+const authMiddlewareUnLogged= require('../middlewares/authMiddlewareUnLogged')
+const authMiddlewareNotAdmin= require('../middlewares/authMiddlewareNotAdmin')
+const authMiddlewareParams= require('../middlewares/authMiddlewareParams')
 
 
 const multer = require ('multer')
@@ -29,7 +31,7 @@ const upload = multer({ storage: storage })
 
 
 /*** GET ALL USERS  READ***/ 
-router.get('/'/*, authMiddleware*/, usersController.index); 
+router.get('/', authMiddlewareNotAdmin, usersController.index); 
 
 
 /*** CREATE ONE USER ***/ 
@@ -39,7 +41,7 @@ router.post('/register', upload.any(), validations, usersController.processRegis
 
 
 /*** GET ONE USER ***/ 
-router.get('/profile/:name/', authMiddleware, usersController.profile); 
+router.get('/profile/:name/', authMiddlewareParams, usersController.profile); 
 
 /*** Login ***/ 
 
@@ -51,11 +53,11 @@ router.post('/login', upload.any(), usersController.loginProcess);
 router.get('/logout/', usersController.logout);
 
 /*** EDIT ONE USER ***/
-router.get('/edit/:name', authMiddleware, usersController.edit); 
-router.put('/edit/:name', authMiddleware, upload.any(), validations, usersController.update); 
+router.get('/edit/:name', authMiddlewareParams, usersController.edit); 
+router.put('/edit/:name', authMiddlewareParams, upload.any(), validations, usersController.update); 
 
 
 /*** DELETE ONE USER ***/ 
-router.delete('/delete/:id', authMiddleware,  usersController.destroy); 
+router.delete('/delete/:name', authMiddlewareParams,  usersController.destroy); 
 
 module.exports = router;

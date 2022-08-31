@@ -31,9 +31,13 @@ const controller = {
 
 	// profile - Detail from one user
 	profile: (req, res) => {
-		res.render('profile', {
-			user: req.session.userLogged
-		});
+		Users.findOne({
+			where:{
+				name:req.params.name
+			}
+		})
+		.then(user => res.render('profile', {user}))
+		
 	},
 
 	//LogOut 
