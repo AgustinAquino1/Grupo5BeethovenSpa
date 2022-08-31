@@ -1051,7 +1051,7 @@ font-size: 15px;
 }
 
 .imagenes-perfiles{
-  width: 70%;
+  width: 100%;
 }
 
 .nombre-prefiles{
@@ -1118,7 +1118,7 @@ font-size: 15px;
 .img-small{
   display:flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 0px;
 }
 .image-div{
   position: relative;
@@ -1168,6 +1168,7 @@ font-size: 15px;
   display: flex;
   justify-content: center;
   margin-left:200px;
+
 }
 
 .bloque-2{
@@ -1207,8 +1208,8 @@ button{
 
 .imagenes-perfiles{
   object-fit: contain;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  
 
 }
 .user-main{
