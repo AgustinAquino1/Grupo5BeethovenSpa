@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head')%>
+
+<body>
+
+    <%- include ('partials/header')%>
+
+    
+    <main class="home-main">
+        
+        <div class = "main-section-container">
+
+            <section class="banner">
+                <div class="image-div">
+                    <img class="image-home" src="/img/spa_perro-1275x640.jpg" >  
+                    <h4 class="texto-home">Un sitio de descanso para tu mascota</h4>
+                    <a class="enlace-button-tienda" href="/products/"><button class="button-tienda">TIENDA</button></a>
+                </div>
+               
+            </section>
+
+
+                <section class = "servicios-main">
+                    <div class = "servicios-imagenes-container">
+                        
+                        <% categories.forEach(category => { %>                 
+                            <article class="card-servicios">
+                                <a class="link-descripciones "href="/products?page=<%= category.id %> ">
+                                    <img class="servicios-imagenes" src="/img/category/<%= category.image %> ">
+                                    <div class="caracteristicas">
+                                        <i class="fa-solid fa-paw"></i>
+                                        <h3 class="descripciones"><%= category.category_name %> </h3>
+                                    </div>
+                                </a>
+                            </article>
+                            <% }) %>
+            
+            
+                    
+                  
+            
+            
+            
+                    </div>
+                </section>              
+
+            </div>
+        </main>
+
+        <%- include ('partials/footer')%>
+        <script type="text/javascript" src="/js/home.js"></script>
+</body>
+</html>
+</html>

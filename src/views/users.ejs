@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head')%>
+
+<body>
+ 
+    <%- include ('partials/header')%>
+
+
+        <main class="user-main">
+
+
+
+                    <div class = "perfiles-container">
+
+                <% users.forEach(user => { %>
+                    
+                    <article class="card-users">
+                        <a href="/users/profile/<%= user.id %> ">
+                            <div class="div-imagenes-perfiles">
+
+                                <img class="imagenes-perfiles" src="/img/users/<%= user.avatar %>">
+                            </div>
+                            <div class="perfil-nombre">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="nombre-prefiles"><%= user.name %></h3>
+                                <% permissions.forEach(permission => { %>
+                                    
+                                    <h3 class="descripciones"><%= user.permission_id == permission.id ? permission.permission_name : ""%></h3>
+                                       
+                    
+                                    
+                                 
+                                <% }) %>
+                            </div>
+                        </a>
+                    </article>
+                <%}) %>
+
+                    </div>
+
+
+
+
+            </div>
+        </main>
+
+        <%- include ('partials/footer')%>
+
+</body>
+</html>

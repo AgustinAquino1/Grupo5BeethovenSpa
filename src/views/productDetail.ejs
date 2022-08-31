@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('partials/head')%>
+
+    <body>
+     
+        <%- include ('partials/header')%>
+
+<main>
+    <div class="bloque-1">
+        <div class="fotos-bloque">
+     <div class="img-principal">
+         <div class="img-principal-product-detail">
+             <img src="/img/products/<%= product.f_image %>" alt="perro+comida" class="img-product1">
+        </div>   
+     </div>
+        <div class="img-small">
+            <img src="/img/products/<%= product.image %>" alt="perroZanahoria" class="img-product2">
+            <img src="/img/products/<%= product.image1 %>" alt="perritocomiendo" class="img-product2">
+            <img src="/img/products/<%= product.image2 %>" alt="perroMoetTorta" class="img-product2">
+        </div>
+        </div>
+        
+        <div class="bloque-2">
+  
+            <div>
+                <h2 class="Cocina-Gourmet">  <%= product.name %>  </h2>
+                <h2 class="Cocina-Gourmet">  <%= product.category_id %>  </h2>
+            </div>
+
+           <div class="button-div">
+            <button id="botonCarrito">Agregar al carrito</button>
+            <script> 
+                function addToCart(event){ 
+                    const productName = "<%= product.name %>"
+                    const productId = "<%= product.id %>"
+                    const productPrice = "<%= product.price %>"
+                    const productDescription = "<%= product.description %>"
+                    const productImage = "<%= product.image %>"
+                    const product = {
+                        name: productName,
+                        id: productId,
+                        price: productPrice,
+                        description: productDescription,
+                        image: productImage
+                    }
+                    
+                    fetch("/cart/create", { 
+                        method : "POST" , 
+                        headers: {'Content-Type':'application/json'},
+                        body : JSON.stringify(product)
+                    })//.then(response => response.json())
+                    //.then(data => console.log(data))
+                    //.catch(err => console.log(err))
+                
+                    
+                } 
+                document.getElementById("botonCarrito").onclick = addToCart
+                  </script>
+           </div>
+
+           <div class="description-art">
+                <h4>Descripción</h4>
+
+                <h5 class="frase1"><%= product.descriptionSlogan %></h5> 
+
+                <ul>
+                    <li><%= product.description %> </li>
+                    
+                                       
+                
+                </ul>
+
+                <div class="description-2">
+
+                    <h4><%= product.feature%></h4>
+                    <h5 class="frase2"><%= product.addSlogan %></h5>
+                    
+                    <ul>
+
+                        <li><%= product.add %></li>
+
+                    </ul>
+
+                    <% if (locals.isLogged) { %>
+             
+                        <div class="register">
+                            <button ><a href="/products/edit/<%= product.id %>" class="button-div">EDITAR</a></button>
+                           </div>
+                           
+                           <div class="button-div">
+                                   <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" class="register" enctype="multipart/form-data" >
+    
+                                <button type="submit">Borrar</button>
+    
+                            </form>
+                               </div>
+                    <% } %>
+        
+
+
+                </div>
+           </div>
+        </div>
+    </div>
+    
+            <div class="bloque-te-puede-interesar">
+
+            <h3 class="te-puede-interesar">
+                <u>Tambien te puede interesar</u>
+            </h3>
+        
+        <div class="img-te-puede-interesar"> 
+
+            <div class="card">
+
+                <img src="/img/products/masajesperro.jpg " alt="*" class="img-product3">
+            </div>
+
+            <div class="card">
+            <img src="/img/products/perrotoalla.jpg" alt="*" class="img-product3">
+            </div>
+
+        
+        <div class="card">
+            <img src="/img/products/perropeinado.jpg" alt="*" class="img-product3">
+        </div>
+
+       </div>
+    </div>
+
+</article>
+</div>
+    
+
+</main>
+ 
+
+<%- include ('partials/footer')%>
+
+  </body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head')%>
+
+<body>
+
+    <%- include ('partials/header')%>
+
+
+        <main class="user-main">
+
+
+
+                    <div class = "perfiles-container">
+
+                <% products.forEach(product => { %>
+                    
+                    <article class="card-users">
+                        <a href="/products/detail/<%= product.id %> ">
+                            <div class="div-imagenes-perfiles">
+
+                                <img class="imagenes-perfiles" src="/img/products/<%= product.f_image %>">
+                            </div>
+                            <div class="perfil-nombre">
+                                <i class="fa-solid fa-paw"></i>
+                                <h3 class="nombre-prefiles"><%= product.name %></h3>
+                                <% categories.forEach(category => { %>
+                                    
+                                    <h3 class="descripciones"><%= product.category_id == category.id ? category.category_name : ""%></h3>
+                                       
+                    
+                                    
+                                 
+                                <% }) %>
+                            </div>
+                        </a>
+                    </article>
+                <%}) %>
+
+                    </div>
+
+
+
+
+            </div>
+        </main>
+
+        <%- include ('partials/footer')%>
+
+</body>
+</html>

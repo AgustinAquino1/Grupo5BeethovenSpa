@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('partials/head')%>
+
+    <body>
+     
+      <%- include ('partials/header')%>
+
+<main>
+
+
+
+
+  <form action="/users/register" method="POST" class="register" enctype="multipart/form-data" >
+     
+           
+    <div class = "logo-register">
+      <a href="/"><img class="logo-register" src="/img/BeethovenSpaLogo.png"></a>
+  </div>
+     
+    <div class="login-information">
+        <div class="title-information"> <h3>Registrate</h3></div>
+        <div class="text-validation"> <p>Validá tus datos para que nadie pueda ingresar o crear una cuenta a tu nombre.</p></div>
+
+
+
+       <div class="main-link-register">
+         <input type="text" 
+         class = "input name"
+         name="name" 
+         placeholder="Nombre"
+         value="<%= locals.oldData ? oldData.name : null %>">
+         <div class="errors">
+          
+           <% if (locals.errors && errors.name) { %>
+            <%= errors.name.msg %> 
+            <% } %>
+
+         </div>
+        </div>
+
+        
+        
+        
+        <div class="main-link-register">
+         <input type="text" 
+         class = "input surname"
+         name="surname" 
+         placeholder="Apellido" 
+         value="<%= locals.oldData ? oldData.surname : null %>">
+         <div class="errors">
+          <% if (locals.errors && errors.surname) { %>
+           <%= errors.surname.msg %> 
+           <% } %>
+
+        </div>
+       </div>
+ 
+        <div class="main-link-register">
+          <input type="file" 
+          class = "input imageAvatar"
+          name="avatar" 
+          placeholder="Sube una foto para tu perfil">
+          <div class="errors">
+            <% if (locals.errors && errors.avatar) { %>
+             <%= errors.avatar.msg %> 
+  
+             <% } %>
+  
+           </div>
+          
+    </div>
+       
+       <div class="main-link-register">
+        <label for="month">Fecha de Nacimiento:</label>
+        <input class = "input birthDate" type="date" name="birth">         
+       </div>
+       <div class="errors">
+
+
+       </div>
+ 
+ 
+        <div class="main-link-register">
+         <input type="text" 
+         class = "input adress"
+         name="adress" 
+         placeholder="Domicilio"
+         value="<%= locals.oldData ? oldData.adress : null %>">
+         <div class="errors">
+          <% if (locals.errors && errors.adress) { %>
+           <%= errors.adress.msg %> 
+           <% } %>
+
+         </div>
+        </div>
+ 
+ 
+        <div class="main-link-register">
+          <input type="text" 
+          class = "input email"
+          name="email" 
+          placeholder="Email"
+          value="<%= locals.oldData ? oldData.email : null %>">
+          <div class="errors">
+            <% if (locals.errors && errors.email) { %>
+             <%= errors.email.msg %> 
+             <% } %>
+
+          </div>
+        </div>
+ 
+
+ 
+        <div class="main-link-register">
+          <input class = "input pass" type="password" name="pass"  placeholder="Contraseña">
+          <div class="errors">
+            <% if (locals.errors && errors.pass) { %>
+             <%= errors.pass.msg %> 
+             <% } %>
+
+          </div>
+        </div>
+ 
+ 
+        <div class="main-link-register">
+           <input class = "input" type="password" name="pass2"   placeholder="Confirmar contraseña">
+           <div class="errors">
+            <% if (locals.errors && errors.pass2) { %>
+             <%= errors.pass2.msg %> 
+             <% } %>
+        </div>
+
+
+
+    </div>
+            
+    <div class="container">
+      <div class="subscription">
+        <input class = "subscription" type="checkbox" name="subscription" value="1">
+        <label for="subscription">Suscribirse a nuevas ofertas </label>
+      </div>
+        <button type="submit" class="send-buttom-register">  Registrarse </button>
+  </div>
+</div>
+</form>
+
+</main>
+<%- include ('partials/footer')%>
+
+
+<script type="text/javascript" src="/js/register.js"></script>
+</body>
+
+
+</html>
