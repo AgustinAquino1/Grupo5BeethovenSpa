@@ -61,6 +61,7 @@ header {
   color: #ffa5b5;
   animation-duration: 3s;
   animation-name: slidein;
+  display: flex;
 }
 
 .rotate-bars{
@@ -145,6 +146,7 @@ header {
   cursor:pointer;
   transition-duration: 1s;
   text-shadow: 1px 1px 1px #FF3A5E ;
+  display: none;
 }
 
 .nav-right {
@@ -153,7 +155,9 @@ header {
   width: 10%;
  
 }
-
+.logout{
+  display: none;
+}
 
 
 .fa-user {
@@ -210,6 +214,7 @@ h1 {
   text-align: center;
 
 }
+
 
 
 .avatar{
@@ -294,7 +299,7 @@ h1 {
   margin-bottom: 10px;
   margin-top: 10px;
   box-shadow: none;
-  width: 100%;
+  width: 50%;
   
 }
 .card-servicios:hover{
@@ -306,6 +311,22 @@ h1 {
   width: 100%;
 }
 
+.info-personal-profile{
+  margin-left: 20px;
+  justify-content: center;
+  width: 50%;
+}
+.info-personal-profile h2{
+  font-family:'Helvetica';
+  color: #FE87B0;
+  margin-bottom: 20px;
+}
+.info-personal-profile h4{
+  font-family:'Helvetica';
+  color: #C570E3;
+
+
+}
 
 /***************************************** M O B I L E - F O O T E R *************************************************/
 
@@ -394,6 +415,9 @@ h3{
   padding-top:10px;
   padding-bottom: 20px;
   font-size:18px;
+  text-align: center;
+
+
 }
 
 .main-link{
@@ -608,9 +632,8 @@ padding: 1%;
   font-size: 0.5cm;
  
 }
-.bloque-te-puede-interesar{
-  width: 50%;
-  
+.card-servicios a{
+  text-decoration: none;
 }
 
 .bloque-1{
@@ -666,10 +689,13 @@ padding: 1%;
 }
 .caracteristicas{
   background-color: white;
+  text-align: center;
+  color: #000;
 }
 .button-div{
   display: flex;
   justify-content: center;
+  margin-top:10px;
 }
 
 
@@ -917,6 +943,7 @@ font-size: 15px;
     font-size: 30px;
     margin-top: 20px;
     text-shadow: 1px 1px 1px #FF3A5E ;
+    display: flex;
   }
 
 .servicios-imagenes-container {
@@ -926,12 +953,11 @@ font-size: 15px;
   display:none
 }
   .card-servicios {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
     box-shadow: none;
-    width: 50%;
+    width: 25%;
   }
 
   main section div article:hover{
@@ -963,6 +989,7 @@ font-size: 15px;
 
 .img-te-puede-interesar{
   display: flex;
+  justify-content: center;
 }
 
 .img-product3{
@@ -1006,7 +1033,22 @@ font-size: 15px;
 .description-2 h4 {
   margin-top: 15px;
 }
+.info-personal-profile{
+  margin-left: 20px;
+  justify-content: center;
+  width: 50%;
+}
+.info-personal-profile h2{
+  font-family:'Helvetica';
+  color: #FE87B0;
+  margin-bottom: 20px;
+}
+.info-personal-profile h4{
+  font-family:'Helvetica';
+  color: #C570E3;
 
+
+}
 
 /** T A B L E T - F O O T E R **/
 
@@ -1062,8 +1104,9 @@ font-size: 15px;
   margin-bottom: 5%;
   margin-top: 5%;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  width: 30%;
+  width: 15%;
   height: 30%;
+
 }
 
 
@@ -1088,6 +1131,7 @@ font-size: 15px;
     font-size: 30px;
     margin-top: 20px;
     text-shadow: 1px 1px 1px #FF3A5E ;
+    display: flex;
   }
   
   .card-servicios {
@@ -1118,7 +1162,7 @@ font-size: 15px;
 .img-small{
   display:flex;
   flex-direction: column;
-  margin-top: 0px;
+ 
 }
 .image-div{
   position: relative;
@@ -1184,7 +1228,9 @@ font-size: 15px;
 }
 .button-div{
  display: flex;
-flex-direction: column;
+
+display: inline-block;
+flex-direction: row;
 }
 button{
   margin-bottom: 20px;
@@ -1209,9 +1255,27 @@ button{
 .imagenes-perfiles{
   object-fit: contain;
   width: 100%;
-  
-
 }
+
+  .info-personal-profile{
+    margin-left: 20px;
+    justify-content: center;
+    width: 50%;
+  }
+  .info-personal-profile h2{
+    font-family:'Helvetica';
+    color: #FE87B0;
+    margin-bottom: 20px;
+  }
+  .info-personal-profile h4{
+    font-family:'Helvetica';
+    color: #C570E3;
+
+
+  }
+
+
+
 .user-main{
   display: flex; 
   text-align: center;
@@ -1221,6 +1285,12 @@ button{
 .nombre-prefiles{
     text-decoration: none;
 }
+
+.bloque-te-puede-interesar{
+  width:50% ;
+ 
+ }
+ 
 
 /*** desktop - PRODUCT CREATE **************************/
 .form-product{
