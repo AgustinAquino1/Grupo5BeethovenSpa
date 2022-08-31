@@ -20,16 +20,10 @@
                 <li class="menu-item">
                     <a href="/products/?page=3"  class="menu-link">EXPERIENCIA GOURMET</a>
                 </li> 
-                <% if (locals.isLogged && locals.userLogged && userLogged.permission_id ===2) { %>
-                    <li class="menu-item carrito-link">
-                        <a href="/cart"  class="menu-link">CARRITO</a>
-                    </li>  
-                <% } %>  
-                <% if (locals.isLogged && locals.userLogged && userLogged.permission_id ===1) { %>
-                    <li class="menu-item">
-                        <a href="/users"  class="menu-link">LISTADO DE USUARIOS</a>
-                    </li>  
-                <% } %>                         
+                <li class="menu-item carrito-link">
+                    <a href="/cart"  class="menu-link">CARRITO</a>
+                </li>  
+                     
             </ul>
            </div>
 
@@ -51,13 +45,40 @@
         </div>
 
         <div class = "nav-right">
-            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a class="carrito-a"href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
             <% if (locals.isLogged) { %>
-                <a href="/users/profile/<%= locals.userLogged.name %>"><img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar"></a>
-                <a id="logout"  href="/users/logout">Logout</a>               
-            <% } else {%>
+                <div class="menu">
+                    <img src="/img/users/<%= locals.userLogged.avatar %>" class ="avatar">
+                    
+                    <div class="avatarMenu">
+                        <ul class="menu-items">
+                            <li class="menu-item">
+                                <a class="menu-link" href="/users/profile/<%= locals.userLogged.name %>">PERFIL</a>
+                                             
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link"   href="/cart">CARRITO</a>               
+                            </li>
+                            <% if (locals.isLogged && locals.userLogged && userLogged.permission_id ===1) { %>
+                                <li class="menu-item">
+                                    <a href="/users"  class="menu-link">LISTADO DE USUARIOS</a>
+                                </li>  
+                                <li class="menu-item">
+                                    <a href="/products/create"  class="menu-link">CREAR PRODUCTO</a>
+                                </li>  
+                                <% } %>        
+                                <li class="menu-item">
+                                    <a class="menu-link" href="/users/logout">CERRAR SESIÓN</a>               
+                                </li>
+                                
+                        </ul>
 
-                <a href="/users/login"><i class="fa-regular fa-user"></i></a>
+                    </div>
+                
+                </div>
+            <% } else {%>
+              
+                <a class="login-a" href="/users/login"><i class="fa-regular fa-user"></i></a>
             <% } %>
         </div>
 

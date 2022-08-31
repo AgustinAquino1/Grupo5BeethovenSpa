@@ -81,6 +81,16 @@ header {
   z-index: 100;
 
 }
+.avatarMenu {
+  position: relative;
+  left: 2000%;
+  opacity:1;
+  padding-top: 40px;
+  width: 0%;
+  transition-duration: 0.6s;
+  z-index: 100;
+
+}
 .menu-items{
   height: 100%;
   gap: 40px;
@@ -94,6 +104,7 @@ header {
   padding-top: 10px;
   border-right: 0.5px solid   #FFD7D7 ;
   border-top: 0.5px solid   #FFD7D7;
+  background-color: rgba(61, 61, 61, 0.5);
 }
 
 
@@ -104,17 +115,26 @@ header {
 .menu-link{
   font-size: 25px;
   text-decoration: none;
-  color: #FF3A5E;
+  color: #f5aab7;
   margin-left: 20px;
   text-overflow: wrap;
+  
 
 }
+
 .activate-menu-items{
   position: absolute;
   left:0%;
   opacity: 1;
   right: 0px;
   transition-duration: 0.3s;
+}
+.activate-menu-avatar-items{
+  position: absolute;
+  left: 78%;
+  opacity: 1;
+  transition-duration: 0.3s;
+  z-index: 100;
 }
 
 .fa-bars {
@@ -131,18 +151,13 @@ header {
 
   display: flex;
   width: 10%;
-  align-items: baseline;
+ 
 }
 
-.fa-cart-shopping{
-  color: #f9cccc;
-  font-size: 30px;
-  margin-top: 20px;
-  text-shadow: 1px 1px 1px #FF3A5E ;
-}
+
 
 .fa-user {
-  visibility: hidden;
+
   font-size: 30px;
   margin-top: 20px;
   color: #f9cccc;
@@ -199,14 +214,19 @@ h1 {
 
 .avatar{
   display: block;
-  top: 10px;
-  left: 50px;
-  position:absolute;
   height: 50px;
   width: 50px;
   border-radius: 100%;
+  position: relative;
+  cursor:pointer;
+  transition-duration: 1s;
+  position: relative;
+  right: 200%;
+  top:10%
+ 
 
 }
+
 
 #logout{
   text-decoration: none;
@@ -861,6 +881,10 @@ font-size: 15px;
     color:rgba(0, 0, 0, 0.88);
     margin-bottom: 20px;
   }
+
+  .carrito-a{
+    display:none
+  }
  
 /** USER MOBILE  **/
 
@@ -871,6 +895,10 @@ font-size: 15px;
 
 @media  (min-width: 426px){
 
+  .carrito-a{
+    display:block
+  }
+ 
   .fa-user {
     visibility:visible;
     color: #f9cccc;
@@ -884,10 +912,18 @@ font-size: 15px;
   .fa-cart-shopping:hover{
     color: #ffa5b5;
   }
-
+  .fa-cart-shopping{
+    color: #f9cccc;
+    font-size: 30px;
+    margin-top: 20px;
+    text-shadow: 1px 1px 1px #FF3A5E ;
+  }
 
 .servicios-imagenes-container {
   display: flex;
+}
+.carrito-link{
+  display:none
 }
   .card-servicios {
     margin-left: 5px;
@@ -1046,6 +1082,13 @@ font-size: 15px;
     
 
   }
+
+  .fa-cart-shopping{
+    color: #f9cccc;
+    font-size: 30px;
+    margin-top: 20px;
+    text-shadow: 1px 1px 1px #FF3A5E ;
+  }
   
   .card-servicios {
     
@@ -1059,12 +1102,19 @@ font-size: 15px;
     flex-direction: row;
     width: 100%; 
   }
+  .carrito-link{
+    display:none
+  }
   .img-principal-product-detail{
     display: flex;
     justify-content:left;
     
      
 }
+.carrito-a{
+  display:block
+}
+
 .img-small{
   display:flex;
   flex-direction: column;
@@ -1090,7 +1140,7 @@ font-size: 15px;
 }
 .texto-home{
   position: absolute;
-  z-index: 100;
+  z-index: 90;
   margin-bottom: 10% ;
   margin-left: 60%;
   color: white;
@@ -1099,7 +1149,7 @@ font-size: 15px;
 }
 .enlace-button-tienda{
   position: absolute;
-  z-index: 100;
+  z-index: 90;
   display: flex;
   margin-left: 50%;
 }
